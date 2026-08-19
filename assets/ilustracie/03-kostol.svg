@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" role="img" aria-label="Kostol v Lesoviciach" preserveAspectRatio="xMidYMid meet"><defs>
+<pattern id="h45" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.6"/>
+</pattern>
+<pattern id="h45f" width="4.2" height="4.2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="4.2" stroke="#000" stroke-width="1.7"/>
+</pattern>
+<pattern id="h135" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.4"/>
+</pattern>
+<pattern id="hv" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-width="2.2"/>
+</pattern>
+<pattern id="hh" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="6" y2="0" stroke="#000" stroke-width="2"/>
+</pattern>
+<pattern id="hhf" width="4" height="4" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="4" y2="0" stroke="#000" stroke-width="1.5"/>
+</pattern>
+<pattern id="cross" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.2"/>
+  <line x1="0" y1="0" x2="7" y2="0" stroke="#000" stroke-width="2.2"/>
+</pattern>
+<pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse">
+  <circle cx="4.5" cy="4.5" r="1.7" fill="#000"/>
+</pattern>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#777"/>
+  <stop offset="1" stop-color="#000"/>
+</linearGradient>
+<mask id="skymask"><rect x="0" y="0" width="420" height="340" fill="url(#fade)"/></mask>
+</defs><g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"><g mask="url(#skymask)"><rect x="0" y="0" width="420" height="340" fill="url(#h45)" opacity=".5"/></g><path d="M0 60 q40 -26 84 -8 q30 -20 60 2" stroke-width="3.2"/><path d="M150 316 L150 214 L330 214 L330 316 Z" fill="#fff" stroke-width="4.4"/><path d="M140 216 L240 158 L340 216 Z" fill="url(#h45)" stroke-width="4.4"/><path d="M140 216 L340 216" stroke-width="4.4"/><path d="M62 316 L62 176 L136 176 L136 316 Z" fill="#fff" stroke-width="4.4"/><path d="M52 178 L99 96 L146 178 Z" fill="url(#h135)" stroke-width="4.4"/><path d="M99 96 L99 60" stroke-width="4.6"/><path d="M99 74 L99 60 M88 68 L110 68" stroke-width="4.6"/><path d="M164 296 L164 254 q16 -22 32 0 L196 296 Z" fill="url(#hv)" stroke-width="3.6"/><path d="M180 296 L180 244" stroke-width="2.8"/><path d="M224 296 L224 254 q16 -22 32 0 L256 296 Z" fill="url(#hv)" stroke-width="3.6"/><path d="M240 296 L240 244" stroke-width="2.8"/><path d="M284 296 L284 254 q16 -22 32 0 L316 296 Z" fill="url(#hv)" stroke-width="3.6"/><path d="M300 296 L300 244" stroke-width="2.8"/><path d="M84 236 L84 206 q15 -20 30 0 L114 236 Z" fill="url(#hv)" stroke-width="3.4"/><path d="M78 316 L78 268 q21 -26 42 0 L120 316 Z" fill="url(#cross)" stroke-width="4"/><path d="M0 316 L420 316 L420 340 L0 340 Z" fill="url(#hh)" opacity=".5"/><path d="M0 316 L420 316" stroke-width="4"/><path d="M376 316 L376 244 M358 268 L394 268" stroke-width="5.4"/><path d="M16.0 122.0 q7.0 -9.0 14.0 -1.0 q7.0 -8.0 14.0 1.0" stroke-width="3.2"/><path d="M403.2 99.2 q-5.6000000000000005 -7.2 -11.200000000000001 -0.8 q-5.6000000000000005 -6.4 -11.200000000000001 0.8" stroke-width="2.5600000000000005"/></g></svg>

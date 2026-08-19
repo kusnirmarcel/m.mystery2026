@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kliatba Lesovíc — príručka pre hercov</title>
+<meta name="description" content="Kompletná príručka k murder mystery Kliatba Lesovíc: príbeh, mapa, postavy, dôkazy, časová os a rekvizity.">
+<meta name="theme-color" content="#231d15">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232c3626'/%3E%3Cpath d='M32 10v44M18 24h28' stroke='%23c99a4a' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════ ZÁKLAD ═══════════════════ */
+:root{
+  --ink:#251d14; --ink-2:#463726; --ink-3:#6b5a44;
+  --parch:#ece0c4; --parch-2:#e2d3b0; --parch-3:#d6c49c; --parch-4:#f5ecd7;
+  --gold:#a8762c; --gold-2:#c99a4a; --gold-soft:#e8cf9c;
+  --forest:#2c3626; --forest-2:#4a5a3c; --moss:#6d7c4c;
+  --blood:#7e2418; --river:#5f7b8c;
+  --pos:#4f7a52; --neg:#8a2b1e; --neu:#8a8272; --cplx:#a8762c;
+  --shadow:0 2px 0 rgba(37,29,20,.08), 0 10px 30px -12px rgba(37,29,20,.35);
+  --radius:3px;
+  --serif:'EB Garamond',Georgia,'Times New Roman',serif;
+  --display:'Cinzel','EB Garamond',Georgia,serif;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--parch); color:var(--ink);
+  font-family:var(--serif); font-size:19px; line-height:1.66;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -10%, rgba(255,250,235,.75), transparent 60%),
+    radial-gradient(ellipse 100% 60% at 50% 110%, rgba(80,60,30,.14), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+}
+h1,h2,h3,h4{font-family:var(--display); font-weight:700; letter-spacing:.01em; line-height:1.22; margin:0 0 .5em}
+h1{font-size:clamp(1.9rem,5vw,3rem)}
+h2{font-size:clamp(1.4rem,3.4vw,2.05rem)}
+h3{font-size:clamp(1.12rem,2.4vw,1.4rem)}
+h4{font-size:1.02rem; font-family:var(--serif); font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3)}
+p{margin:0 0 1em}
+a{color:var(--gold); text-decoration-thickness:1px; text-underline-offset:3px}
+img{max-width:100%; display:block}
+button{font:inherit; color:inherit; cursor:pointer}
+:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:2px}
+::selection{background:var(--gold-soft)}
+
+/* ═══════════════════════════════════════════ HLAVIČKA ═════════════════ */
+.topbar{
+  position:sticky; top:0; z-index:60; background:var(--forest);
+  color:var(--parch-4); border-bottom:3px double rgba(232,207,156,.45);
+  box-shadow:0 6px 22px -10px rgba(0,0,0,.6);
+}
+.topbar__in{max-width:var(--maxw); margin:0 auto; padding:.5rem clamp(.8rem,3vw,1.6rem); display:flex; align-items:center; gap:1rem}
+.brand{display:flex; align-items:baseline; gap:.6rem; text-decoration:none; color:inherit; flex:0 0 auto}
+.brand__mark{font-family:var(--display); font-size:1.28rem; font-weight:700; letter-spacing:.04em}
+.brand__sub{font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-2); display:none}
+@media(min-width:900px){.brand__sub{display:inline}}
+.nav{margin-left:auto; display:flex; gap:.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch}
+.nav::-webkit-scrollbar{display:none}
+.topbar__in{position:relative}
+@media(max-width:820px){
+  .topbar__in::after{content:""; position:absolute; right:0; bottom:0; width:2.4rem; height:2.2rem;
+    background:linear-gradient(90deg,rgba(44,54,38,0),var(--forest)); pointer-events:none}
+}
+.nav a{
+  color:rgba(240,232,212,.78); text-decoration:none; padding:.44rem .66rem; border-radius:2px;
+  font-size:.9rem; letter-spacing:.045em; text-transform:uppercase; white-space:nowrap;
+  border-bottom:2px solid transparent; transition:color .15s, border-color .15s, background .15s;
+}
+.nav a:hover{color:#fff; background:rgba(255,255,255,.06)}
+.nav a.is-active{color:var(--gold-2); border-bottom-color:var(--gold-2)}
+@media(max-width:820px){
+  .topbar__in{flex-wrap:wrap; gap:.4rem}
+  .nav{width:100%; margin-left:0; padding-bottom:.15rem}
+  .nav a{font-size:.82rem; padding:.38rem .5rem}
+}
+
+/* ═══════════════════════════════════════════ LAYOUT ═══════════════════ */
+main{max-width:var(--maxw); margin:0 auto; padding:clamp(1.4rem,4vw,3rem) clamp(.9rem,3vw,1.6rem) 6rem}
+.view{animation:fade .35s ease}
+@keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+.eyebrow{font-size:.76rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); margin:0 0 .5rem; font-weight:600}
+.lead{font-size:1.12em; color:var(--ink-2)}
+.rule{border:0; height:0; margin:2.6rem 0; text-align:center; overflow:visible}
+.rule::before{content:"❧"; color:var(--gold); font-size:1.2rem; background:transparent; position:relative; top:-.7rem}
+.hr-thin{border:0; border-top:1px solid rgba(37,29,20,.16); margin:2rem 0}
+
+.card{
+  background:linear-gradient(180deg, var(--parch-4), var(--parch-2));
+  border:1px solid rgba(37,29,20,.22); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:clamp(1rem,2.4vw,1.5rem); position:relative;
+}
+.card--flat{box-shadow:none; background:rgba(245,236,215,.55)}
+.grid{display:grid; gap:1rem}
+@media(min-width:640px){.g2{grid-template-columns:repeat(2,1fr)} }
+@media(min-width:900px){.g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:640px) and (max-width:899px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+
+.pill{display:inline-flex; align-items:center; gap:.35rem; font-size:.78rem; letter-spacing:.08em;
+  text-transform:uppercase; padding:.18rem .55rem; border-radius:99px; border:1px solid currentColor;
+  font-weight:600; white-space:nowrap}
+.pill--pos{color:var(--pos)} .pill--neg{color:var(--neg)} .pill--neu{color:var(--neu)} .pill--cplx{color:var(--cplx)}
+.pill--solid{background:var(--forest); color:var(--parch-4); border-color:var(--forest)}
+.pill--blood{background:var(--blood); color:#fff; border-color:var(--blood)}
+.pill--gold{background:var(--gold); color:#fff; border-color:var(--gold)}
+
+.btn{
+  display:inline-flex; align-items:center; gap:.45rem; background:var(--forest); color:var(--parch-4);
+  border:1px solid var(--forest); padding:.5rem 1rem; border-radius:2px; text-decoration:none;
+  font-size:.88rem; letter-spacing:.06em; text-transform:uppercase; transition:.15s;
+}
+.btn:hover{background:var(--forest-2)}
+.btn--ghost{background:transparent; color:var(--ink); border-color:rgba(37,29,20,.35)}
+.btn--ghost:hover{background:rgba(37,29,20,.07)}
+
+.chips{display:flex; flex-wrap:wrap; gap:.4rem; margin:0 0 1.2rem}
+.chip{
+  background:rgba(245,236,215,.7); border:1px solid rgba(37,29,20,.25); color:var(--ink-2);
+  padding:.3rem .7rem; border-radius:99px; font-size:.86rem; transition:.15s; display:inline-flex;
+  align-items:center; gap:.4rem; line-height:1.3;
+}
+.chip:hover{background:var(--parch-4); border-color:var(--ink-3)}
+.chip.is-on{background:var(--forest); color:var(--parch-4); border-color:var(--forest)}
+.chip__dot{width:.62rem; height:.62rem; border-radius:99px; background:currentColor; flex:0 0 auto}
+
+/* ═══════════════════════════════════════════ PREHĽAD ══════════════════ */
+.hero{text-align:center; padding:clamp(1rem,4vw,2.4rem) 0 0}
+.hero__orn{color:var(--gold); letter-spacing:.6em; font-size:.9rem; margin-bottom:1rem}
+.hero h1{margin-bottom:.2em; text-shadow:0 1px 0 rgba(255,250,235,.6)}
+.hero__sub{font-style:italic; color:var(--ink-3); font-size:1.15rem; margin-bottom:.4rem}
+.hero__meta{font-size:.82rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold)}
+.warn{
+  border-left:4px solid var(--blood); background:rgba(126,36,24,.07);
+  padding:.85rem 1.1rem; margin:2rem 0; border-radius:2px; font-size:.98rem;
+}
+.warn strong{color:var(--blood)}
+.fact{padding:.9rem 1rem; background:rgba(245,236,215,.62); border:1px solid rgba(37,29,20,.18); border-radius:2px}
+.fact__k{font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-weight:600}
+.fact__v{font-family:var(--display); font-size:1.06rem; font-weight:700; margin:.15rem 0 .1rem}
+.fact__d{font-size:.88rem; color:var(--ink-3)}
+.castlist{display:flex; flex-wrap:wrap; gap:.5rem}
+.cast{display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; color:inherit;
+  border:1px solid rgba(37,29,20,.22); background:rgba(245,236,215,.6); padding:.35rem .75rem .35rem .4rem; border-radius:99px; transition:.15s}
+.cast:hover{background:var(--parch-4); box-shadow:var(--shadow)}
+.cast__av{width:1.9rem; height:1.9rem; border-radius:99px; display:grid; place-items:center; color:#fff;
+  font-family:var(--display); font-weight:700; font-size:.9rem; flex:0 0 auto}
+.cast__n{font-weight:600} .cast__a{color:var(--ink-3); font-size:.9rem}
+
+/* ═══════════════════════════════════════════ PRÍBEH ═══════════════════ */
+.story{max-width:74ch; margin:0 auto}
+.story h2{margin-top:0}
+.story__ch{margin:0 0 3rem}
+.story__ch p{text-align:justify; hyphens:auto}
+.story__ch p:first-of-type::first-letter{
+  float:left; font-family:var(--display); font-size:3.5em; line-height:.82; padding:.06em .1em 0 0;
+  color:var(--gold); font-weight:700;
+}
+.ill{
+  width:min(46%,300px); margin:.2rem 0 1rem; padding:.6rem; background:rgba(245,236,215,.72);
+  border:1px solid rgba(37,29,20,.2); border-radius:2px; box-shadow:var(--shadow);
+}
+.ill--right{float:right; margin-left:1.6rem}
+.ill--left{float:left; margin-right:1.6rem}
+.ill svg,.ill img{width:100%; height:auto; color:var(--ink)}
+.ill figcaption{font-size:.78rem; text-align:center; color:var(--ink-3); font-style:italic; margin-top:.4rem}
+@media(max-width:620px){
+  .ill{float:none !important; width:min(78%,320px); margin:1.4rem auto}
+  .story__ch p{text-align:left}
+}
+.story__ch::after{content:""; display:block; clear:both}
+
+/* ═══════════════════════════════════════════ MAPA ═════════════════════ */
+.mapwrap{border:1px solid rgba(37,29,20,.3); border-radius:2px; overflow:hidden; box-shadow:var(--shadow);
+  background:var(--forest); position:relative}
+.mapview{position:relative; overflow:hidden; touch-action:none; cursor:grab; user-select:none; height:min(64vh,520px)}
+@media(min-width:701px){.mapview{height:auto}}
+.mapview.is-drag{cursor:grabbing}
+.mapstage{position:relative; transform-origin:0 0; will-change:transform}
+.mapstage img{width:100%; display:block; pointer-events:none}
+.hot{
+  position:absolute; transform:translate(-50%,-50%) scale(var(--hs,1)); width:2.3rem; height:2.3rem; border-radius:99px;
+  border:2px solid var(--parch-4); background:rgba(44,54,38,.9); color:var(--parch-4);
+  display:grid; place-items:center; font-family:var(--display); font-weight:700; font-size:.82rem;
+  box-shadow:0 3px 10px rgba(0,0,0,.5); transition:transform .15s, background .15s; padding:0;
+}
+.hot:hover,.hot.is-on{background:var(--gold); transform:translate(-50%,-50%) scale(calc(var(--hs,1) * 1.18)); z-index:3}
+.hot::after{content:""; position:absolute; inset:-7px; border-radius:99px; border:1px solid rgba(232,207,156,.5); animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{opacity:.7; transform:scale(.85)} 70%{opacity:0; transform:scale(1.4)} 100%{opacity:0}}
+@media(max-width:700px){
+  .hot{width:1.9rem; height:1.9rem; font-size:.76rem}
+}
+.mapctl{position:absolute; right:.6rem; bottom:.6rem; display:flex; gap:.3rem; z-index:5}
+.mapctl button{width:2.3rem; height:2.3rem; border-radius:2px; border:1px solid rgba(232,207,156,.5);
+  background:rgba(44,54,38,.92); color:var(--parch-4); font-size:1.1rem; display:grid; place-items:center; padding:0}
+.mapctl button:hover{background:var(--gold)}
+.maphint{font-size:.84rem; color:var(--ink-3); text-align:center; margin:.6rem 0 1.4rem; font-style:italic}
+.mapinfo{min-height:2rem}
+
+/* ═══════════════════════════════════════════ POSTAVY ══════════════════ */
+.pcard{
+  display:flex; flex-direction:column; text-align:left; text-decoration:none; color:inherit;
+  background:linear-gradient(180deg,var(--parch-4),var(--parch-2));
+  border:1px solid rgba(37,29,20,.22); border-top:4px solid var(--c,var(--ink)); border-radius:var(--radius);
+  padding:1.1rem; box-shadow:var(--shadow); transition:transform .18s, box-shadow .18s; height:100%;
+}
+.pcard:hover{transform:translateY(-3px); box-shadow:0 14px 34px -14px rgba(37,29,20,.5)}
+.pcard__top{display:flex; align-items:center; gap:.7rem; margin-bottom:.6rem}
+.av{width:2.9rem; height:2.9rem; border-radius:99px; display:grid; place-items:center; color:#fff;
+  font-family:var(--display); font-weight:700; font-size:1.15rem; flex:0 0 auto; box-shadow:inset 0 0 0 2px rgba(255,255,255,.25)}
+.pcard__n{font-family:var(--display); font-weight:700; font-size:1.06rem; line-height:1.2}
+.pcard__r{font-size:.85rem; color:var(--ink-3)}
+.pcard__k{font-size:.95rem; color:var(--ink-2); margin:0 0 .8rem; flex:1}
+.pcard__f{display:flex; flex-wrap:wrap; gap:.35rem; align-items:center; font-size:.8rem; color:var(--ink-3)}
+
+.pdetail__hd{display:flex; gap:1rem; align-items:flex-start; flex-wrap:wrap; margin-bottom:1.2rem;
+  border-bottom:3px double rgba(37,29,20,.25); padding-bottom:1.2rem}
+.pdetail__hd .av{width:4.2rem; height:4.2rem; font-size:1.6rem}
+.pdetail__meta{display:flex; flex-wrap:wrap; gap:.35rem .9rem; font-size:.9rem; color:var(--ink-3); margin-top:.4rem}
+.pdetail__meta b{color:var(--ink-2); font-weight:600}
+.sect{margin:0 0 1.6rem}
+.sect > h4{border-bottom:1px solid rgba(37,29,20,.18); padding-bottom:.3rem; margin-bottom:.7rem}
+.tlist{list-style:none; padding:0; margin:0}
+.tlist li{padding:.55rem 0; border-bottom:1px dotted rgba(37,29,20,.2)}
+.tlist li:last-child{border-bottom:0}
+.tlist b{font-weight:600}
+.relrow{display:flex; gap:.7rem; align-items:flex-start; padding:.5rem 0; border-bottom:1px dotted rgba(37,29,20,.2)}
+.relrow:last-child{border-bottom:0}
+.reldot{width:.7rem; height:.7rem; border-radius:99px; margin-top:.5rem; flex:0 0 auto}
+.relname{font-weight:600; font-family:var(--display)}
+.backlink{display:inline-flex; align-items:center; gap:.4rem; text-decoration:none; color:var(--ink-3);
+  font-size:.88rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:1rem}
+.backlink:hover{color:var(--gold)}
+
+/* ═══════════════════════════════════════════ ČASOVÁ OS ════════════════ */
+.tl{position:relative; margin-top:1rem}
+.tl__row{display:grid; grid-template-columns:5.4rem 1fr; gap:1rem; padding:.2rem 0 1rem; position:relative}
+.tl__row::before{content:""; position:absolute; left:5.4rem; top:0; bottom:0; width:2px;
+  background:linear-gradient(180deg,rgba(37,29,20,.28),rgba(37,29,20,.14)); transform:translateX(-1px)}
+.tl__t{text-align:right; font-family:var(--display); font-weight:700; font-size:1rem; color:var(--ink-2); padding-top:.15rem; position:relative}
+.tl__t::after{content:""; position:absolute; right:-1.36rem; top:.5rem; width:.72rem; height:.72rem; border-radius:99px;
+  background:var(--parch); border:2px solid var(--ink-3); z-index:2}
+.tl__row.is-key .tl__t{color:var(--gold)}
+.tl__row.is-key .tl__t::after{background:var(--gold); border-color:var(--gold)}
+.tl__row.is-murder .tl__t{color:var(--blood)}
+.tl__row.is-murder .tl__t::after{background:var(--blood); border-color:var(--blood); box-shadow:0 0 0 4px rgba(126,36,24,.22)}
+.tl__acts{display:grid; gap:.5rem}
+@media(min-width:760px){.tl__acts{grid-template-columns:repeat(2,1fr)}}
+.act{background:rgba(245,236,215,.62); border:1px solid rgba(37,29,20,.16); border-left:4px solid var(--c);
+  padding:.5rem .75rem; border-radius:2px; font-size:.95rem}
+.act__w{font-family:var(--display); font-weight:700; font-size:.85rem; letter-spacing:.04em; color:var(--c); display:block}
+.tl__row.is-murder .act{background:rgba(126,36,24,.06)}
+@media(max-width:560px){
+  .tl__row{grid-template-columns:4rem 1fr; gap:.7rem}
+  .tl__row::before{left:4rem}
+  .tl__t::after{right:-1.06rem}
+}
+
+/* ═══════════════════════════════════════════ VZŤAHY ═══════════════════ */
+.graphbox{border:1px solid rgba(37,29,20,.25); border-radius:2px; background:rgba(245,236,215,.5);
+  box-shadow:var(--shadow); overflow-x:auto; -webkit-overflow-scrolling:touch}
+.graphbox svg{display:block; min-width:640px; width:100%; height:auto}
+.gnode{cursor:pointer}
+.gnode circle{transition:.18s}
+.gnode:hover circle{stroke-width:4}
+.gnode text{font-family:var(--display); font-weight:700; pointer-events:none}
+.gedge{transition:.2s}
+.legend{display:flex; flex-wrap:wrap; gap:.5rem 1.1rem; margin:1rem 0 0; font-size:.86rem; color:var(--ink-3)}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.legend i{width:1.6rem; height:0; border-top-width:3px; border-top-style:solid; display:inline-block}
+.tabs{display:flex; gap:.3rem; margin-bottom:1.2rem; border-bottom:1px solid rgba(37,29,20,.2)}
+.tabs button{background:none; border:0; padding:.55rem .95rem; font-family:var(--display); font-weight:700;
+  color:var(--ink-3); border-bottom:3px solid transparent; margin-bottom:-1px; font-size:.98rem}
+.tabs button.is-on{color:var(--ink); border-bottom-color:var(--gold)}
+
+/* ═══════════════════════════════════════════ DÔKAZY / REKVIZITY ═══════ */
+/* ── matica vzťahov ── */
+.mxwrap{overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid rgba(37,29,20,.25);
+  border-radius:2px; background:rgba(245,236,215,.5); box-shadow:var(--shadow)}
+table.mx{border-collapse:collapse; width:100%; min-width:760px; font-size:.86rem}
+table.mx th,table.mx td{border:1px solid rgba(37,29,20,.14); vertical-align:top; padding:0}
+table.mx thead th{position:sticky; top:0; background:var(--parch-2); z-index:2; padding:.5rem .4rem;
+  font-family:var(--display); font-size:.8rem; font-weight:700; text-align:center; line-height:1.2}
+table.mx tbody th{position:sticky; left:0; background:var(--parch-2); z-index:1; text-align:left;
+  padding:.5rem .6rem; font-family:var(--display); font-size:.84rem; font-weight:700; white-space:nowrap;
+  border-left:4px solid var(--c)}
+table.mx thead th:first-child{left:0; z-index:3; background:var(--parch-3)}
+.mxc{display:block; width:100%; text-align:left; background:none; border:0; padding:.45rem .5rem;
+  min-height:3.1rem; line-height:1.3; font-size:.82rem; color:var(--ink-2); transition:.12s}
+.mxc:hover{background:rgba(168,118,44,.14)}
+.mxc.is-on{background:rgba(168,118,44,.26); box-shadow:inset 0 0 0 2px var(--gold)}
+.mxc--pos{background:rgba(79,122,82,.13)} .mxc--neg{background:rgba(138,43,30,.13)}
+.mxc--neu{background:rgba(138,130,114,.12)}
+.mxc--self{background:repeating-linear-gradient(45deg,transparent,transparent 5px,rgba(37,29,20,.07) 5px,rgba(37,29,20,.07) 10px); cursor:default}
+.mxc--empty{cursor:default}
+
+.prog{height:.62rem; background:rgba(37,29,20,.14); border-radius:99px; overflow:hidden; margin:.5rem 0 .3rem}
+.prog i{display:block; height:100%; background:linear-gradient(90deg,var(--moss),var(--forest-2)); border-radius:99px; transition:width .5s}
+.rq{display:flex; gap:.75rem; align-items:flex-start; padding:.7rem .2rem; border-bottom:1px dotted rgba(37,29,20,.22)}
+.rq:last-child{border-bottom:0}
+.rq__box{width:1.35rem; height:1.35rem; border:2px solid var(--ink-3); border-radius:2px; flex:0 0 auto;
+  display:grid; place-items:center; margin-top:.16rem; font-size:.95rem; color:transparent; background:rgba(255,255,255,.35)}
+.rq.is-done .rq__box{background:var(--forest); border-color:var(--forest); color:var(--parch-4)}
+.rq.is-done .rq__n{text-decoration:line-through; text-decoration-color:rgba(37,29,20,.4); color:var(--ink-3)}
+.rq__n{font-weight:600}
+.rq__d{font-size:.92rem; color:var(--ink-3)}
+.rq__u{font-size:.9rem; color:var(--ink-2); margin-top:.2rem}
+
+/* ═══════════════════════════════════════════ DOKUMENTY ════════════════ */
+.doc{border:1px solid rgba(37,29,20,.22); background:linear-gradient(180deg,#f7efdc,#eee2c6);
+  box-shadow:var(--shadow); border-radius:2px; margin-bottom:1rem; overflow:hidden}
+.doc__hd{width:100%; text-align:left; background:none; border:0; padding:1rem 1.2rem; display:flex;
+  align-items:center; gap:.8rem; justify-content:space-between}
+.doc__hd:hover{background:rgba(37,29,20,.045)}
+.doc__ti{font-family:var(--display); font-weight:700; font-size:1.06rem}
+.doc__su{font-size:.86rem; color:var(--ink-3); font-style:italic}
+.doc__ar{color:var(--gold); font-size:1.1rem; transition:transform .2s}
+.doc.is-open .doc__ar{transform:rotate(180deg)}
+.doc__bd{display:none; padding:0 1.2rem 1.3rem}
+.doc.is-open .doc__bd{display:block}
+.doc__bd pre{white-space:pre-wrap; font-family:var(--serif); font-size:1rem; line-height:1.68; margin:0;
+  border-top:1px solid rgba(37,29,20,.18); padding-top:1rem}
+.doc__bd img{margin:1rem auto 0; max-width:min(100%,420px); border:1px solid rgba(37,29,20,.2)}
+
+/* ═══════════════════════════════════════════ RIEŠENIE ═════════════════ */
+.spoil{border:2px solid var(--blood); background:rgba(126,36,24,.05); padding:1.2rem; border-radius:2px}
+.qa{border-bottom:1px dotted rgba(37,29,20,.25); padding:.75rem 0}
+.qa:last-child{border-bottom:0}
+.qa__q{font-weight:600; display:flex; gap:.6rem; align-items:baseline}
+.qa__b{font-family:var(--display); font-weight:700; color:var(--gold); font-size:.9rem; flex:0 0 auto}
+.qa__a{color:var(--blood); font-weight:600; margin-top:.15rem}
+
+/* ═══════════════════════════════════════════ PÄTA / STAV ═════════════ */
+.foot{border-top:3px double rgba(37,29,20,.25); margin-top:4rem; padding:1.6rem 0 0; font-size:.86rem; color:var(--ink-3); text-align:center}
+.loading{text-align:center; padding:5rem 1rem; color:var(--ink-3); font-style:italic}
+.err{max-width:44rem; margin:4rem auto; border:2px solid var(--blood); padding:1.4rem; border-radius:2px; background:rgba(126,36,24,.06)}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+
+/* ═══════════════ HERO ═══════════════ */
+.bleed{width:100vw; margin-left:calc(50% - 50vw)}
+.hero2{position:relative; overflow:hidden; margin-bottom:clamp(1.6rem,4vw,2.8rem);
+  border-top:1px solid rgba(37,29,20,.25); border-bottom:1px solid rgba(37,29,20,.25);
+  background:#1b1a14; display:block; text-decoration:none; color:inherit}
+.hero2__img{position:absolute; inset:0; background-size:cover; background-position:center 58%;
+  transform:scale(1.04); transition:transform 6s ease}
+.hero2:hover .hero2__img{transform:scale(1.1)}
+.hero2::after{content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(12,10,7,.42), rgba(12,10,7,.80) 78%),
+    linear-gradient(180deg, rgba(12,10,7,.72), rgba(12,10,7,.15) 34%, rgba(12,10,7,.30) 62%, rgba(12,10,7,.88));
+}
+.hero2__in{position:relative; z-index:2; max-width:var(--maxw); margin:0 auto;
+  padding:clamp(3.4rem,12vw,7rem) clamp(1rem,4vw,2rem); text-align:center; color:#f3e9d2}
+.hero2__orn{color:var(--gold-2); letter-spacing:.85em; font-size:.78rem; margin-bottom:1.1rem; text-indent:.85em}
+.hero2 h1{font-size:clamp(2.3rem,8vw,4.6rem); margin:0 0 .35rem; color:#f7eeda;
+  letter-spacing:.045em; text-shadow:0 2px 22px rgba(0,0,0,.75), 0 1px 2px rgba(0,0,0,.9)}
+.hero2__yr{font-size:clamp(.7rem,2vw,.86rem); letter-spacing:.4em; text-transform:uppercase;
+  color:var(--gold-2); text-indent:.4em; margin:0}
+.hero2__q{max-width:46ch; margin:1.5rem auto 0; font-style:italic; font-size:clamp(1rem,2.4vw,1.22rem);
+  line-height:1.6; color:#e6d9bb; text-shadow:0 1px 12px rgba(0,0,0,.8)}
+.hero2__rule{width:clamp(5rem,18vw,11rem); height:0; margin:1.4rem auto 0;
+  border-top:1px solid rgba(232,207,156,.55); position:relative}
+.hero2__rule::after{content:"✦"; position:absolute; left:50%; top:-.78em; transform:translateX(-50%);
+  color:var(--gold-2); font-size:.72rem; background:transparent; padding:0 .5rem}
+
+/* dlaždice na prehľade */
+.tiles{display:grid; gap:.8rem; grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.tile{display:flex; align-items:baseline; justify-content:space-between; gap:.6rem;
+  text-decoration:none; color:inherit; padding:.85rem 1rem;
+  background:rgba(245,236,215,.62); border:1px solid rgba(37,29,20,.2); border-radius:2px;
+  border-left:3px solid var(--gold); transition:.15s}
+.tile:hover{background:var(--parch-4); box-shadow:var(--shadow); transform:translateY(-2px)}
+.tile__n{font-family:var(--display); font-weight:700; font-size:1rem}
+.tile__c{font-size:.82rem; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.secttitle{font-size:.74rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold);
+  font-weight:600; margin:2.6rem 0 .9rem; display:flex; align-items:center; gap:.8rem}
+.secttitle::after{content:""; flex:1; height:1px; background:rgba(37,29,20,.18)}
+
+/* ═══════════════ PROFIL POSTAVY ═══════════════ */
+.pbody{max-width:70ch; font-size:1.06em; line-height:1.74}
+.pbody p{margin:0 0 1.1em}
+.pbody p:first-of-type::first-letter{float:left; font-family:var(--display); font-size:3.1em;
+  line-height:.84; padding:.05em .12em 0 0; color:var(--gold); font-weight:700}
+.pgrid{display:grid; gap:1rem; margin-top:1.6rem}
+@media(min-width:760px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+.pbox{background:rgba(245,236,215,.6); border:1px solid rgba(37,29,20,.18);
+  border-left:4px solid var(--c,var(--gold)); border-radius:2px; padding:1rem 1.15rem}
+.pbox h4{margin-bottom:.5rem}
+.pbox p:last-child,.pbox ul:last-child{margin-bottom:0}
+.pbox ul{margin:0; padding-left:1.1rem}
+.pbox ul li{margin-bottom:.45rem}
+.pbox ul li:last-child{margin-bottom:0}
+.linkrow{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.2rem}
+.lnk{display:inline-flex; align-items:center; gap:.35rem; text-decoration:none;
+  border:1px solid rgba(37,29,20,.25); background:rgba(245,236,215,.6); color:var(--ink-2);
+  padding:.28rem .7rem; border-radius:99px; font-size:.88rem; transition:.15s}
+.lnk:hover{background:var(--parch-4); border-color:var(--ink-3)}
+
+@keyframes hl{0%{background:rgba(168,118,44,.34)} 100%{background:transparent}}
+.rq.is-hl{animation:hl 2.6s ease-out}
+@media print{
+  .topbar,.mapctl,.chips,.tabs,.backlink{display:none !important}
+  body{background:#fff; font-size:11pt}
+  .card,.doc{box-shadow:none; break-inside:avoid}
+  .doc__bd{display:block !important}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="#prehlad">
+      <span class="brand__mark">Kliatba Lesovíc</span>
+      <span class="brand__sub">Anno Domini 1503</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Hlavná navigácia"></nav>
+  </div>
+</header>
+
+<main id="app"><div class="loading">Otváram kroniku…</div></main>
+
+<footer class="foot">
+  <div id="footmeta"></div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+var D = null;
+var app = document.getElementById('app');
+var nav = document.getElementById('nav');
+
+var VIEWS = [
+  {id:'prehlad',   label:'Prehľad',   fn:vPrehlad},
+  {id:'pribeh',    label:'Príbeh',    fn:vPribeh},
+  {id:'mapa',      label:'Mapa',      fn:vMapa},
+  {id:'postavy',   label:'Postavy',   fn:vPostavy},
+  {id:'vztahy',    label:'Vzťahy',    fn:vVztahy},
+  {id:'cas',       label:'Časová os', fn:vCas},
+  {id:'rekvizity', label:'Rekvizity', fn:vRekvizity},
+  {id:'dokumenty', label:'Dokumenty', fn:vDokumenty},
+  {id:'dotaznik',  label:'Dotazník',  fn:vDotaznik}
+];
+
+/* ───────────────────────────────────────────────────────── pomocníci ── */
+function esc(s){
+  return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+/* jediná povolená sadzba: **tučné** a *kurzíva* */
+function md(s){
+  return esc(s).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+               .replace(/\*([^*]+)\*/g,'<em>$1</em>');
+}
+function nl(s){ return esc(s).replace(/\n/g,'<br>'); }
+function P(id){ for (var i=0;i<D.postavy.length;i++) if (D.postavy[i].id === id) return D.postavy[i]; return null; }
+function slug(t){
+  return String(t||'').toLowerCase()
+    .replace(/[áä]/g,'a').replace(/[čć]/g,'c').replace(/ď/g,'d').replace(/[éě]/g,'e')
+    .replace(/í/g,'i').replace(/ľ/g,'l').replace(/ĺ/g,'l').replace(/ň/g,'n')
+    .replace(/[óô]/g,'o').replace(/[ŕř]/g,'r').replace(/[šś]/g,'s').replace(/ť/g,'t')
+    .replace(/[úů]/g,'u').replace(/ý/g,'y').replace(/[žź]/g,'z')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,48);
+}
+function krstne(m){ return String(m||'').split(' ')[0]; }
+function ini(m){ return String(m||'?').trim().charAt(0).toUpperCase(); }
+
+/* Charakter vzťahu sa NEODVODZUJE — berie sa len vtedy, keď je v texte
+   doslova napísaný „pozitívny" / „negatívny" / „neutrálny". */
+function sentiment(t){
+  var x = String(t||'').toLowerCase();
+  var hits = [];
+  [['pozit','pos'],['negat','neg'],['neutr','neu'],['neutál','neu']].forEach(function(p){
+    var i = x.indexOf(p[0]);
+    if (i >= 0) hits.push([i, p[1]]);
+  });
+  if (!hits.length) return '';
+  hits.sort(function(a,b){ return a[0]-b[0]; });
+  return hits[0][1];
+}
+function sFarba(c){ return {pos:'#4f7a52', neg:'#8a2b1e', neu:'#8a8272'}[c] || '#6b5a44'; }
+function sNazov(c){ return {pos:'Pozitívny', neg:'Negatívny', neu:'Neutrálny'}[c] || ''; }
+function avatar(p, cls){
+  return '<span class="'+(cls||'av')+'" style="background:'+esc(p.farba)+'" aria-hidden="true">'+esc(ini(p.meno))+'</span>';
+}
+var HALO = ' paint-order="stroke" stroke="#ece0c4" stroke-width="4.5" stroke-linejoin="round"';
+
+/* ═══════════════════════════════════════════════════ PREHĽAD ══════════ */
+function vPrehlad(){
+  var m = D.meta;
+  var h = '<a class="bleed hero2" href="#mapa" aria-label="Mapa Lesovíc">' +
+    '<div class="hero2__img" style="background-image:url(\''+esc(m.hero || D.mapa.obrazok)+'\')"></div>' +
+    '<div class="hero2__in">' +
+      '<div class="hero2__orn">✦ ✦ ✦</div>' +
+      '<h1>'+esc(m.titul)+'</h1>' +
+      '<p class="hero2__yr">'+esc(m.miesto)+' &nbsp;·&nbsp; '+esc(m.rok)+'</p>' +
+      (m.uryvok ? '<p class="hero2__q">'+esc(m.uryvok)+'</p>' : '') +
+      '<div class="hero2__rule"></div>' +
+    '</div></a>';
+
+  var hr = D.postavy.filter(function(p){ return p.hratelna; });
+  var obet = D.postavy.filter(function(p){ return p.obet; });
+
+  h += '<p class="secttitle">Postavy</p><div class="grid g3">' +
+       obet.concat(hr).map(pcard).join('') + '</div>';
+
+  var rek = D.rekvizity, hot = rek.filter(function(x){ return x.hotovo; }).length;
+  var pocty = [
+    ['pribeh',    'Príbeh',              D.pribeh.length + ' kapitol'],
+    ['mapa',      'Mapa',                D.mapa.body.length + ' miest'],
+    ['postavy',   'Postavy',             hr.length + ' + obeť'],
+    ['vztahy',    'Vzťahy',              'rodokmeň a matica'],
+    ['cas',       'Časová os',           D.casovaOs.zaznamy.length + ' záznamov'],
+    ['rekvizity', 'Rekvizity a dôkazy',  hot + ' z ' + rek.length + ' hotových'],
+    ['dokumenty', 'Dokumenty',           D.dokumenty.length + ' listín'],
+    ['dotaznik',  'Dotazník',            D.dotaznik.reduce(function(a,x){return a+x.body;},0) + ' bodov']
+  ];
+  h += '<p class="secttitle">Obsah</p><div class="tiles">' + pocty.map(function(t){
+      return '<a class="tile" href="#'+t[0]+'"><span class="tile__n">'+esc(t[1])+'</span>' +
+             '<span class="tile__c">'+esc(t[2])+'</span></a>';
+    }).join('') + '</div>';
+
+  return h;
+}
+
+/* ═══════════════════════════════════════════════════ PRÍBEH ═══════════ */
+function vPribeh(){
+  var h = '<h1>Príbeh</h1><div class="story">';
+  D.pribeh.forEach(function(ch, i){
+    h += '<section class="story__ch" id="kapitola-'+(i+1)+'">';
+    if (ch.nadpis) h += '<h2>'+esc(ch.nadpis)+'</h2>';
+    if (ch.ilustracia) {
+      h += '<figure class="ill ill--'+(ch.ilustracia.strana === 'left' ? 'left' : 'right')+'">' +
+           '<img src="'+esc(ch.ilustracia.src)+'" alt="" loading="lazy"></figure>';
+    }
+    h += ch.odseky.map(function(p){ return '<p>'+md(p)+'</p>'; }).join('');
+    h += '</section>';
+  });
+  return h + '</div>';
+}
+
+/* ═══════════════════════════════════════════════════ MAPA ═════════════ */
+function vMapa(){
+  var b = D.mapa.body;
+  var h = '<h1>Mapa</h1>';
+  h += '<div class="mapwrap"><div class="mapview" id="mapview"><div class="mapstage" id="mapstage">' +
+       '<img src="'+esc(D.mapa.obrazok)+'" alt="Mapa Lesovíc">' +
+       b.map(function(x,i){
+         return '<button class="hot" data-id="'+esc(x.id)+'" style="left:'+x.x+'%;top:'+x.y+'%" ' +
+                'aria-label="'+esc(x.nazov)+'">'+(i+1)+'</button>';
+       }).join('') +
+       '</div><div class="mapctl">' +
+       '<button data-z="in" aria-label="Priblížiť">+</button>' +
+       '<button data-z="out" aria-label="Oddialiť">−</button>' +
+       '<button data-z="reset" aria-label="Pôvodná veľkosť">⟲</button>' +
+       '</div></div></div>';
+  h += '<div class="mapinfo" id="mapinfo"></div>';
+  h += '<div class="grid g2" style="margin-top:2.4rem">' + b.map(function(x,i){
+      var p = x.postava ? P(x.postava) : null;
+      return '<div class="card card--flat" id="miesto-'+esc(x.id)+'">' +
+        '<h3 style="display:flex;gap:.55rem;align-items:center;margin-bottom:.4rem">' +
+          '<span class="av" style="width:1.9rem;height:1.9rem;font-size:.85rem;background:'+(p?esc(p.farba):'#463726')+'">'+(i+1)+'</span>' +
+          esc(x.nazov) + '</h3>' +
+        (p ? '<p style="margin:0 0 .5rem"><a href="#postava/'+esc(p.id)+'">'+esc(p.meno)+'</a></p>' : '') +
+        '<p style="margin-bottom:'+(x.udalosti?'.7rem':'0')+'">'+esc(x.popis)+'</p>' +
+        (x.udalosti ? '<ul class="tlist">'+x.udalosti.map(function(u){return '<li>'+esc(u)+'</li>';}).join('')+'</ul>' : '') +
+      '</div>';
+    }).join('') + '</div>';
+  return h;
+}
+
+function initMapa(otvor){
+  var view = document.getElementById('mapview');
+  var stage = document.getElementById('mapstage');
+  var info = document.getElementById('mapinfo');
+  if (!view || !stage) return;
+
+  var initS = 1, s = 1, tx = 0, ty = 0, MIN = 1, MAX = 6;
+
+  function fitS(){
+    var r = view.getBoundingClientRect();
+    return Math.min(3, Math.max(1, r.height / (stage.offsetHeight || 1)));
+  }
+  function apply(){
+    var r = view.getBoundingClientRect();
+    var sw = r.width * s, sh = stage.offsetHeight * s;
+    tx = sw <= r.width ? (r.width - sw) / 2 : Math.min(0, Math.max(tx, r.width - sw));
+    ty = sh <= r.height ? (r.height - sh) / 2 : Math.min(0, Math.max(ty, r.height - sh));
+    stage.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + s + ')';
+    stage.style.setProperty('--hs', (1 / s).toFixed(3));
+  }
+  function zoom(f, cx, cy){
+    var r = view.getBoundingClientRect();
+    if (cx == null) { cx = r.width / 2; cy = r.height / 2; }
+    var ns = Math.min(MAX, Math.max(MIN, s * f));
+    tx = cx - (cx - tx) * (ns / s); ty = cy - (cy - ty) * (ns / s);
+    s = ns; apply();
+  }
+  function center(){
+    var r = view.getBoundingClientRect();
+    tx = -(r.width * s - r.width) / 2;
+    ty = -(stage.offsetHeight * s - r.height) / 2;
+    apply();
+  }
+  function reset(){ initS = fitS(); s = initS; center(); }
+
+  view.addEventListener('wheel', function(e){
+    e.preventDefault();
+    var r = view.getBoundingClientRect();
+    zoom(e.deltaY < 0 ? 1.16 : 1/1.16, e.clientX - r.left, e.clientY - r.top);
+  }, {passive:false});
+
+  var pts = {}, last = null, moved = 0;
+  view.addEventListener('pointerdown', function(e){
+    if (e.target.closest && e.target.closest('.hot, .mapctl')) { moved = 0; return; }
+    pts[e.pointerId] = {x:e.clientX, y:e.clientY};
+    view.setPointerCapture(e.pointerId); moved = 0;
+    view.classList.add('is-drag');
+  });
+  view.addEventListener('pointermove', function(e){
+    if (!pts[e.pointerId]) return;
+    var ids = Object.keys(pts), prev = pts[e.pointerId];
+    var dx = e.clientX - prev.x, dy = e.clientY - prev.y;
+    moved += Math.abs(dx) + Math.abs(dy);
+    pts[e.pointerId] = {x:e.clientX, y:e.clientY};
+    if (ids.length === 1) { tx += dx; ty += dy; apply(); }
+    else if (ids.length === 2) {
+      var a = pts[ids[0]], b2 = pts[ids[1]];
+      var d = Math.hypot(a.x-b2.x, a.y-b2.y);
+      if (last) {
+        var r = view.getBoundingClientRect();
+        zoom(d/last, (a.x+b2.x)/2 - r.left, (a.y+b2.y)/2 - r.top);
+      }
+      last = d;
+    }
+  });
+  function up(e){ delete pts[e.pointerId]; last = null; view.classList.remove('is-drag'); }
+  view.addEventListener('pointerup', up);
+  view.addEventListener('pointercancel', up);
+
+  view.querySelector('.mapctl').addEventListener('click', function(e){
+    var b3 = e.target.closest('button'); if (!b3) return;
+    var z = b3.getAttribute('data-z');
+    if (z === 'in') zoom(1.4); else if (z === 'out') zoom(1/1.4); else reset();
+  });
+
+  stage.addEventListener('click', function(e){
+    var hot = e.target.closest('.hot'); if (!hot || moved > 8) return;
+    var id = hot.getAttribute('data-id'), m = null, idx = 0;
+    D.mapa.body.forEach(function(x,i){ if (x.id === id) { m = x; idx = i; } });
+    if (!m) return;
+    Array.prototype.forEach.call(stage.querySelectorAll('.hot'), function(x){ x.classList.remove('is-on'); });
+    hot.classList.add('is-on');
+    var p = m.postava ? P(m.postava) : null;
+    info.innerHTML = '<div class="card" style="margin:1rem 0 0;border-left:4px solid '+(p?esc(p.farba):'#a8762c')+'">' +
+      '<h3 style="margin-bottom:.35rem">'+(idx+1)+'. '+esc(m.nazov)+'</h3>' +
+      (p ? '<p style="margin:0 0 .5rem"><a href="#postava/'+esc(p.id)+'">'+esc(p.meno)+'</a></p>' : '') +
+      '<p style="margin-bottom:'+(m.udalosti?'.7rem':'0')+'">'+esc(m.popis)+'</p>' +
+      (m.udalosti ? '<ul class="tlist">'+m.udalosti.map(function(u){return '<li>'+esc(u)+'</li>';}).join('')+'</ul>' : '') +
+    '</div>';
+    info.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+
+  window.addEventListener('resize', reset);
+  var im = stage.querySelector('img');
+  if (im && !im.complete) im.addEventListener('load', reset);
+  reset();
+
+  if (otvor) {
+    var target = stage.querySelector('.hot[data-id="' + otvor + '"]');
+    if (target) setTimeout(function(){ target.click(); }, 120);
+  }
+}
+
+/* ═══════════════════════════════════════════════════ POSTAVY ══════════ */
+function vPostavy(){
+  var h = '<h1>Postavy</h1><div class="grid g3">' +
+    D.postavy.filter(function(p){return p.hratelna;}).map(pcard).join('') + '</div>';
+  var t = D.postavy.filter(function(p){return p.obet;});
+  if (t.length) h += '<hr class="rule"><div class="grid g3">' + t.map(pcard).join('') + '</div>';
+  return h;
+}
+
+function pcard(p){
+  var prve = (p.opis && p.opis[0]) ? p.opis[0] : '';
+  if (prve.length > 168) prve = prve.slice(0, 165).replace(/\s+\S*$/, '') + '…';
+  return '<a class="pcard" href="#postava/'+esc(p.id)+'" style="--c:'+esc(p.farba)+'">' +
+    '<div class="pcard__top">' + avatar(p) +
+      '<div><div class="pcard__n">'+esc(p.meno)+'</div><div class="pcard__r">'+esc(p.rola)+'</div></div>' +
+    '</div>' +
+    '<p class="pcard__k">'+esc(prve)+'</p>' +
+    '<div class="pcard__f">' +
+      (p.hratelna ? '<span class="pill pill--solid">'+esc(p.herec)+'</span>' : '<span class="pill pill--blood">Obeť</span>') +
+      '<span style="margin-left:auto">'+esc(p.vek)+' r.</span>' +
+    '</div></a>';
+}
+
+function vPostava(id){
+  var p = P(id);
+  if (!p) return '<div class="err"><h2>Postava sa nenašla</h2><p><a href="#postavy">Späť</a></p></div>';
+
+  var h = '<a class="backlink" href="#postavy">← Postavy</a>';
+
+  h += '<div class="pdetail__hd" style="border-bottom-color:'+esc(p.farba)+'">' + avatar(p) +
+    '<div style="flex:1;min-width:14rem">' +
+      '<h1 style="margin-bottom:.1em">'+esc(p.meno)+'</h1>' +
+      (p.prezyvka ? '<p style="font-style:italic;color:var(--ink-3);margin:0 0 .3rem">'+esc(p.prezyvka)+'</p>' : '') +
+      '<p style="margin:0;font-size:1.08rem"><strong>'+esc(p.rola)+'</strong></p>' +
+      '<div class="pdetail__meta">' +
+        (p.herec ? '<span><b>Hrá:</b> '+esc(p.herec)+'</span>' : '') +
+        (p.vek ? '<span><b>Vek:</b> '+esc(p.vek)+'</span>' : '') +
+        (p.narodenie ? '<span><b>Narodenie:</b> '+esc(p.narodenie)+'</span>' : '') +
+        (p.rodicia ? '<span><b>Rodičia:</b> '+esc(p.rodicia)+'</span>' : '') +
+      '</div>' +
+    '</div></div>';
+
+  /* opis — na plnú šírku, v čitateľnej miere */
+  h += '<div class="pbody">' + p.opis.map(function(x){ return '<p>'+esc(x)+'</p>'; }).join('') + '</div>';
+
+  /* kartičky */
+  var boxes = [];
+  if (p.vztahSObetou) {
+    var sc = sentiment(p.vztahSObetou);
+    boxes.push('<div class="pbox" style="--c:'+(sc?sFarba(sc):'var(--gold)')+'">' +
+      '<h4>Vzťah s obeťou</h4><p>'+nl(p.vztahSObetou)+'</p></div>');
+  }
+  if (p.motiv) boxes.push('<div class="pbox"><h4>Motív</h4><p>'+nl(p.motiv)+'</p></div>');
+  if (p.taji && p.taji.length) {
+    boxes.push('<div class="pbox"><h4>Čo tají pred inkvizítormi</h4><ul>' +
+      p.taji.map(function(t){
+        return '<li><b>'+esc(t.co)+'</b>'+(t.kedy ? '<br><span style="color:var(--ink-3)">'+esc(t.kedy)+'</span>' : '')+'</li>';
+      }).join('') + '</ul></div>');
+  }
+  [['obvinuje','Obviňuje'],['chrani','Chráni']].forEach(function(k){
+    var arr = p[k[0]];
+    if (!arr || !arr.length) return;
+    boxes.push('<div class="pbox"><h4>'+k[1]+'</h4><ul>' + arr.map(function(t){
+      var o = t.kto ? P(t.kto) : null;
+      var nm = o ? '<a href="#postava/'+esc(o.id)+'" style="color:'+esc(o.farba)+'"><b>'+esc(t.meno)+'</b></a>'
+                 : '<b>'+esc(t.meno)+'</b>';
+      return '<li>'+nm+(t.text ? ' — '+esc(t.text) : '')+'</li>';
+    }).join('') + '</ul></div>');
+  });
+  if (p.vlastnosti && p.vlastnosti.length) {
+    boxes.push('<div class="pbox"><h4>Vlastnosti a zaujímavosti</h4><ul>' +
+      p.vlastnosti.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('') + '</ul></div>');
+  }
+  if (boxes.length) h += '<div class="pgrid">' + boxes.join('') + '</div>';
+
+  /* vzťahy */
+  if (p.vztahy && p.vztahy.length) {
+    h += '<p class="secttitle">Vzťahy</p><div class="card">' +
+      p.vztahy.map(function(v){
+        var o = v.kto ? P(v.kto) : null, sc2 = sentiment(v.text);
+        return '<div class="relrow"><span class="reldot" style="background:'+(sc2?sFarba(sc2):'#c1b391')+'"></span>' +
+          '<div>' + (o ? '<a class="relname" href="#postava/'+esc(o.id)+'" style="color:'+esc(o.farba)+'">'+esc(o.meno)+'</a>' : '') +
+          '<div style="color:var(--ink-2)">'+esc(v.text)+'</div></div></div>';
+      }).join('') +
+      '<p style="margin:1rem 0 0"><a href="#vztahy">Rodokmeň a matica vzťahov →</a></p></div>';
+  }
+
+  /* časová os */
+  var mine = [];
+  D.casovaOs.zaznamy.forEach(function(z){
+    if (z.akcie && z.akcie[p.id]) mine.push({den:z.den, cas:z.cas, txt:z.akcie[p.id]});
+  });
+  if (mine.length) {
+    h += '<p class="secttitle">Časová os</p><div class="tl">';
+    var cur = null;
+    mine.forEach(function(mm){
+      if (mm.den !== cur) {
+        cur = mm.den;
+        var dd = D.casovaOs.dni.filter(function(x){ return x.id === mm.den; })[0];
+        h += '<h3 style="margin:1.2rem 0 .6rem;color:var(--gold)">'+esc(dd?dd.nazov:mm.den)+'</h3>';
+      }
+      h += '<div class="tl__row'+(/VRAŽDA|^Smrť$/.test(mm.txt)?' is-murder':'')+'">' +
+        '<div class="tl__t">'+esc(mm.cas)+'</div>' +
+        '<div class="tl__acts" style="grid-template-columns:1fr">' +
+        '<div class="act" style="--c:'+esc(p.farba)+'">'+nl(mm.txt)+'</div></div></div>';
+    });
+    h += '</div><p style="margin:.8rem 0 0"><a href="#cas">Celá časová os →</a></p>';
+  }
+
+  /* prepojenia na ostatné sekcie */
+  var miesta = D.mapa.body.filter(function(x){ return x.postava === p.id; });
+  var prve = krstne(p.meno);
+  var rekv = D.rekvizity.filter(function(x){
+    return x.postava && (x.postava.indexOf(prve) >= 0 || x.postava.indexOf(p.meno) >= 0);
+  });
+
+  if (miesta.length || rekv.length) {
+    h += '<p class="secttitle">Súvisiace</p><div class="pgrid">';
+    if (miesta.length) {
+      h += '<div class="pbox"><h4>Miesta na mape</h4><div class="linkrow">' +
+        miesta.map(function(x){ return '<a class="lnk" href="#mapa/'+esc(x.id)+'">'+esc(x.nazov)+'</a>'; }).join('') +
+        '</div></div>';
+    }
+    if (rekv.length) {
+      h += '<div class="pbox"><h4>Rekvizity a dôkazy</h4><div class="linkrow">' +
+        rekv.map(function(x){
+          return '<a class="lnk" href="#rekvizity/'+slug(x.nazov)+'">' +
+            (x.hotovo ? '<span style="color:var(--pos)">✓</span>' : '<span style="color:var(--ink-3)">○</span>') +
+            esc(x.nazov)+'</a>';
+        }).join('') + '</div></div>';
+    }
+    h += '</div>';
+  }
+
+  /* ostatné postavy */
+  h += '<p class="secttitle">Ostatné postavy</p><div class="castlist">' +
+    D.postavy.filter(function(x){ return x.id !== p.id; }).map(function(x){
+      return '<a class="cast" href="#postava/'+esc(x.id)+'">' + avatar(x,'cast__av') +
+        '<span><span class="cast__n">'+esc(krstne(x.meno))+'</span>' +
+        (x.herec ? ' <span class="cast__a">· '+esc(x.herec)+'</span>' : '')+'</span></a>';
+    }).join('') + '</div>';
+
+  return h;
+}
+
+/* ═══════════════════════════════════════════════════ VZŤAHY ═══════════ */
+var VTYP = {
+  krv:        {label:'Pokrvné puto', farba:'#251d14', dash:'', w:3.4},
+  manzelstvo: {label:'Manželstvo',   farba:'#5f7b8c', dash:'', w:3.4},
+  laska:      {label:'Milenci',      farba:'#a35c6e', dash:'', w:3.4}
+};
+
+function vVztahy(){
+  return '<h1>Vzťahy</h1>' +
+    '<div class="tabs" id="vtabs">' +
+      '<button data-t="rodokmen" class="is-on">Rodokmeň</button>' +
+      '<button data-t="matica">Matica</button>' +
+    '</div><div id="vbody"></div>';
+}
+
+function initVztahy(){
+  var tabs = document.getElementById('vtabs');
+  var body = document.getElementById('vbody');
+  if (!tabs) return;
+
+  function draw(t){
+    if (t === 'matica') { body.innerHTML = matica(); wireMatica(); }
+    else { body.innerHTML = rodokmen(); wireRodokmen(); }
+  }
+  tabs.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    Array.prototype.forEach.call(tabs.children, function(x){ x.classList.remove('is-on'); });
+    b.classList.add('is-on');
+    draw(b.getAttribute('data-t'));
+  });
+  draw('rodokmen');
+}
+
+/* ---------- rodokmeň: obeť v strede ---------- */
+function rkPos(){
+  var R = D.rodokmen, W = 900, H = 690, cx = W/2, cy = H/2 - 8, RAD = 232;
+  var pos = {};
+  pos[R.stred] = {x:cx, y:cy, r:46, hlavna:true};
+  R.poradie.forEach(function(id, i){
+    var a = (-90 + i * 360 / R.poradie.length) * Math.PI/180;
+    pos[id] = {x: cx + Math.cos(a)*RAD, y: cy + Math.sin(a)*RAD, r:31, hlavna:true};
+  });
+  (R.predkovia||[]).forEach(function(pr){
+    var a = pr.uhol * Math.PI/180;
+    pos[pr.id] = {x: cx + Math.cos(a)*330, y: cy + Math.sin(a)*330, r:20, predok:pr};
+  });
+  return {pos:pos, W:W, H:H, cx:cx, cy:cy};
+}
+
+function rodokmen(){
+  var g = rkPos(), R = D.rodokmen, out = [];
+
+  /* lúče od obete k postavám — text z „Vzťah s obeťou" */
+  R.poradie.forEach(function(id){
+    var p = P(id), t = g.pos[id];
+    var sc = sentiment(p.vztahSObetou);
+    out.push('<line class="gedge" data-a="'+g.stred+'" data-z="'+R.stred+'" data-do="'+id+'" ' +
+      'x1="'+g.cx+'" y1="'+g.cy+'" x2="'+t.x.toFixed(1)+'" y2="'+t.y.toFixed(1)+'" ' +
+      'stroke="'+(sc?sFarba(sc):'#b6a888')+'" stroke-width="2.6" stroke-linecap="round" opacity=".75"/>');
+  });
+
+  /* rodinné a partnerské väzby */
+  (R.vazby||[]).forEach(function(v){
+    var a = g.pos[v.z], b = g.pos[v.do]; if (!a || !b) return;
+    var t = VTYP[v.typ] || {farba:'#463726', dash:'', w:3};
+    var ox = 0, oy = 0;
+    if (v.z === R.stred || v.do === R.stred) {           /* aby neprekryl lúč k obeti */
+      var dx = b.x - a.x, dy = b.y - a.y, dl = Math.hypot(dx, dy) || 1;
+      ox = -dy / dl * 7; oy = dx / dl * 7;
+    }
+    out.push('<line class="gedge" data-z="'+v.z+'" data-do="'+v.do+'" ' +
+      'x1="'+(a.x+ox).toFixed(1)+'" y1="'+(a.y+oy).toFixed(1)+'" x2="'+(b.x+ox).toFixed(1)+'" y2="'+(b.y+oy).toFixed(1)+'" ' +
+      'stroke="'+t.farba+'" stroke-width="'+t.w+'" stroke-linecap="round"><title>'+esc(v.popis)+'</title></line>');
+  });
+
+  /* uzly */
+  function uzol(id, meno, pozn, farba, tucne){
+    var t = g.pos[id];
+    return '<g class="gnode" data-n="'+esc(id)+'" tabindex="0">' +
+      '<circle cx="'+t.x.toFixed(1)+'" cy="'+t.y.toFixed(1)+'" r="'+t.r+'" fill="'+farba+'" stroke="#ece0c4" stroke-width="3.5"/>' +
+      '<text x="'+t.x.toFixed(1)+'" y="'+(t.y+t.r*0.24).toFixed(1)+'" text-anchor="middle" font-size="'+(t.r*0.62).toFixed(0)+'" fill="#fff">'+esc(ini(meno))+'</text>' +
+      '<text x="'+t.x.toFixed(1)+'" y="'+(t.y+t.r+19).toFixed(1)+'" text-anchor="middle" font-size="'+(tucne?15.5:13.5)+'" fill="#251d14"'+HALO+'>'+esc(meno)+'</text>' +
+      (pozn ? '<text x="'+t.x.toFixed(1)+'" y="'+(t.y+t.r+35).toFixed(1)+'" text-anchor="middle" font-size="11.5" fill="#6b5a44" font-family="EB Garamond,serif"'+HALO+'>'+esc(pozn)+'</text>' : '') +
+      '</g>';
+  }
+  var stred = P(R.stred);
+  out.push(uzol(R.stred, stred.meno, stred.rola, stred.farba, true));
+  R.poradie.forEach(function(id){
+    var p = P(id);
+    out.push(uzol(id, p.meno, p.rola, p.farba, true));
+  });
+  (R.predkovia||[]).forEach(function(pr){ out.push(uzol(pr.id, pr.meno, pr.pozn, '#8a8272', false)); });
+
+  var svg = '<svg id="rksvg" viewBox="0 0 '+g.W+' '+g.H+'" xmlns="http://www.w3.org/2000/svg" ' +
+    'font-family="Cinzel,serif" role="img" aria-label="Rodokmeň">' + out.join('') + '</svg>';
+
+  var leg = '<div class="legend">' +
+    Object.keys(VTYP).map(function(k){
+      return '<span><i style="border-top-color:'+VTYP[k].farba+'"></i>'+esc(VTYP[k].label)+'</span>';
+    }).join('') +
+    ['pos','neg','neu'].map(function(c){
+      return '<span><i style="border-top-color:'+sFarba(c)+';border-top-style:solid"></i>'+sNazov(c)+' vzťah k obeti</span>';
+    }).join('') + '</div>';
+
+  return '<div class="graphbox">' + svg + '</div>' + leg + '<div id="rkdet"></div>';
+}
+
+function wireRodokmen(){
+  var sv = document.getElementById('rksvg');
+  var det = document.getElementById('rkdet');
+  if (!sv) return;
+  sv.addEventListener('click', function(e){
+    var gn = e.target.closest('.gnode'); if (!gn) return;
+    var id = gn.getAttribute('data-n');
+    var p = P(id);
+    var R = D.rodokmen;
+
+    Array.prototype.forEach.call(sv.querySelectorAll('.gedge'), function(ed){
+      ed.style.opacity = (ed.getAttribute('data-z')===id || ed.getAttribute('data-do')===id) ? '1' : '.1';
+    });
+    Array.prototype.forEach.call(sv.querySelectorAll('.gnode'), function(n){
+      var nid = n.getAttribute('data-n');
+      var tied = nid === id ||
+        (R.vazby||[]).some(function(v){ return (v.z===id&&v.do===nid)||(v.do===id&&v.z===nid); }) ||
+        (id === R.stred && R.poradie.indexOf(nid) >= 0) ||
+        (R.stred === nid && R.poradie.indexOf(id) >= 0);
+      n.style.opacity = tied ? '1' : '.28';
+    });
+
+    var vaz = (R.vazby||[]).filter(function(v){ return v.z===id || v.do===id; });
+    var pr = (R.predkovia||[]).filter(function(x){ return x.id===id; })[0];
+    var html = '<div class="card" style="margin-top:1rem;border-left:4px solid '+(p?esc(p.farba):'#8a8272')+'">' +
+      '<h3 style="margin-bottom:.2rem">'+esc(p ? p.meno : (pr?pr.meno:id))+'</h3>' +
+      '<p style="color:var(--ink-3);margin-bottom:.8rem">'+esc(p ? p.rola : (pr?pr.pozn:''))+
+        (p ? ' · <a href="#postava/'+esc(p.id)+'">profil</a>' : '')+'</p>';
+    if (p && p.vztahSObetou) html += '<p style="margin:0 0 .8rem">'+nl(p.vztahSObetou)+'</p>';
+    if (vaz.length) {
+      html += '<ul class="tlist">' + vaz.map(function(v){
+        var iny = v.z===id ? v.do : v.z;
+        var o = P(iny), pr2 = (R.predkovia||[]).filter(function(x){return x.id===iny;})[0];
+        var t = VTYP[v.typ] || {label:v.typ, farba:'#463726'};
+        return '<li><span class="reldot" style="display:inline-block;background:'+t.farba+'"></span> ' +
+          '<b>'+esc(o?o.meno:(pr2?pr2.meno:iny))+'</b> — '+esc(v.popis)+'</li>';
+      }).join('') + '</ul>';
+    }
+    det.innerHTML = html + '</div>';
+    det.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+}
+
+/* ---------- matica ---------- */
+function matica(){
+  var ps = D.postavy;
+  var h = '<div class="mxwrap"><table class="mx"><thead><tr><th></th>' +
+    ps.map(function(c){ return '<th style="color:'+esc(c.farba)+'">'+esc(krstne(c.meno))+'</th>'; }).join('') +
+    '</tr></thead><tbody>';
+
+  ps.forEach(function(r){
+    h += '<tr><th style="--c:'+esc(r.farba)+'"><a href="#postava/'+esc(r.id)+'" style="color:'+esc(r.farba)+';text-decoration:none">'+esc(krstne(r.meno))+'</a></th>';
+    ps.forEach(function(c){
+      if (r.id === c.id) { h += '<td><span class="mxc mxc--self"></span></td>'; return; }
+      var v = (r.vztahy||[]).filter(function(x){ return x.kto === c.id; })[0];
+      if (!v) { h += '<td><span class="mxc mxc--empty"></span></td>'; return; }
+      var sc = sentiment(v.text);
+      var kratko = v.text.split(/[,.;]|\s-\s/)[0];
+      if (kratko.length > 42) kratko = kratko.slice(0, 40).replace(/\s+\S*$/,'') + '…';
+      h += '<td><button class="mxc'+(sc?' mxc--'+sc:'')+'" data-r="'+esc(r.id)+'" data-c="'+esc(c.id)+'">'+esc(kratko)+'</button></td>';
+    });
+    h += '</tr>';
+  });
+
+  h += '</tbody></table></div>';
+  h += '<div class="legend">' + ['pos','neg','neu'].map(function(c){
+      return '<span><i style="border-top-color:'+sFarba(c)+';border-top-width:12px"></i>'+sNazov(c)+'</span>';
+    }).join('') + '</div>';
+  h += '<div id="mxdet"></div>';
+  return h;
+}
+
+function wireMatica(){
+  var tb = document.querySelector('.mxwrap');
+  var det = document.getElementById('mxdet');
+  if (!tb) return;
+  tb.addEventListener('click', function(e){
+    var c = e.target.closest('.mxc'); if (!c || !c.getAttribute('data-r')) return;
+    Array.prototype.forEach.call(tb.querySelectorAll('.mxc'), function(x){ x.classList.remove('is-on'); });
+    c.classList.add('is-on');
+    var r = P(c.getAttribute('data-r')), o = P(c.getAttribute('data-c'));
+    var v = (r.vztahy||[]).filter(function(x){ return x.kto === o.id; })[0];
+    det.innerHTML = '<div class="card" style="margin-top:1rem;border-left:4px solid '+esc(r.farba)+'">' +
+      '<h3 style="margin-bottom:.5rem">' +
+        '<a href="#postava/'+esc(r.id)+'" style="color:'+esc(r.farba)+';text-decoration:none">'+esc(r.meno)+'</a>' +
+        ' <span style="color:var(--ink-3)">→</span> ' +
+        '<a href="#postava/'+esc(o.id)+'" style="color:'+esc(o.farba)+';text-decoration:none">'+esc(o.meno)+'</a></h3>' +
+      '<p style="margin:0">'+esc(v.text)+'</p></div>';
+    det.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+}
+
+/* ═══════════════════════════════════════════════════ ČASOVÁ OS ════════ */
+var casFilter = null, casDen = null;
+
+function vCas(){
+  if (!casDen) casDen = D.casovaOs.dni[0].id;
+  var h = '<h1>Časová os</h1>';
+  h += '<div class="tabs" id="dnitabs">' + D.casovaOs.dni.map(function(d){
+      return '<button data-d="'+esc(d.id)+'"'+(d.id===casDen?' class="is-on"':'')+'>'+esc(d.nazov)+'</button>';
+    }).join('') + '</div>';
+  h += '<div class="chips" id="casfilter">' +
+    '<button class="chip'+(casFilter===null?' is-on':'')+'" data-p="">Všetci</button>' +
+    D.postavy.map(function(p){
+      return '<button class="chip'+(casFilter===p.id?' is-on':'')+'" data-p="'+esc(p.id)+'">' +
+        '<span class="chip__dot" style="background:'+esc(p.farba)+'"></span>'+esc(krstne(p.meno))+'</button>';
+    }).join('') + '</div>';
+  return h + '<div id="tlbody">' + tlBody() + '</div>';
+}
+
+function tlBody(){
+  var rows = D.casovaOs.zaznamy.filter(function(z){
+    if (z.den !== casDen) return false;
+    if (casFilter && !z.akcie[casFilter]) return false;
+    return true;
+  });
+  if (!rows.length) return '<p style="color:var(--ink-3);font-style:italic">—</p>';
+  var poradie = D.postavy.map(function(p){ return p.id; });
+
+  return '<div class="tl">' + rows.map(function(z){
+    var ids = Object.keys(z.akcie).filter(function(k){ return !casFilter || k === casFilter; });
+    ids.sort(function(a,b){ return poradie.indexOf(a) - poradie.indexOf(b); });
+    var vrazda = ids.some(function(k){ return /VRAŽDA/.test(z.akcie[k]) || /^Smrť$/.test(z.akcie[k]); });
+    return '<div class="tl__row'+(vrazda?' is-murder':'')+'">' +
+      '<div class="tl__t">'+esc(z.cas)+'</div>' +
+      '<div class="tl__acts"'+(ids.length===1?' style="grid-template-columns:1fr"':'')+'>' +
+      ids.map(function(k){
+        var p = P(k); if (!p) return '';
+        return '<div class="act" style="--c:'+esc(p.farba)+'">' +
+          '<a class="act__w" href="#postava/'+esc(p.id)+'" style="text-decoration:none">'+esc(krstne(p.meno))+'</a>' +
+          nl(z.akcie[k]) + '</div>';
+      }).join('') + '</div></div>';
+  }).join('') + '</div>';
+}
+
+function initCas(){
+  var dn = document.getElementById('dnitabs');
+  var fl = document.getElementById('casfilter');
+  var bd = document.getElementById('tlbody');
+  if (!dn) return;
+  dn.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    casDen = b.getAttribute('data-d');
+    Array.prototype.forEach.call(dn.children, function(x){ x.classList.remove('is-on'); });
+    b.classList.add('is-on'); bd.innerHTML = tlBody();
+  });
+  fl.addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if (!b) return;
+    casFilter = b.getAttribute('data-p') || null;
+    Array.prototype.forEach.call(fl.children, function(x){ x.classList.remove('is-on'); });
+    b.classList.add('is-on'); bd.innerHTML = tlBody();
+  });
+}
+
+/* ═══════════════════════════════════════════════ REKVIZITY A DÔKAZY ═══ */
+var rekFilter = 'vsetko';
+
+function vRekvizity(){
+  var r = D.rekvizity;
+  var done = r.filter(function(x){return x.hotovo;}).length;
+  var pct = r.length ? Math.round(done/r.length*100) : 0;
+
+  var h = '<h1>Rekvizity a dôkazy</h1>';
+  h += '<div class="card" style="margin-bottom:1.6rem">' +
+    '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem">' +
+      '<h3 style="margin:0">Hotovo '+done+' z '+r.length+'</h3>' +
+      '<span style="font-family:var(--display);font-size:1.6rem;color:var(--gold)">'+pct+'%</span></div>' +
+    '<div class="prog"><i style="width:'+pct+'%"></i></div></div>';
+
+  var typy = [];
+  r.forEach(function(x){ if (typy.indexOf(x.typ) < 0) typy.push(x.typ); });
+
+  h += '<div class="chips" id="rfilter">' +
+    '<button class="chip'+(rekFilter==='vsetko'?' is-on':'')+'" data-f="vsetko">Všetko ('+r.length+')</button>' +
+    '<button class="chip'+(rekFilter==='chyba'?' is-on':'')+'" data-f="chyba">Chýba ('+(r.length-done)+')</button>' +
+    '<button class="chip'+(rekFilter==='hotovo'?' is-on':'')+'" data-f="hotovo">Hotovo ('+done+')</button>' +
+    '<button class="chip'+(rekFilter==='must'?' is-on':'')+'" data-f="must">Must-have</button>' +
+    typy.map(function(t){ return '<button class="chip'+(rekFilter===t?' is-on':'')+'" data-f="'+esc(t)+'">'+esc(t)+'</button>'; }).join('') +
+  '</div>';
+
+  return h + '<div id="rbody">' + rBody() + '</div>';
+}
+
+function rBody(){
+  var list = D.rekvizity.filter(function(x){
+    if (rekFilter === 'vsetko') return true;
+    if (rekFilter === 'chyba') return !x.hotovo;
+    if (rekFilter === 'hotovo') return x.hotovo;
+    if (rekFilter === 'must') return x.priorita === 'Must-have';
+    return x.typ === rekFilter;
+  });
+  if (!list.length) return '<p style="color:var(--ink-3);font-style:italic">—</p>';
+
+  var typy = [];
+  list.forEach(function(x){ if (typy.indexOf(x.typ) < 0) typy.push(x.typ); });
+
+  return typy.map(function(t){
+    return '<section style="margin-bottom:1.6rem"><h3>'+esc(t)+'</h3><div class="card">' +
+      list.filter(function(x){return x.typ===t;}).map(function(x){
+        return '<div class="rq'+(x.hotovo?' is-done':'')+'" id="rq-'+slug(x.nazov)+'">' +
+          '<span class="rq__box" aria-hidden="true">✓</span>' +
+          '<div style="flex:1">' +
+            '<div style="display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap">' +
+              '<span class="rq__n">'+esc(x.nazov)+'</span>' +
+              (x.priorita ? '<span class="pill '+(x.priorita==='Must-have'?'pill--gold':'pill--neu')+'" style="font-size:.66rem">'+esc(x.priorita)+'</span>' : '') +
+              (x.postava ? '<span style="font-size:.84rem;color:var(--ink-3)">'+esc(x.postava)+'</span>' : '') +
+            '</div>' +
+            (x.popis ? '<div class="rq__d">'+nl(x.popis)+'</div>' : '') +
+            (x.ucel ? '<div class="rq__u">'+nl(x.ucel)+'</div>' : '') +
+          '</div></div>';
+      }).join('') + '</div></section>';
+  }).join('');
+}
+
+function initRekvizity(skok){
+  var f = document.getElementById('rfilter'); if (!f) return;
+  if (skok) {
+    var el2 = document.getElementById('rq-' + skok);
+    if (el2) {
+      el2.classList.add('is-hl');
+      setTimeout(function(){ el2.scrollIntoView({behavior:'smooth', block:'center'}); }, 80);
+    }
+  }
+  f.addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if (!b) return;
+    rekFilter = b.getAttribute('data-f');
+    Array.prototype.forEach.call(f.children, function(x){ x.classList.remove('is-on'); });
+    b.classList.add('is-on');
+    document.getElementById('rbody').innerHTML = rBody();
+  });
+}
+
+/* ═══════════════════════════════════════════════════ DOKUMENTY ════════ */
+function vDokumenty(){
+  return '<h1>Dokumenty</h1>' + D.dokumenty.map(function(d,i){
+    return '<article class="doc" data-i="'+i+'">' +
+      '<button class="doc__hd"><span><span class="doc__ti">'+esc(d.nazov)+'</span>' +
+      (d.podnazov ? '<br><span class="doc__su">'+esc(d.podnazov)+'</span>' : '') + '</span>' +
+      '<span class="doc__ar">▾</span></button>' +
+      '<div class="doc__bd"><pre>'+esc(d.text)+'</pre>' +
+      (d.obrazok ? '<img src="'+esc(d.obrazok)+'" alt="" loading="lazy">' : '') +
+      '</div></article>';
+  }).join('');
+}
+
+function initDokumenty(){
+  document.querySelectorAll('.doc__hd').forEach(function(b){
+    b.addEventListener('click', function(){ b.closest('.doc').classList.toggle('is-open'); });
+  });
+}
+
+/* ═══════════════════════════════════════════════════ DOTAZNÍK ═════════ */
+function vDotaznik(){
+  var total = D.dotaznik.reduce(function(a,x){ return a + x.body; }, 0);
+  return '<h1>Výstupný dotazník <span style="color:var(--gold);font-size:.55em">'+total+' bodov</span></h1>' +
+    '<div class="card">' + D.dotaznik.map(function(q){
+      return '<div class="qa"><div class="qa__q"><span class="qa__b">('+q.body+')</span><span>'+esc(q.otazka)+'</span></div>' +
+        '<div class="qa__a">'+esc(q.odpoved)+'</div></div>';
+    }).join('') + '</div>';
+}
+
+/* ═══════════════════════════════════════════════════ ROUTER ═══════════ */
+function render(){
+  var hash = (location.hash || '#prehlad').slice(1);
+  var parts = hash.split('/');
+  var html, active = parts[0];
+
+  if (parts[0] === 'postava') { html = vPostava(parts[1]); active = 'postavy'; }
+  else {
+    var v = VIEWS.filter(function(x){ return x.id === parts[0]; })[0] || VIEWS[0];
+    html = v.fn(); active = v.id;
+  }
+
+  app.innerHTML = '<div class="view">' + html + '</div>';
+  Array.prototype.forEach.call(nav.children, function(a){
+    a.classList.toggle('is-active', a.getAttribute('href') === '#' + active);
+  });
+
+  if (active === 'mapa') initMapa(parts[1]);
+  if (active === 'vztahy') initVztahy();
+  if (active === 'cas') initCas();
+  if (active === 'rekvizity') initRekvizity(parts[1]);
+  if (active === 'dokumenty') initDokumenty();
+
+  window.scrollTo(0, 0);
+  var lbl = (VIEWS.filter(function(x){return x.id===active;})[0]||{}).label;
+  document.title = (active === 'prehlad' ? '' : lbl + ' — ') + 'Kliatba Lesovíc';
+}
+
+/* ═══════════════════════════════════════════════════ ŠTART ════════════ */
+window.__boot = function(){
+  D = window.LESOVICE;
+  if (!D) return window.__fail('Súbor data.js sa načítal, ale neobsahuje LESOVICE.');
+  nav.innerHTML = VIEWS.map(function(v){ return '<a href="#'+v.id+'">'+esc(v.label)+'</a>'; }).join('');
+  document.getElementById('footmeta').textContent =
+    'Verzia ' + (D.meta.verzia||'?') + ' · ' + (D.meta.aktualizovane||'');
+  window.addEventListener('hashchange', render);
+  render();
+};
+
+window.__fail = function(msg){
+  app.innerHTML = '<div class="err"><h2>Dáta sa nepodarilo načítať</h2><p>' + esc(msg) + '</p>' +
+    '<p>Najčastejšia príčina je chýbajúca čiarka alebo úvodzovka v <code>data.js</code>. ' +
+    'Konzola prehliadača (F12) ukáže presný riadok.</p></div>';
+};
+})();
+</script>
+
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.src = 'data.js?v=' + Date.now();
+  s.onload = function(){ window.__boot(); };
+  s.onerror = function(){ window.__fail('Súbor data.js sa nepodarilo načítať.'); };
+  document.head.appendChild(s);
+})();
+</script>
+
+<noscript><div class="err"><h2>Zapni JavaScript</h2></div></noscript>
+</body>
+</html>

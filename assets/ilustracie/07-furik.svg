@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" role="img" aria-label="Fúrik v nočnej dedine" preserveAspectRatio="xMidYMid meet"><defs>
+<pattern id="h45" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.6"/>
+</pattern>
+<pattern id="h45f" width="4.2" height="4.2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="4.2" stroke="#000" stroke-width="1.7"/>
+</pattern>
+<pattern id="h135" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.4"/>
+</pattern>
+<pattern id="hv" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-width="2.2"/>
+</pattern>
+<pattern id="hh" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="6" y2="0" stroke="#000" stroke-width="2"/>
+</pattern>
+<pattern id="hhf" width="4" height="4" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="4" y2="0" stroke="#000" stroke-width="1.5"/>
+</pattern>
+<pattern id="cross" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.2"/>
+  <line x1="0" y1="0" x2="7" y2="0" stroke="#000" stroke-width="2.2"/>
+</pattern>
+<pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse">
+  <circle cx="4.5" cy="4.5" r="1.7" fill="#000"/>
+</pattern>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#777"/>
+  <stop offset="1" stop-color="#000"/>
+</linearGradient>
+<mask id="skymask"><rect x="0" y="0" width="420" height="340" fill="url(#fade)"/></mask>
+</defs><g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="0" width="420" height="230" fill="url(#cross)" opacity=".5"/><circle cx="336" cy="66" r="34" fill="#fff" stroke-width="4.4"/><path d="M336 32 a34 34 0 0 0 0 68 a26 34 0 0 1 0 -68 Z" fill="#000" opacity=".85"/><path d="M0 230 L0 176 L44 176 L44 152 L84 122 L124 152 L124 230 Z" fill="#000"/><path d="M124 230 L124 166 L166 134 L208 166 L208 230 Z" fill="#000"/><path d="M228 230 L228 158 L262 130 L296 158 L296 230 Z" fill="#000"/><rect x="150" y="182" width="20" height="20" fill="#fff"/><rect x="246" y="176" width="18" height="18" fill="#fff"/><path d="M0 232 L420 232" stroke-width="4"/><path d="M0 232 L420 232 L420 340 L0 340 Z" fill="url(#hh)" opacity=".28"/><path d="M112 262 L288 254 L272 300 L146 300 Z" fill="url(#h45)" stroke-width="5"/><path d="M112 262 L288 254" stroke-width="5.4"/><path d="M124 262 q26 -50 84 -46 q56 4 74 44 q-84 16 -158 2 Z" fill="#fff" stroke-width="5"/><path d="M150 244 q30 -26 62 -22 M138 254 q40 -34 88 -28" stroke-width="3"/><path d="M282 260 q14 6 20 16" stroke-width="3.4"/><circle cx="176" cy="308" r="26" fill="#fff" stroke-width="5"/><circle cx="176" cy="308" r="7" fill="#000"/><path d="M183.0 308.0 L202.0 308.0" stroke-width="3.2"/><path d="M179.5 314.1 L189.0 330.5" stroke-width="3.2"/><path d="M172.5 314.1 L163.0 330.5" stroke-width="3.2"/><path d="M169.0 308.0 L150.0 308.0" stroke-width="3.2"/><path d="M172.5 301.9 L163.0 285.5" stroke-width="3.2"/><path d="M179.5 301.9 L189.0 285.5" stroke-width="3.2"/><path d="M272 292 L336 306" stroke-width="6"/><path d="M266 264 L332 276" stroke-width="6"/><path d="M282 300 L292 316 L268 316" stroke-width="5" fill="none"/><circle cx="88" cy="322" r="9" stroke-width="5"/></g></svg>

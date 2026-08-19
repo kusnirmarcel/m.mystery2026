@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" role="img" aria-label="Morová rana nad dedinou" preserveAspectRatio="xMidYMid meet"><defs>
+<pattern id="h45" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.6"/>
+</pattern>
+<pattern id="h45f" width="4.2" height="4.2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="4.2" stroke="#000" stroke-width="1.7"/>
+</pattern>
+<pattern id="h135" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.4"/>
+</pattern>
+<pattern id="hv" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-width="2.2"/>
+</pattern>
+<pattern id="hh" width="6" height="6" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="6" y2="0" stroke="#000" stroke-width="2"/>
+</pattern>
+<pattern id="hhf" width="4" height="4" patternUnits="userSpaceOnUse">
+  <line x1="0" y1="0" x2="4" y2="0" stroke="#000" stroke-width="1.5"/>
+</pattern>
+<pattern id="cross" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <line x1="0" y1="0" x2="0" y2="7" stroke="#000" stroke-width="2.2"/>
+  <line x1="0" y1="0" x2="7" y2="0" stroke="#000" stroke-width="2.2"/>
+</pattern>
+<pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse">
+  <circle cx="4.5" cy="4.5" r="1.7" fill="#000"/>
+</pattern>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#777"/>
+  <stop offset="1" stop-color="#000"/>
+</linearGradient>
+<mask id="skymask"><rect x="0" y="0" width="420" height="340" fill="url(#fade)"/></mask>
+</defs><g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"><g mask="url(#skymask)"><rect x="0" y="0" width="420" height="340" fill="url(#h45)" opacity=".5"/></g><path d="M40 46 q26 -20 56 -6 q22 -18 48 -2 q30 -4 34 16" stroke-width="3.4" fill="#fff"/><path d="M232 30 q22 -16 46 -4 q24 -12 44 6" stroke-width="3" fill="#fff"/><path d="M82.0 66.0 q7.0 -9.0 14.0 -1.0 q7.0 -8.0 14.0 1.0" stroke-width="3.2"/><path d="M150.5 47.0 q-5.25 -6.75 -10.5 -0.75 q-5.25 -6.0 -10.5 0.75" stroke-width="2.4000000000000004"/><path d="M312.6 61.6 q-6.3 -8.1 -12.6 -0.9 q-6.3 -7.2 -12.6 0.9" stroke-width="2.8800000000000003"/><path d="M338.2 80.8 q4.8999999999999995 -6.3 9.799999999999999 -0.7 q4.8999999999999995 -5.6 9.799999999999999 0.7" stroke-width="2.2399999999999998"/><path d="M0 214 q70 -34 150 -18 q80 16 140 -10 q70 -30 130 -6 L420 340 L0 340 Z" fill="#fff" stroke-width="3.6"/><path d="M0 214 q70 -34 150 -18 q80 16 140 -10 q70 -30 130 -6 L420 340 L0 340 Z" fill="url(#hh)" opacity=".26"/><path d="M58 250 L58 201.7" stroke-width="6.21"/><path d="M41.900000000000006 215.224 L74.1 215.224" stroke-width="5.75"/><path d="M39.6 252 q18.4 8.049999999999999 36.8 0" stroke-width="3.4499999999999997"/><path d="M108 236 L108 196.1" stroke-width="5.13"/><path d="M94.7 207.272 L121.3 207.272" stroke-width="4.75"/><path d="M92.8 238 q15.2 6.6499999999999995 30.4 0" stroke-width="2.8499999999999996"/><path d="M156 244 L156 199.9" stroke-width="5.670000000000001"/><path d="M141.3 212.248 L170.7 212.248" stroke-width="5.25"/><path d="M139.2 246 q16.8 7.3500000000000005 33.6 0" stroke-width="3.1500000000000004"/><path d="M206 232 L206 196.3" stroke-width="4.59"/><path d="M194.1 206.296 L217.9 206.296" stroke-width="4.25"/><path d="M192.4 234 q13.6 5.95 27.2 0" stroke-width="2.55"/><path d="M252 246 L252 204.0" stroke-width="5.4"/><path d="M238.0 215.76 L266.0 215.76" stroke-width="5.0"/><path d="M236.0 248 q16.0 7.0 32.0 0" stroke-width="3.0"/><path d="M304 236 L304 198.2" stroke-width="4.86"/><path d="M291.4 208.784 L316.6 208.784" stroke-width="4.5"/><path d="M289.6 238 q14.4 6.3 28.8 0" stroke-width="2.7"/><path d="M356 250 L356 203.8" stroke-width="5.940000000000001"/><path d="M340.6 216.736 L371.4 216.736" stroke-width="5.5"/><path d="M338.4 252 q17.6 7.700000000000001 35.2 0" stroke-width="3.3000000000000003"/><path d="M388 268 L388 234.4" stroke-width="4.32"/><path d="M376.8 243.808 L399.2 243.808" stroke-width="4.0"/><path d="M375.2 270 q12.8 5.6000000000000005 25.6 0" stroke-width="2.4000000000000004"/><path d="M30 276 L30 238.2" stroke-width="4.86"/><path d="M17.4 248.784 L42.6 248.784" stroke-width="4.5"/><path d="M15.6 278 q14.4 6.3 28.8 0" stroke-width="2.7"/><path d="M132 278 L132 244.4" stroke-width="4.32"/><path d="M120.8 253.808 L143.2 253.808" stroke-width="4.0"/><path d="M119.2 280 q12.8 5.6000000000000005 25.6 0" stroke-width="2.4000000000000004"/><path d="M222 282 L222 246.3" stroke-width="4.59"/><path d="M210.1 256.296 L233.9 256.296" stroke-width="4.25"/><path d="M208.4 284 q13.6 5.95 27.2 0" stroke-width="2.55"/><path d="M330 286 L330 248.2" stroke-width="4.86"/><path d="M317.4 258.784 L342.6 258.784" stroke-width="4.5"/><path d="M315.6 288 q14.4 6.3 28.8 0" stroke-width="2.7"/><path d="M198 326 q-2 -52 10 -80 q7 -17 20 -17 q13 0 20 17 q12 28 10 80 Z" fill="#000"/><path d="M210 232 q0 -26 18 -26 q18 0 18 26 q0 16 -18 16 q-18 0 -18 -16 Z" fill="#000"/><path d="M228 206 q-9 4 -9 16 q0 12 9 14 q9 -2 9 -14 q0 -12 -9 -16 Z" fill="#fff" stroke-width="2.4"/><path d="M246 258 q16 4 20 18" stroke-width="6"/><path d="M266 324 L262 200" stroke-width="5.4"/><path d="M262 200 q12 -10 2 -18" stroke-width="4.6"/><path d="M198 326 q30 8 60 0" stroke-width="4"/><path d="M0 300 L420 300 L420 340 L0 340 Z" fill="url(#hh)" opacity=".45"/></g></svg>
