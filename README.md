@@ -58,7 +58,7 @@ Každá sekcia má dole preklik na ďalšie dve sekcie.
 ## Scenár pre moderátora
 
 Blok `scenar:` v `data.js` — `kto`, `zlatePravidla`, `priprava`, `kroky` (každý krok má
-`cas`, `nadpis`, `co`, `komu`, `ako`, `otvara`) a `poznamky`. Časy krokov musia sedieť
+`cas`, `nadpis`, `co`, `komu`, `ako`, `otvara`). Časy krokov musia sedieť
 s blokom `harmonogram:`, inak to vypíše kontrola konzistencie.
 
 ## Zadanie prípadu (bez spoilerov)
