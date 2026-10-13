@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kliatba Lesovíc</title>
+<meta name="description" content="Murder mystery Kliatba Lesovíc — príručka pre hercov a organizátorov. Lesovice, 1503.">
+<meta name="theme-color" content="#1a1410">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23efe3c8'/><text x='50' y='79' font-size='80' text-anchor='middle' fill='%238c2f22' font-family='serif'>K</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parch:#ece0c4; --parch-hi:#f7efdb; --parch-lo:#dccdaa;
+  --ink:#2a1e14; --ink-2:#5b4934; --ink-3:#8a7557;
+  --rub:#8f2d20; --rub-2:#b04433;
+  --gold:#9c7a2e; --gold-2:#c9a44a;
+  --green:#5f7d3f;
+  --night:#1a1410;
+  --rule:#c4b18c;
+  --sh:0 1px 0 rgba(255,255,255,.5), 0 12px 26px -18px rgba(60,40,20,.55);
+  --sh-lift:0 1px 0 rgba(255,255,255,.6), 0 18px 34px -20px rgba(60,40,20,.6);
+  --measure:68ch;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:'EB Garamond',Garamond,Georgia,serif;
+  --caps:'Cinzel',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.62;
+  background-color:var(--parch);
+  background-image:
+    radial-gradient(900px 400px at 10% -4%, rgba(255,250,236,.8), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");}
+img{max-width:100%;display:block}
+::selection{background:rgba(143,45,32,.2)}
+svg.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+h1,h2,h3{font-family:var(--caps);font-weight:600;line-height:1.18;margin:0 0 .5em}
+h1{font-size:clamp(30px,5vw,46px)}
+h2{font-size:clamp(24px,3.5vw,34px)}
+h3{font-size:clamp(19px,2.4vw,23px)}
+p{margin:0 0 1.05em;max-width:var(--measure)}
+a{color:var(--rub);text-underline-offset:3px}
+.rubric{font-family:var(--caps);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--rub);margin:0 0 .6em;display:flex;align-items:center;gap:9px}
+.rubric::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--rule),transparent)}
+.lede{font-size:1.13em;color:var(--ink-2);font-style:italic;max-width:64ch}
+.muted{color:var(--ink-2)} .quiet{color:var(--ink-3)}
+.sm{font-size:15px;line-height:1.55} .xs{font-size:13.5px;line-height:1.5}
+.num{font-family:var(--mono);font-size:.82em;color:var(--rub)}
+.orn{display:flex;align-items:center;gap:14px;color:var(--gold);margin:38px 0}
+.orn::before,.orn::after{content:"";flex:1;border-top:1px solid var(--rule);box-shadow:0 3px 0 -2px var(--rule)}
+.orn span{font-size:15px;letter-spacing:.3em}
+
+/* ============ hlavička ============ */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(236,224,196,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule)}
+.topbar.solid{box-shadow:0 8px 20px -18px rgba(60,40,20,.9)}
+.tb{max-width:1340px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;gap:14px}
+.logo{font-family:'UnifrakturMaguntia',var(--caps);font-size:23px;line-height:1;color:var(--ink);
+  text-decoration:none;white-space:nowrap;flex:none}
+.tnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.tnav::-webkit-scrollbar{display:none}
+.tnav a{flex:0 0 auto;display:flex;align-items:center;gap:6px;font-family:var(--caps);font-size:11.5px;
+  letter-spacing:.06em;text-transform:uppercase;padding:8px 10px;border-radius:2px;color:var(--ink-2);
+  text-decoration:none;white-space:nowrap}
+.tnav a:hover{background:rgba(196,177,140,.35);color:var(--ink)}
+.tnav a[aria-current="true"]{background:var(--ink);color:var(--parch-hi)}
+.tnav a svg{width:14px;height:14px}
+.sbtn{flex:none;display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--rule);
+  background:var(--parch-hi);border-radius:2px;cursor:pointer;color:var(--ink-2)}
+.sbtn:hover{border-color:var(--rub);color:var(--rub)}
+.sbtn svg{width:18px;height:18px}
+.searchrow{display:none;max-width:1340px;margin:0 auto;padding:0 22px 12px}
+.searchrow.on{display:block}
+.searchrow input{width:100%;padding:11px 16px;font-family:var(--serif);font-size:17px;color:var(--ink);
+  background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px}
+.searchrow input:focus{outline:none;border-color:var(--rub);box-shadow:0 0 0 3px rgba(143,45,32,.12)}
+.mobbar{display:none;border-bottom:1px solid var(--rule);background:rgba(236,224,196,.95)}
+.mobbar .row{display:flex;gap:6px;overflow-x:auto;padding:9px 22px;scrollbar-width:none;max-width:1340px;margin:0 auto}
+.mobbar .row::-webkit-scrollbar{display:none}
+.mobbar a{flex:0 0 auto;display:flex;align-items:center;gap:6px;font-family:var(--caps);font-size:11.5px;
+  letter-spacing:.07em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink-2);text-decoration:none;background:var(--parch-hi);white-space:nowrap}
+.mobbar a svg{width:14px;height:14px}
+.mobbar a[aria-current="true"]{background:var(--ink);color:var(--parch-hi);border-color:var(--ink)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.wide{max-width:1340px;margin:0 auto;padding:0 22px}
+main{padding-bottom:70px}
+section[hidden]{display:none}
+.pagehead{margin:34px 0 26px}
+.pagehead h2{margin-bottom:6px}
+.centered{text-align:center;max-width:760px;margin:0 auto}
+.centered .pagehead{margin-bottom:18px}
+.centered .rubric::after{display:none}
+.centered .lede{max-width:60ch;margin-left:auto;margin-right:auto}
+.centered p.big{font-size:1.16em;line-height:1.7;max-width:62ch;margin:0 auto;color:var(--ink)}
+
+/* ============ HERO ============ */
+.hero{position:relative;background:var(--night);overflow:hidden}
+.hero img{width:100%;height:clamp(340px,62vh,640px);object-fit:cover;object-position:center 58%;
+  filter:saturate(.82) contrast(1.05) brightness(.78)}
+.hero .veil{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(18,13,9,.6) 0%,rgba(18,13,9,.2) 30%,rgba(18,13,9,.72) 70%,rgba(18,13,9,.88) 92%,var(--parch) 100%)}
+.hero .inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  align-items:center;text-align:center;padding:0 22px 96px}
+.hero .kick{font-family:var(--caps);font-size:clamp(10px,1.4vw,12px);letter-spacing:.32em;text-transform:uppercase;
+  color:#edd08a;margin-bottom:14px;text-shadow:0 2px 6px rgba(0,0,0,1),0 0 18px rgba(0,0,0,.9)}
+.hero h1{font-family:'UnifrakturMaguntia',var(--caps);color:#f6ecd4;margin:0;line-height:.98;
+  font-size:clamp(44px,9.5vw,110px);text-shadow:0 4px 26px rgba(0,0,0,.75)}
+.hero .sub{font-family:var(--caps);font-size:clamp(11px,1.7vw,15px);letter-spacing:.2em;text-transform:uppercase;
+  color:#e2d3b2;margin-top:16px;text-shadow:0 2px 10px rgba(0,0,0,.9)}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--caps);font-size:12.5px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;padding:11px 20px;border-radius:2px;cursor:pointer;
+  border:1px solid var(--rule);background:var(--parch-hi);color:var(--ink);text-decoration:none}
+.btn:hover{border-color:var(--rub);color:var(--rub)}
+.btn.prim{background:var(--rub);border-color:var(--rub);color:#f6ecd4}
+.btn.prim:hover{background:#7d2419;color:#f6ecd4}
+.btn.ghost{background:rgba(246,236,212,.1);border-color:rgba(246,236,212,.5);color:#f6ecd4;backdrop-filter:blur(4px)}
+.btn.ghost:hover{background:rgba(246,236,212,.2);color:#fff;border-color:#f6ecd4}
+.btn svg{width:15px;height:15px}
+
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:-56px auto 0;
+  position:relative;z-index:2}
+.key{background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;padding:16px 18px;box-shadow:var(--sh)}
+.key .ttl{display:flex;align-items:center;gap:8px;font-family:var(--caps);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--rub);margin-bottom:7px}
+.key .ttl svg{width:14px;height:14px}
+.key .val{font-size:16.5px;line-height:1.35}
+
+/* ============ momenty ============ */
+.moments{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(222px,1fr))}
+.mom{padding:20px 18px;background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;
+  box-shadow:var(--sh);position:relative;transition:transform .13s,border-color .13s}
+.mom:hover{transform:translateY(-3px)}
+.mom.hot{border-color:var(--rub);border-top:3px solid var(--rub)}
+.mom .ico{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;margin-bottom:12px;
+  background:radial-gradient(circle at 34% 30%,#6d5a3f,#332719 75%);color:#f0e3c6}
+.mom .ico svg{width:18px;height:18px}
+.mom.hot .ico{background:radial-gradient(circle at 34% 30%,#b8493a,#7d2419 75%)}
+.mom .t{font-family:var(--mono);font-size:12.5px;color:var(--rub)}
+.mom h4{font-family:var(--caps);font-size:16px;font-weight:600;margin:4px 0 6px}
+.mom p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink-2);max-width:none}
+
+/* ============ dlaždice ============ */
+.tiles{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
+.tile{display:flex;flex-direction:column;gap:9px;text-align:left;padding:20px;background:var(--parch-hi);
+  border:1px solid var(--rule);border-radius:2px;box-shadow:var(--sh);cursor:pointer;font:inherit;color:inherit;
+  transition:transform .13s,box-shadow .13s,border-color .13s}
+.tile:hover{transform:translateY(-3px);box-shadow:var(--sh-lift);border-color:var(--rub)}
+.tile .hd{display:flex;align-items:center;gap:11px}
+.tile .em{width:36px;height:36px;border:1px solid var(--rule);border-radius:2px;display:grid;place-items:center;
+  color:var(--rub);background:rgba(196,177,140,.2)}
+.tile .em svg{width:19px;height:19px}
+.tile h3{margin:0;font-size:19px}
+.tile p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.5;max-width:none}
+.tile .go{margin-top:auto;font-family:var(--caps);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--rub)}
+
+/* ============ fotky / obsadenie ============ */
+.ph{background:#d9cbab;object-fit:cover;filter:sepia(.12) contrast(1.03)}
+.cast{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+.person{display:flex;flex-direction:column;text-align:center;padding:0 0 14px;overflow:hidden;
+  background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;box-shadow:var(--sh);
+  cursor:pointer;font:inherit;color:inherit;transition:transform .13s,border-color .13s}
+.person:hover{transform:translateY(-4px);border-color:var(--rub)}
+.person img{width:100%;aspect-ratio:3/3.4;object-fit:cover;object-position:center 18%;
+  border-bottom:1px solid var(--rule)}
+.person .nm{font-family:var(--caps);font-weight:600;font-size:16px;line-height:1.2;margin:12px 12px 2px}
+.person .rl{font-size:13.5px;color:var(--ink-2);line-height:1.35;margin:0 12px}
+.person .ac{font-size:12px;color:var(--ink-3);margin:4px 12px 0}
+.person.victim img{filter:sepia(.3) grayscale(.35) contrast(1.05)}
+.person.victim{border-color:var(--rub)}
+
+/* ============ prípad / podozriví ============ */
+.suspects{display:grid;gap:16px}
+.suspect{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:start;
+  background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;box-shadow:var(--sh);
+  padding:18px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:border-color .13s,transform .13s}
+.suspect:hover{border-color:var(--rub);transform:translateY(-2px)}
+.suspect img{width:150px;aspect-ratio:3/3.6;object-fit:cover;object-position:center 16%;border:1px solid var(--rule)}
+.suspect h3{margin:0 0 2px;font-size:21px}
+.suspect .job{font-family:var(--caps);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--rub);margin-bottom:10px}
+.suspect p{margin:0;max-width:none;font-size:15.5px;line-height:1.55}
+@media(max-width:620px){.suspect{grid-template-columns:1fr;gap:14px}.suspect img{width:100%;aspect-ratio:3/2;object-position:center 14%}}
+
+/* ============ bloky ============ */
+.leaf{background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;
+  padding:clamp(18px,2.6vw,26px);box-shadow:var(--sh)}
+.leaf.tight{padding:17px 19px}
+.stack{display:grid;gap:15px}
+.cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(275px,1fr))}
+.blk{margin:0 0 22px}
+.blk ul{list-style:none;margin:0;padding:0}
+.blk li{position:relative;padding:7px 0 7px 21px;border-bottom:1px solid rgba(196,177,140,.45);font-size:15.5px;line-height:1.5}
+.blk li:last-child{border-bottom:0}
+.blk li::before{content:"❧";position:absolute;left:0;top:7px;color:var(--gold);font-size:12px}
+.blk li.danger::before{content:"✠";color:var(--rub)}
+.sched{width:100%;border-collapse:collapse;font-size:15.5px}
+.sched td{padding:10px 8px;border-bottom:1px solid rgba(196,177,140,.55);vertical-align:top}
+.sched tr:last-child td{border-bottom:0}
+.sched .t{font-family:var(--mono);font-size:13px;color:var(--rub);white-space:nowrap;width:1%;padding-right:16px}
+.callout{border:1px solid var(--rule);border-left:4px solid var(--rub);background:rgba(143,45,32,.05);
+  padding:14px 17px;border-radius:2px;margin:0 0 18px}
+.callout.ok{border-left-color:var(--gold);background:rgba(156,122,46,.07)}
+.callout p{max-width:none;margin:0}
+.callout ul{margin:8px 0 0;padding-left:18px}.callout li{margin:4px 0;font-size:15px}
+.ilink{color:var(--rub);cursor:pointer;border-bottom:1px dotted var(--rub);font-weight:500}
+.ilink:hover{border-bottom-style:solid}
+
+/* ============ príbeh ============ */
+.chapter h3{text-align:center;margin-bottom:4px;font-size:clamp(20px,2.6vw,26px)}
+.chapter .ch-no{display:block;text-align:center;font-family:var(--caps);font-size:11px;letter-spacing:.24em;
+  color:var(--rub);text-transform:uppercase;margin-bottom:14px}
+.chapter .body{columns:2;column-gap:42px;column-rule:1px solid rgba(196,177,140,.5)}
+.chapter .body p{max-width:none}
+@media(max-width:900px){.chapter .body{columns:1}}
+.chapter .body p:first-of-type::first-letter{float:left;font-family:var(--caps);font-weight:700;font-size:3.5em;
+  line-height:.82;padding:6px 10px 2px 0;color:var(--rub)}
+
+/* ============ postavy ============ */
+.picker{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));margin-bottom:24px}
+.pick{display:flex;flex-direction:column;align-items:center;gap:7px;padding:10px 6px;border:1px solid var(--rule);
+  background:var(--parch-hi);border-radius:2px;cursor:pointer;font:inherit;color:inherit;transition:.13s}
+.pick:hover{border-color:var(--rub)}
+.pick img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center 16%;
+  border:2px solid var(--rule)}
+.pick[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+.pick[aria-pressed="true"] .lbl{color:var(--parch-hi)}
+.pick[aria-pressed="true"] img{border-color:var(--gold-2)}
+.pick .lbl{font-family:var(--caps);font-size:12px;font-weight:600}
+.charhead{display:grid;grid-template-columns:168px minmax(0,1fr);gap:22px;align-items:start;
+  padding-bottom:20px;margin-bottom:22px;border-bottom:3px double var(--rule)}
+.charhead img{width:168px;aspect-ratio:3/3.6;object-fit:cover;object-position:center 15%;
+  border:1px solid var(--rule);box-shadow:var(--sh)}
+.charhead h2{margin:0 0 2px}
+@media(max-width:640px){.charhead{grid-template-columns:1fr}.charhead img{width:100%;aspect-ratio:3/2.2;object-position:center 14%}}
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font-size:14.5px;margin-top:14px}
+.idcard dt{font-family:var(--caps);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);white-space:nowrap;padding-top:3px}
+.idcard dd{margin:0}
+.rail{display:grid;gap:14px;align-content:start}
+.railbox{background:rgba(196,177,140,.16);border:1px solid var(--rule);border-left:3px solid var(--gold);
+  border-radius:2px;padding:14px 16px}
+.railbox.rub{border-left-color:var(--rub)}
+.pair{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.relrow{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:15.5px;align-items:baseline}
+.relrow b{font-family:var(--caps);font-size:13.5px;font-weight:600;color:var(--rub);white-space:nowrap;cursor:pointer}
+.relrow b:hover{text-decoration:underline}
+details.fold{border-top:1px solid var(--rule)}
+details.fold summary{cursor:pointer;list-style:none;padding:12px 0;font-family:var(--caps);font-size:12.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--rub);display:flex;align-items:center;gap:9px}
+details.fold summary::-webkit-details-marker{display:none}
+details.fold summary::after{content:"+";margin-left:auto;font-family:var(--mono);color:var(--ink-3);font-size:16px}
+details.fold[open] summary::after{content:"–"}
+details.fold .in{padding:0 0 18px}
+.qa dt{font-weight:600;margin-top:14px}.qa dt:first-child{margin-top:0}
+.qa dd{margin:3px 0 0;color:var(--ink-2)}
+.net{width:100%;height:auto;display:block}
+.netlegend{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-2);margin-top:10px}
+.netlegend i{display:inline-block;width:22px;height:0;border-top:2px solid;vertical-align:middle;margin-right:6px}
+
+/* ============ súvislosti ============ */
+.hubwrap{background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;box-shadow:var(--sh);padding:8px}
+.hub{width:100%;height:auto;display:block}
+.hub g.node{cursor:pointer}
+.hub g.node:hover circle.bg,.hub g.node:hover rect.bg{stroke:var(--rub);stroke-width:3}
+.linkcols{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:18px}
+.linkcard{background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;padding:15px 17px;box-shadow:var(--sh)}
+.linkcard h4{font-family:var(--caps);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--rub);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.linkcard h4 svg{width:14px;height:14px}
+.linkcard ul{list-style:none;margin:0;padding:0}
+.linkcard li{padding:7px 0;border-bottom:1px solid rgba(196,177,140,.45);font-size:14.5px;line-height:1.45}
+.linkcard li:last-child{border-bottom:0}
+.linkcard .k{font-family:var(--mono);font-size:12px;color:var(--rub);margin-right:6px}
+
+/* ============ časová os ============ */
+.tools{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.chip{font-family:var(--caps);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;
+  border:1px solid var(--rule);background:var(--parch-hi);border-radius:2px;cursor:pointer;color:var(--ink-2);font-weight:600}
+.chip:hover{border-color:var(--rub);color:var(--rub)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--parch-hi);border-color:var(--ink)}
+.chip.rub[aria-pressed="true"]{background:var(--rub);border-color:var(--rub)}
+.dayhead{font-family:var(--caps);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--rub);
+  margin:30px 0 10px;display:flex;align-items:center;gap:12px}
+.dayhead::after{content:"";flex:1;border-top:1px solid var(--rule)}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:2px;background:var(--parch-hi);box-shadow:var(--sh)}
+table.tl{border-collapse:collapse;width:100%;min-width:880px;font-size:14px}
+table.tl th,table.tl td{border-right:1px solid rgba(196,177,140,.5);border-bottom:1px solid rgba(196,177,140,.5);
+  padding:8px 11px;vertical-align:top;text-align:left;line-height:1.42}
+table.tl thead th{position:sticky;top:0;background:#e6d9ba;z-index:2;font-family:var(--caps);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;border-bottom:2px solid var(--rule)}
+table.tl td.time,table.tl th.time{position:sticky;left:0;background:#e6d9ba;z-index:1;font-family:var(--mono);
+  font-size:12px;white-space:nowrap;color:var(--rub);width:64px;border-right:2px solid var(--rule)}
+table.tl thead th.time{z-index:3}
+table.tl tr.key td{background:rgba(201,164,74,.09)}
+table.tl tr.key td.time{background:#e2d2ae}
+table.tl tr.murder td{background:rgba(143,45,32,.11)}
+table.tl tr.murder td.time{background:var(--rub);color:#f6eeda}
+.tlcards{display:none}
+.tlcard{border:1px solid var(--rule);background:var(--parch-hi);border-radius:2px;padding:13px 15px;
+  margin-bottom:10px;box-shadow:var(--sh)}
+.tlcard.murder{border-color:var(--rub);border-left-width:4px}
+.tlcard .h{font-family:var(--mono);font-size:13px;color:var(--rub);margin-bottom:6px}
+.tlcard p{margin:0 0 5px;font-size:15.5px;max-width:none}
+.tlcard p b{font-family:var(--caps);font-size:13.5px;font-weight:600}
+@media(max-width:840px){.tablewrap{display:none}.tlcards{display:block}}
+
+/* ============ mapa ============ */
+.mapframe{position:relative;border:1px solid var(--rule);border-radius:2px;overflow:hidden;box-shadow:var(--sh);background:#111}
+.pin{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;display:grid;
+  place-items:center;cursor:pointer;font-family:var(--caps);font-size:13px;font-weight:700;color:#f6eeda;
+  background:radial-gradient(circle at 34% 30%,#5f4c33,#241a11 78%);border:2px solid rgba(246,238,218,.9);
+  box-shadow:0 3px 10px rgba(0,0,0,.6);transition:.14s}
+.pin:hover,.pin[aria-pressed="true"]{background:radial-gradient(circle at 34% 30%,#b8493a,#7d2419 78%);
+  transform:translate(-50%,-50%) scale(1.2)}
+.pin.crime{background:radial-gradient(circle at 34% 30%,#b8493a,#7d2419 78%)}
+.placelist{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));margin-top:18px}
+
+/* ============ dôkazy ============ */
+.ev{background:var(--parch-hi);border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:2px;
+  padding:16px 18px;margin-bottom:12px;box-shadow:var(--sh);display:flex;gap:15px;align-items:flex-start}
+.ev.key{border-left-color:var(--rub)}
+.ev .em{width:40px;height:40px;border:1px solid var(--rule);border-radius:2px;display:grid;place-items:center;
+  color:var(--rub);background:rgba(196,177,140,.2);flex:none}
+.ev .em svg{width:20px;height:20px}
+.ev .body{flex:1;min-width:0}
+.ev .hd{display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin-bottom:5px}
+.ev .tm{font-family:var(--mono);font-size:12.5px;color:var(--rub);border:1px solid var(--rule);padding:2px 7px}
+.ev .nm{font-family:var(--caps);font-weight:600;font-size:18px}
+.ev .ty{font-family:var(--caps);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.ev p{max-width:none}
+.linkline{font-size:14px;color:var(--ink-2);margin-top:10px;padding-top:9px;border-top:1px solid rgba(196,177,140,.55)}
+
+/* ============ dokumenty ============ */
+.sheet{background:radial-gradient(120% 90% at 50% 0%,#fdf8ea 0%,#f2e7cd 55%,#e9dcbd 100%);
+  border:1px solid var(--rule);border-radius:2px;padding:clamp(22px,5vw,58px);
+  box-shadow:0 16px 34px -22px rgba(70,50,25,.7), inset 0 0 70px rgba(150,120,70,.12)}
+.sheet h3{text-align:center;color:var(--rub);margin-bottom:4px}
+.sheet .sub{text-align:center;font-style:italic;color:var(--ink-2);margin-bottom:24px;font-size:15.5px}
+.sheet .txt{white-space:pre-wrap;font-size:17px;line-height:1.75;max-width:74ch;margin:0 auto}
+.doclist{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px}
+
+/* ============ scenár ============ */
+.step{display:grid;grid-template-columns:92px minmax(0,1fr);gap:20px;background:var(--parch-hi);
+  border:1px solid var(--rule);border-radius:2px;box-shadow:var(--sh);padding:18px 20px;margin-bottom:13px}
+.step.final{border-left:4px solid var(--rub)}
+.step .when{font-family:var(--mono);font-size:15px;color:var(--rub);font-weight:600;padding-top:3px}
+.step h3{margin:0 0 10px;font-size:19.5px}
+.step .what{background:rgba(196,177,140,.2);border-left:3px solid var(--gold);padding:9px 13px;
+  margin:0 0 12px;font-size:15px}
+.step dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:15px;line-height:1.5}
+.step dt{font-family:var(--caps);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--rub);white-space:nowrap;padding-top:4px}
+.step dd{margin:0}
+@media(max-width:620px){.step{grid-template-columns:1fr;gap:10px}.step dl{grid-template-columns:1fr;gap:2px 0}
+  .step dt{margin-top:8px}}
+
+/* ============ réžia ============ */
+.qz{width:100%;border-collapse:collapse;font-size:15.5px}
+.qz td{padding:10px 8px;border-bottom:1px solid rgba(196,177,140,.55);vertical-align:top}
+.qz tr:last-child td{border-bottom:0}
+.qz .ans{color:var(--rub);font-size:14.5px;margin-top:2px}
+.qz .pt{text-align:right;white-space:nowrap;font-family:var(--mono);font-size:13px;color:var(--ink-3)}
+.bar{height:6px;background:var(--parch-lo);border:1px solid var(--rule);border-radius:2px;overflow:hidden;
+  margin:10px 0 18px;max-width:420px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+table.props{width:100%;border-collapse:collapse;font-size:15px;min-width:700px}
+table.props th{font-family:var(--caps);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--rub);
+  text-align:left;padding:9px 8px;border-bottom:2px solid var(--rule)}
+table.props td{padding:10px 8px;border-bottom:1px solid rgba(196,177,140,.5);vertical-align:top}
+table.props tr.done td{opacity:.5}
+input[type=checkbox]{width:17px;height:17px;accent-color:var(--rub);cursor:pointer}
+
+/* ============ hľadanie ============ */
+.hit{background:var(--parch-hi);border:1px solid var(--rule);border-radius:2px;padding:13px 16px;margin-bottom:9px;
+  cursor:pointer;box-shadow:var(--sh)}
+.hit:hover{border-color:var(--rub)}
+.hit .w{font-family:var(--caps);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--rub)}
+.hit .h{font-family:var(--caps);font-size:16.5px;font-weight:600;margin:2px 0 4px}
+.hit p{margin:0;max-width:none}
+mark{background:rgba(201,164,74,.42);padding:0 2px}
+
+/* ============ ďalej / pätka ============ */
+.nextnav{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:44px}
+.nextcard{display:flex;flex-direction:column;gap:5px;padding:17px 19px;background:var(--parch-hi);
+  border:1px solid var(--rule);border-radius:2px;cursor:pointer;font:inherit;color:inherit;text-align:left;
+  box-shadow:var(--sh);transition:.13s}
+.nextcard:hover{border-color:var(--rub);transform:translateY(-2px)}
+.nextcard .w{font-family:var(--caps);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.nextcard .h{font-family:var(--caps);font-size:18px;font-weight:600}
+.nextcard .d{font-size:14px;color:var(--ink-2)}
+footer{border-top:3px double var(--rule);margin-top:44px;padding:24px 0 50px;font-size:13.5px;
+  color:var(--ink-3);text-align:center}
+
+@media(max-width:940px){
+  .tnav{display:none}
+  .tb{gap:10px}
+  body{font-size:17px}
+  .keys{margin-top:-30px}
+  .mobbar{display:block}
+}
+@media(max-width:600px){.keys{margin-top:18px}.hero .inner{padding-bottom:34px}}
+
+@media print{
+  .topbar,.mobbar,.noprint,footer,.nextnav,.hero{display:none!important}
+  body{background:#fff;font-size:11.5pt}
+  .leaf,.ev,.sheet,.step{box-shadow:none;border-color:#bbb;background:#fff}
+  details.fold[open] .in{display:block}
+  details.fold,.step{page-break-inside:avoid}
+  .chapter .body{columns:1}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="tb">
+    <a class="logo" href="#prehlad" data-tab="prehlad">Kliatba Lesovíc</a>
+    <nav class="tnav" id="tnav" aria-label="Hlavná navigácia"></nav>
+    <button class="sbtn" id="sbtn" aria-label="Hľadať" title="Hľadať">
+      <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
+    </button>
+  </div>
+  <div class="searchrow" id="searchrow">
+    <input id="q" type="search" placeholder="Hľadaj — krížik, fúrik, 20:45, kutáč…" autocomplete="off">
+  </div>
+</header>
+<div class="mobbar"><div class="row" id="mobnav"></div></div>
+
+<main>
+  <section id="v-hladanie" hidden><div class="wrap" id="hitbox"></div></section>
+  <section id="v-prehlad"></section>
+  <section id="v-pripad" hidden></section>
+  <section id="v-pribeh" hidden></section>
+  <section id="v-postavy" hidden></section>
+  <section id="v-mapa" hidden></section>
+  <section id="v-os" hidden></section>
+  <section id="v-suvislosti" hidden></section>
+  <section id="v-dokazy" hidden></section>
+  <section id="v-dokumenty" hidden></section>
+  <section id="v-riesenie" hidden></section>
+  <section id="v-rezia" hidden></section>
+</main>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script src="data.js?v=20261013"></script>
+<script>
+/* ===================== helpers ===================== */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const paras=s=>esc(s).split(/\n\s*\n/).map(p=>`<p>${p.replace(/\n/g,'<br>')}</p>`).join('');
+const ROMAN=['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV'];
+const P={}; DATA.postavy.forEach(p=>P[p.id]=p); P[DATA.obet.id]=DATA.obet;
+const nameOf=id=>P[id]?P[id].meno:id;
+const first=id=>nameOf(id).split(' ')[0];
+const fotoOf=id=>(P[id]&&P[id].foto)||'';
+const ilink=id=>`<span class="ilink" data-goto="${id}">${esc(nameOf(id))}</span>`;
+
+/* ===================== ikony ===================== */
+const I={
+  book:'<path d="M3 5.5c3-1 6-1 9 .5v14c-3-1.5-6-1.5-9-.5z"/><path d="M21 5.5c-3-1-6-1-9 .5v14c3-1.5 6-1.5 9-.5z"/>',
+  scroll:'<path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 0 2 2H8a2 2 0 0 1-2-2z"/><path d="M6 4a2 2 0 0 0-2 2v2h2"/><path d="M9 9h7M9 13h7"/>',
+  people:'<circle cx="9" cy="8" r="3"/><path d="M3.5 20c.6-3.2 2.9-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 15.2c2.2-.4 4.3 1.2 5 4.8"/>',
+  map:'<path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5z"/><path d="M9 4v13M15 6.5v13"/>',
+  clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.2l3.2 2"/>',
+  glass:'<circle cx="11" cy="11" r="6.6"/><path d="M19.6 19.6 16 16"/>',
+  doc:'<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/>',
+  key:'<circle cx="8" cy="12" r="3.6"/><path d="M11.6 12H21"/><path d="M18 12v3M15 12v2.4"/>',
+  candle:'<path d="M9 21h6V10H9z"/><path d="M12 10c2-2.4 0-3.6 0-5.6-2.2 2-3 3.4-3 4.6a3 3 0 0 0 3 3"/>',
+  web:'<circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="6" r="2"/><circle cx="19.5" cy="6" r="2"/><circle cx="4.5" cy="18" r="2"/><circle cx="19.5" cy="18" r="2"/><path d="M6.2 7.2 9.8 10M17.8 7.2 14.2 10M6.2 16.8 9.8 14M17.8 16.8 14.2 14"/>',
+  flag:'<path d="M6 21V4"/><path d="M6 5h11l-2 3.5L17 12H6"/>',
+  cross:'<path d="M12 3.5v17M7 9h10"/>',
+  herb:'<path d="M12 21V9"/><path d="M12 14c-3.4 0-5.5-2.1-5.5-5.5 3.4 0 5.5 2.1 5.5 5.5z"/><path d="M12 11c3.4 0 5.5-2.1 5.5-5.5-3.4 0-5.5 2.1-5.5 5.5z"/>',
+  heart:'<path d="M12 20s-7-4.4-7-9.2A3.9 3.9 0 0 1 12 8.2 3.9 3.9 0 0 1 19 10.8C19 15.6 12 20 12 20z"/>',
+  axe:'<path d="M4 20 14 10"/><path d="M13 4.5c3.6-1.6 6.5.6 6.8 4.2-2.6 1.4-4.2 1.4-5.6.6l-2.6 2.6-3-3 2.6-2.6c-.5-1.2-.4-2.6 1.8-1.8z"/>',
+  beads:'<circle cx="12" cy="9" r="5.4"/><path d="M12 14.4v3M10.3 16.2h3.4"/>',
+  tankard:'<path d="M6 8h9v12H6z"/><path d="M15 10h2.6a2 2 0 0 1 0 5H15"/><path d="M6 8c1-1.6 2-2 4.5-2S14 6.4 15 8"/>',
+  sheep:'<path d="M6.5 15a3 3 0 0 1 .4-6 3 3 0 0 1 5-1.6A3 3 0 0 1 17 9a3 3 0 0 1 .4 6z"/><path d="M8 15v3M16 15v3"/><circle cx="18.6" cy="11" r="2.1"/>',
+  ring:'<circle cx="12" cy="14" r="5.4"/><path d="m9.6 8 2.4-3.4L14.4 8"/>',
+  fist:'<path d="M6 11V8.6A1.6 1.6 0 0 1 9.2 8.6V11"/><path d="M9.2 10.6V7.6a1.6 1.6 0 0 1 3.2 0v3"/><path d="M12.4 10.6V8.4a1.6 1.6 0 0 1 3.2 0V13"/><path d="M15.6 13v-1a1.6 1.6 0 0 1 3.2 0v3.6A5 5 0 0 1 14 20.2h-1.6A6.4 6.4 0 0 1 6 14v-3"/>',
+  cup:'<path d="M6 8h10v5a5 5 0 0 1-10 0z"/><path d="M16 9.4h1.8a2 2 0 0 1 0 4H16"/><path d="M5 20h12"/>',
+  eye:'<path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/>',
+  flame:'<path d="M12 21c3.3 0 5.5-2.2 5.5-5 0-3.6-3.4-5-4.2-9-2.2 1.6-3.4 3.4-3.4 5.2 0 1.4.6 2 .6 2.8 0 .9-.7 1.6-1.6 1.6-.8 0-1.4-.6-1.6-1.4-.5 1-.8 2-.8 3 0 2.8 2.2 4.8 5.5 4.8z"/>',
+  cart:'<circle cx="8" cy="18" r="2.2"/><path d="M4 6h3l3.2 9h7.4"/><path d="M8.5 9H20l-1.6 6"/>',
+  moon:'<path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/>',
+  sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>',
+  skull:'<path d="M12 3c4.4 0 7.5 3 7.5 7 0 2.5-1.2 3.8-2 4.6-.5.5-.5 1.4-.5 2.4H7c0-1 0-1.9-.5-2.4-.8-.8-2-2.1-2-4.6 0-4 3.1-7 7.5-7z"/><circle cx="9.4" cy="11" r="1.5"/><circle cx="14.6" cy="11" r="1.5"/><path d="M8 17v3.5M12 17v3.5M16 17v3.5"/>',
+  knife:'<path d="M4 20 9 15"/><path d="M9.6 14.4 19 5c1 3-.4 7-4.4 9.4z"/>',
+  scales:'<path d="M12 4v16M8 20h8"/><path d="M12 7 5 9.5M12 7l7 2.5"/><path d="M2.6 14a2.4 2.4 0 0 0 4.8 0L5 9.5z"/><path d="M16.6 14a2.4 2.4 0 0 0 4.8 0L19 9.5z"/>',
+  bottle:'<path d="M10 3h4v3.2l2.2 3.2V21H7.8V9.4L10 6.2z"/><path d="M7.8 13h8.4"/>',
+  shirt:'<path d="M9 3 5 5.2l1.4 4L8 8.6V21h8V8.6l1.6.6 1.4-4L15 3a3 3 0 0 1-6 0z"/>',
+  church:'<path d="M12 2.5 14 6v2.5l4 2.6V21H6v-9.9l4-2.6V6z"/><path d="M12 2.5V6M10.4 4.2h3.2"/><path d="M10 21v-4h4v4"/>'
+};
+const svg=(k,cls)=>`<svg class="ic ${cls||''}" viewBox="0 0 24 24">${I[k]||I.doc}</svg>`;
+const EV_ICON=d=>{
+  const n=(d.nazov||'').toLowerCase();
+  if(n.includes('pozvánka'))return'scroll';
+  if(n.includes('podozriv'))return'people';
+  if(n.includes('tela')||n.includes('telo'))return'skull';
+  if(n.includes('mapa'))return'map';
+  if(n.includes('bylink'))return'herb';
+  if(n.includes('odvar'))return'bottle';
+  if(n.includes('zápisník'))return'doc';
+  if(n.includes('spoved'))return'church';
+  if(n.includes('matrik'))return'book';
+  if(n.includes('list'))return'heart';
+  if(n.includes('oblečen'))return'shirt';
+  if(n.includes('dotazník'))return'scales';
+  return'doc';
+};
+
+/* ===================== sekcie ===================== */
+const TABS=[
+  ['prehlad','Prehľad','book','Prípad v kocke, obsadenie a kľúčové momenty'],
+  ['pripad','Prípad','flag','Zadanie a podozriví — bez spoilerov, pre tímy'],
+  ['pribeh','Príbeh','scroll','Desať kapitol od moru 1482 po nález tela'],
+  ['postavy','Postavy','people','Karty pre hercov a sieť obvinení'],
+  ['mapa','Mapa','map','Trinásť miest a čo sa na nich stalo'],
+  ['os','Časová os','clock','Osem postáv, hodinu po hodine'],
+  ['suvislosti','Súvislosti','web','Klikacia mapa väzieb — kto, čo, kde, kedy'],
+  ['dokazy','Dôkazy','glass','Trinásť dôkazov v poradí vypúšťania'],
+  ['dokumenty','Dokumenty','doc','Plné znenie ôsmich herných listín'],
+  ['riesenie','Riešenie','key','Verdikt, reťaz dôkazov a falošné stopy'],
+  ['rezia','Réžia','candle','Scenár pre brata Martina, rekvizity, bodovanie']
+];
+let view='prehlad';
+function buildNav(){
+  const h=TABS.map(([id,l,ic])=>`<a href="#${id}" data-tab="${id}">${svg(ic)}${esc(l)}</a>`).join('');
+  $('#tnav').innerHTML=h; $('#mobnav').innerHTML=h;
+  $$('[data-tab]').forEach(a=>a.onclick=e=>{e.preventDefault();show(a.dataset.tab);});
+}
+function show(id,anchor){
+  if(!TABS.some(t=>t[0]===id)&&id!=='hladanie') id='prehlad';
+  view=id;
+  $$('main > section').forEach(s=>s.hidden=true);
+  const sec=$('#v-'+id); if(sec) sec.hidden=false;
+  $$('[data-tab]').forEach(a=>a.setAttribute('aria-current',a.dataset.tab===id?'true':'false'));
+  if(id!=='hladanie'){ history.replaceState(null,'','#'+id+(anchor?'/'+anchor:'')); $('#searchrow').classList.remove('on'); }
+  if(anchor){
+    const t=document.getElementById(anchor);
+    if(t){ t.scrollIntoView({block:'start'}); t.animate([{background:'rgba(201,164,74,.4)'},{background:'transparent'}],{duration:1500}); return; }
+  }
+  window.scrollTo({top:0});
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-goto]'); if(!a) return;
+  const id=a.dataset.goto;
+  if(P[id]) return openChar(id);
+  if(DATA.dokumenty.some(d=>d.id===id)) return show('dokumenty','doc-'+id);
+  if(DATA.dokazy.some(d=>d.id===id)) return show('dokazy','ev-'+id);
+  if(DATA.mapa.body.some(b=>'m-'+b.id===id)) return show('mapa',id);
+  if(DATA.pribeh.some(k=>k.id===id)) return show('pribeh',id);
+});
+function nextNav(cur){
+  const i=TABS.findIndex(t=>t[0]===cur);
+  const picks=[TABS[(i+1)%TABS.length],TABS[(i+2)%TABS.length]];
+  return `<div class="nextnav noprint">${picks.map(t=>`<button class="nextcard" data-tab="${t[0]}">
+      <span class="w">Ďalej</span><span class="h">${esc(t[1])}</span><span class="d">${esc(t[3])}</span></button>`).join('')}</div>`;
+}
+function wireNext(root){ $$('[data-tab]',root).forEach(b=>b.onclick=e=>{e.preventDefault();show(b.dataset.tab);}); }
+
+/* ===================== PREHĽAD ===================== */
+const KEY_ICON={'Obeť':'skull','Čas smrti':'clock','Nájdené':'sun','Našiel':'eye','Nástroj':'knife',
+  'Páchateľ':'beads','Hrateľné postavy':'people','Dĺžka hry':'candle'};
+function renderPrehlad(){
+  const m=DATA.meta, mom=DATA.momenty||[];
+  $('#foot').innerHTML=`<div class="orn"><span>❦</span></div>
+    ${esc(m.nazov)} · verzia ${esc(m.verzia)} · ${esc(m.aktualizovane)}<br>
+    <span class="quiet">Obsah webu sa mení v súbore <code>data.js</code>.</span>`;
+
+  $('#v-prehlad').innerHTML=`
+  <div class="hero">
+    <img src="assets/cover.jpg" alt="Dedina Lesovice">
+    <div class="veil"></div>
+    <div class="inner">
+      <div class="kick">Inquisitio · Anno Domini MDIII</div>
+      <h1>Kliatba Lesovíc</h1>
+      <div class="sub">${esc(m.podnazov)}</div>
+      <div class="cta">
+        <button class="btn prim" data-tab="pripad">${svg('flag')} Zadanie prípadu</button>
+        <button class="btn ghost" data-tab="postavy">${svg('people')} Postavy</button>
+        <button class="btn ghost" data-tab="rezia">${svg('candle')} Scenár večera</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wide">
+    <div class="keys">${m.fakty.slice(0,4).map(f=>
+      `<div class="key"><div class="ttl">${svg(KEY_ICON[f.k]||'doc')}${esc(f.k)}</div><div class="val">${esc(f.v)}</div></div>`).join('')}</div>
+  </div>
+
+  <div class="wrap">
+    <div class="centered">
+      <div class="pagehead"><h2>Čo sa stalo</h2></div>
+      <p class="big">${esc(m.brief)}</p>
+    </div>
+    <div class="cols" style="margin-top:26px">
+      ${m.fakty.slice(4).map(f=>`<div class="leaf tight"><div class="rubric">${esc(f.k)}</div>
+        <div style="font-size:16.5px">${esc(f.v)}</div></div>`).join('')}
+    </div>
+
+    ${mom.length?`<div class="orn"><span>❦ ❦ ❦</span></div>
+    <div class="pagehead"><h2>Deň vraždy v siedmich momentoch</h2>
+      <p class="lede">Rýchly prehľad, než sa ponoríš do celého príbehu.</p></div>
+    <div class="moments">${mom.map(x=>`<div class="mom ${x.ikona==='flame'?'hot':''}">
+      <div class="ico">${svg(x.ikona)}</div><div class="t">${esc(x.cas)}</div>
+      <h4>${esc(x.nadpis)}</h4><p>${esc(x.text)}</p></div>`).join('')}</div>`:''}
+
+    <div class="orn"><span>❦</span></div>
+    <div class="pagehead"><h2>Obsadenie</h2>
+      <p class="lede">Sedem obyvateľov a ich richtár. Klikni na ktoréhokoľvek a otvorí sa jeho karta.</p></div>
+    <div class="cast">${DATA.postavy.map(p=>`<button class="person" data-goto="${p.id}">
+        <img class="ph" src="${p.foto}" alt="${esc(p.meno)}" loading="lazy">
+        <span class="nm">${esc(first(p.id))}</span>
+        <span class="rl">${esc(p.rola.replace(' — PÁCHATEĽKA',''))}</span>
+        <span class="ac">hrá ${esc(p.herec)}</span></button>`).join('')}
+      <button class="person victim" data-goto="${DATA.obet.id}">
+        <img class="ph" src="${DATA.obet.foto}" alt="${esc(DATA.obet.meno)}" loading="lazy">
+        <span class="nm">${esc(first(DATA.obet.id))}</span>
+        <span class="rl">Obeť — richtár</span><span class="ac">${DATA.obet.vek} rokov</span></button>
+    </div>
+
+    <div class="orn"><span>❦</span></div>
+    <div class="pagehead"><h2>Kam ďalej</h2><p class="lede">Jedenásť sekcií — klikni a si tam.</p></div>
+    <div class="tiles">${TABS.filter(t=>t[0]!=='prehlad').map(([id,l,ic,d])=>
+      `<button class="tile" data-tab="${id}"><div class="hd"><span class="em">${svg(ic)}</span><h3>${esc(l)}</h3></div>
+        <p>${esc(d)}</p><span class="go">Otvoriť →</span></button>`).join('')}</div>
+  </div>`;
+  wireNext($('#v-prehlad'));
+}
+
+/* ===================== PRÍPAD ===================== */
+function renderPripad(){
+  const u=DATA.uvod;
+  if(!u){ $('#v-pripad').innerHTML='<div class="wrap"><p class="lede">Úvodné texty nie sú vyplnené.</p></div>'; return; }
+  $('#v-pripad').innerHTML=`<div class="wrap">
+  <div class="centered">
+    <div class="pagehead"><h2>Zadanie prípadu</h2>
+      <p class="lede">Toto vidia aj tímy. Žiadne spoilery — presne to, s čím prichádzajú do Lesovíc.</p></div>
+  </div>
+  <div class="leaf" style="max-width:800px;margin:0 auto">
+    ${u.intro.map((t,i)=>`<p${i===0?' style="font-size:1.08em"':''}>${esc(t)}</p>`).join('')}
+  </div>
+
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h2>Obeť</h2></div>
+  <div class="suspect" data-goto="${DATA.obet.id}" style="border-color:var(--rub)">
+    <img class="ph" src="${DATA.obet.foto}" alt="${esc(u.obet.meno)}" loading="lazy" style="filter:sepia(.3) grayscale(.3)">
+    <div>
+      <h3>${esc(u.obet.meno)}</h3>
+      <div class="job">${esc(u.obet.povolanie)} · ${u.obet.vek} rokov</div>
+      ${u.obet.text.map(t=>`<p class="sm">${esc(t)}</p>`).join('')}
+    </div>
+  </div>
+
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h2>Podozriví svedkovia</h2>
+    <p class="lede">Sedem obyvateľov Lesovíc. Klikni na ktoréhokoľvek a otvorí sa jeho plná karta.</p></div>
+  <div class="suspects">${u.podozrivi.map(x=>`
+    <button class="suspect" data-goto="${x.id}">
+      <img class="ph" src="${fotoOf(x.id)}" alt="${esc(x.meno)}" loading="lazy">
+      <div><h3>${esc(x.meno)}</h3><div class="job">${esc(x.povolanie)}</div>
+        <p>${esc(x.text)}</p></div></button>`).join('')}</div>
+  ${nextNav('pripad')}</div>`;
+  wireNext($('#v-pripad'));
+}
+
+/* ===================== PRÍBEH ===================== */
+function renderPribeh(){
+  $('#v-pribeh').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Príbeh</h2>
+    <p class="lede">Čo sa v Lesoviciach naozaj stalo — od príchodu otca Benedikta v roku 1482 po ráno, keď Viliam našiel telo.</p></div>
+  <div class="leaf tight noprint" style="margin-bottom:20px"><div class="rubric">Kapitoly</div>
+    <div class="doclist">${DATA.pribeh.map((k,i)=>
+      `<button class="chip" data-goto="${k.id}">${ROMAN[i+1]} · ${esc(k.nadpis.replace(/^[IVX]+\.\s*/,''))}</button>`).join('')}</div></div>
+  <div class="stack">${DATA.pribeh.map((k,i)=>`<article class="leaf chapter" id="${k.id}">
+    <span class="ch-no">Kapitola ${ROMAN[i+1]}</span>
+    <h3>${esc(k.nadpis.replace(/^[IVX]+\.\s*/,''))}</h3>
+    <div class="orn" style="margin:10px 0 22px"><span>❦</span></div>
+    <div class="body">${k.text.map(t=>`<p>${esc(t)}</p>`).join('')}</div></article>`).join('')}</div>
+  ${nextNav('pribeh')}</div>`;
+  wireNext($('#v-pribeh'));
+}
+
+/* ===================== SIEŤ OBVINENÍ ===================== */
+function accuseNet(focus){
+  const ids=DATA.postavy.map(p=>p.id);
+  const N=ids.length, W=780, H=520, cx=W/2, cy=H/2, R=178, NR=28;
+  const pos={},ang={};
+  ids.forEach((id,i)=>{const a=-Math.PI/2+i*2*Math.PI/N; ang[id]=a;
+    pos[id]={x:cx+R*Math.cos(a),y:cy+R*Math.sin(a)};});
+  const edge=(a,b,kind,on)=>{
+    if(!pos[a]||!pos[b]) return '';
+    const A=pos[a],B=pos[b];
+    const mx=(A.x+B.x)/2,my=(A.y+B.y)/2;
+    const qx=mx+(cx-mx)*.36, qy=my+(cy-my)*.36;
+    const t=(NR+5)/Math.hypot(B.x-qx,B.y-qy);
+    const ex=B.x+(qx-B.x)*t, ey=B.y+(qy-B.y)*t;
+    const col=kind==='acc'?'#8f2d20':'#5f7d3f';
+    return `<path d="M${A.x.toFixed(1)} ${A.y.toFixed(1)} Q${qx.toFixed(1)} ${qy.toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)}"
+      fill="none" stroke="${col}" stroke-width="${on?2.2:1.2}" opacity="${on?.92:.13}"
+      ${kind==='pro'?'stroke-dasharray="6 5"':''} marker-end="url(#${kind==='acc'?(on?'arrOn':'arrOff'):(on?'proOn':'proOff')})"/>`;
+  };
+  let e='';
+  DATA.postavy.forEach(p=>{
+    const on=!focus||focus===p.id;
+    (p.obvinuje||[]).forEach(r=>{ e+=edge(p.id,r.kto,'acc',on); });
+    (p.chrani||[]).forEach(r=>{ e+=edge(p.id,r.kto,'pro',on); });
+  });
+  const nodes=ids.map(id=>{
+    const {x,y}=pos[id], a=ang[id];
+    const lx=(R+48)*Math.cos(a)-(x-cx), ly=(R+48)*Math.sin(a)-(y-cy)+5;
+    const anchor=Math.abs(Math.cos(a))<0.25?'middle':(Math.cos(a)>0?'start':'end');
+    const act=focus===id;
+    return `<g class="node" data-goto="${id}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})">
+      <circle class="bg" r="${NR}" fill="#3a2d1d" stroke="${act?'#8f2d20':'#f7efdb'}" stroke-width="${act?4:2.5}"/>
+      <image href="${fotoOf(id)}" x="${-NR}" y="${-NR}" width="${NR*2}" height="${NR*2}"
+        preserveAspectRatio="xMidYMin slice" clip-path="url(#cp-${id})" opacity="${act?1:.88}"/>
+      <circle r="${NR}" fill="none" stroke="${act?'#8f2d20':'#f7efdb'}" stroke-width="${act?4:2.5}"/>
+      <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" font-family="Cinzel,serif"
+        font-size="13.5" font-weight="${act?700:400}" fill="${act?'#8f2d20':'#2a1e14'}">${esc(first(id))}</text></g>`;}).join('');
+  const mk=(id,col)=>`<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5"
+    orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="${col}"/></marker>`;
+  const defs=ids.map(id=>`<clipPath id="cp-${id}"><circle cx="0" cy="0" r="${NR}"/></clipPath>`).join('');
+  return `<svg class="net" viewBox="0 0 ${W} ${H}" role="img" aria-label="Sieť obvinení medzi postavami">
+    <defs>${mk('arrOn','#8f2d20')}${mk('arrOff','rgba(143,45,32,.25)')}${mk('proOn','#5f7d3f')}${mk('proOff','rgba(95,125,63,.25)')}
+      ${defs}</defs>${e}${nodes}</svg>`;
+}
+
+/* ===================== POSTAVY ===================== */
+function charBody(p,victim){
+  const rels=a=>a&&a.length?`<div class="relrow">${a.map(r=>
+    `<b data-goto="${r.kto}">${esc(first(r.kto))}</b><span>${esc(r.popis)}</span>`).join('')}</div>`:'<p class="sm quiet">—</p>';
+  const list=(a,cls)=>a&&a.length?`<div class="blk"><ul>${a.map(x=>`<li class="${cls||''}">${esc(x)}</li>`).join('')}</ul></div>`:'<p class="sm quiet">—</p>';
+  let h=`<div class="charhead">
+    <img class="ph" src="${p.foto}" alt="${esc(p.meno)}">
+    <div>
+      <h2>${esc(p.meno)}</h2><p class="lede" style="margin:0">${esc(p.rola)}</p>
+      <dl class="idcard">${p.herec?`<dt>Hrá</dt><dd><b>${esc(p.herec)}</b></dd>`:''}
+        <dt>Vek</dt><dd>${p.vek}</dd><dt>Narodenie</dt><dd>${esc(p.narodenie)}</dd>
+        <dt>Rodičia</dt><dd>${esc(p.rodicia)}</dd></dl>
+      <div class="tools noprint" style="margin:16px 0 0">
+        <button class="chip" data-suv="${p.id}">Zobraziť súvislosti</button></div>
+    </div></div>`;
+  if(victim) return h+`<div class="blk"><div class="rubric">Kto to bol</div>${paras(p.opis)}</div>`;
+  h+=`<div class="pair" style="margin-bottom:6px">
+    <div class="blk"><div class="rubric">Kto som</div>${paras(p.opis)}</div>
+    <aside class="rail">
+      <div class="railbox"><div class="rubric">Vzťah s obeťou</div><p class="sm" style="max-width:none;margin:0">${esc(p.vztahSObetou)}</p></div>
+      <div class="railbox rub"><div class="rubric">Motív v očiach tímov</div><p class="sm" style="max-width:none;margin:0">${esc(p.motiv)}</p></div>
+    </aside></div>
+  <div class="pair">
+    <div class="blk"><div class="rubric">Čo hovorím vždy</div>${list(p.vzdyHovori)}</div>
+    <div class="blk"><div class="rubric">Čo tajím</div>${list(p.taji,'danger')}</div></div>
+  <div class="pair">
+    <div class="blk"><div class="rubric">Koho obviňujem</div>${rels(p.obvinuje)}</div>
+    <div class="blk"><div class="rubric">Koho chránim</div>${rels(p.chrani)}</div></div>
+  <details class="fold"><summary>Môj deň — nedeľa 22. októbra</summary><div class="in">${personalTL(p.id)}</div></details>
+  <details class="fold"><summary>Vzťahy ku všetkým v dedine</summary><div class="in">${rels(p.vztahy)}</div></details>
+  <details class="fold"><summary>Vlastnosti a zaujímavosti</summary><div class="in">${list(p.vlastnosti)}</div></details>
+  <details class="fold"><summary>Otázky, ktoré prídu (${(p.faq||[]).length})</summary><div class="in">
+    <dl class="qa">${(p.faq||[]).map(f=>`<dt>${esc(f.q)}</dt><dd>${esc(f.a)}</dd>`).join('')}</dl></div></details>
+  <details class="fold"><summary>Dôkazy, ktoré sa ma týkajú</summary><div class="in">${(()=>{
+    const ds=DATA.dokazy.filter(d=>(d.postavy||[]).includes(p.id));
+    return ds.length?`<div class="blk"><ul>${ds.map(d=>
+      `<li><span class="num">${esc(d.cas)}</span> &nbsp;<span class="ilink" data-goto="${d.id}">${esc(d.nazov)}</span></li>`).join('')}</ul></div>`:'<p class="sm quiet">—</p>';})()}</div></details>`;
+  return h;
+}
+function personalTL(id){
+  const rows=DATA.casovaOs.zaznamy.filter(z=>z.r[id]);
+  if(!rows.length) return '<p class="sm quiet">—</p>';
+  return `<div class="blk"><ul>${rows.map(z=>
+    `<li><span class="num">${z.cas}</span>${z.den==='pon'?' <span class="quiet xs">(pondelok)</span>':''} ${esc(z.r[id])}</li>`).join('')}</ul></div>`;
+}
+let openId=null, netAll=false, hubId=null;
+function openChar(id){ openId=id; renderPostavy(); show('postavy'); }
+function renderPostavy(){
+  const all=DATA.postavy.concat([DATA.obet]);
+  if(!openId) openId=DATA.postavy[0].id;
+  const p=P[openId], victim=openId===DATA.obet.id;
+  $('#v-postavy').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Postavy</h2>
+    <p class="lede">Vyber postavu — dlhšie časti sú zložené, aby to nebola stena textu. Karta sa dá vytlačiť pre herca.</p></div>
+  <div class="picker noprint">${all.map(x=>`<button class="pick" data-char="${x.id}" aria-pressed="${x.id===openId}">
+    <img class="ph" src="${x.foto}" alt="" loading="lazy"><span class="lbl">${esc(first(x.id))}</span></button>`).join('')}</div>
+  <div class="tools noprint" style="margin-bottom:16px">
+    <button class="chip" id="printChar">Vytlačiť kartu</button>
+    <button class="chip" id="openAll">Rozbaliť všetko</button></div>
+  <article class="leaf">${charBody(p,victim)}</article>
+
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h2>Kto koho obviňuje</h2>
+    <p class="lede">Zvýraznené sú väzby vybranej postavy. Červená šípka — obviňuje. Zelená prerušovaná — chráni. Klikni na ktorúkoľvek tvár.</p></div>
+  <div class="tools noprint"><button class="chip" id="netAll" aria-pressed="${netAll}">Zobraziť všetky väzby</button></div>
+  <div class="leaf">${accuseNet(netAll?null:openId)}
+    <div class="netlegend"><span><i style="border-color:#8f2d20"></i>obviňuje</span>
+      <span><i style="border-color:#5f7d3f;border-top-style:dashed"></i>chráni</span></div></div>
+
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h2>Postavy v pozadí</h2>
+    <p class="lede">Nehrá ich nikto, ale tímy o nich budú počuť.</p></div>
+  <div class="cols">${DATA.pozadie.map(x=>`<div class="leaf tight">
+    <div class="rubric">${esc(x.rola)}</div>
+    <h3 style="font-size:19px;margin-bottom:6px">${esc(x.meno)}</h3>
+    <p class="sm" style="margin:0;max-width:none">${esc(x.text)}</p></div>`).join('')}</div>
+  ${nextNav('postavy')}</div>`;
+  $$('#v-postavy [data-char]').forEach(b=>b.onclick=()=>{openId=b.dataset.char;renderPostavy();window.scrollTo({top:0});});
+  $('#printChar').onclick=()=>{$$('#v-postavy details').forEach(d=>d.open=true);setTimeout(()=>window.print(),80);};
+  $('#openAll').onclick=e=>{const any=$$('#v-postavy details').some(d=>!d.open);
+    $$('#v-postavy details').forEach(d=>d.open=any); e.target.textContent=any?'Zložiť všetko':'Rozbaliť všetko';};
+  const nb=$('#netAll'); if(nb) nb.onclick=()=>{netAll=!netAll;renderPostavy();
+    const t=$('#v-postavy .net'); if(t) t.scrollIntoView({block:'center'});};
+  $$('#v-postavy [data-suv]').forEach(b=>b.onclick=()=>{hubId=b.dataset.suv;renderSuvislosti();show('suvislosti');});
+  wireNext($('#v-postavy'));
+}
+
+/* ===================== SÚVISLOSTI ===================== */
+function hubData(id){
+  const p=P[id];
+  const out={postavy:[],dokazy:[],miesta:[],cas:[],dokumenty:[]};
+  if(!p) return out;
+  const seen=new Set();
+  const push=(kto,vzt,popis)=>{ if(kto===id||seen.has(kto)) return; seen.add(kto); out.postavy.push({id:kto,vzt,popis}); };
+  (p.obvinuje||[]).forEach(r=>push(r.kto,'obviňuje',r.popis));
+  (p.chrani||[]).forEach(r=>push(r.kto,'chráni',r.popis));
+  (p.vztahy||[]).forEach(r=>push(r.kto,'vzťah',r.popis));
+  // protismerné väzby — kto sa vyjadruje o tejto postave
+  DATA.postavy.forEach(o=>{ if(o.id===id) return;
+    (o.obvinuje||[]).forEach(r=>{ if(r.kto===id) push(o.id,'obviňuje ju/ho',r.popis); });
+    (o.chrani||[]).forEach(r=>{ if(r.kto===id) push(o.id,'chráni ju/ho',r.popis); });
+    (o.vztahy||[]).forEach(r=>{ if(r.kto===id) push(o.id,'vzťah k nemu/nej',r.popis); });
+  });
+  DATA.dokazy.forEach(d=>{ if((d.postavy||[]).includes(id)) out.dokazy.push(d); });
+  DATA.mapa.body.forEach(b=>{ if((b.postavy||[]).includes(id)) out.miesta.push(b); });
+  DATA.casovaOs.zaznamy.forEach(z=>{ if(z.r[id]&&z.klic) out.cas.push({cas:z.cas,den:z.den,text:z.r[id]}); });
+  const nm=first(id);
+  DATA.dokumenty.forEach(d=>{ if(d.text.indexOf(nm)>=0) out.dokumenty.push(d); });
+  return out;
+}
+// pre schému beriem len obmedzený výber, inak je to nečitateľné
+function hubTop(d){
+  const mins=t=>{const [h,m]=t.split(':').map(Number);return h*60+m;};
+  const cas=[...d.cas].sort((a,b)=>Math.abs(mins(a.cas)-1110)-Math.abs(mins(b.cas)-1110)).slice(0,6)
+    .sort((a,b)=>mins(a.cas)-mins(b.cas));
+  return {postavy:d.postavy.slice(0,6), dokazy:d.dokazy.slice(0,5), miesta:d.miesta.slice(0,4), cas:cas.slice(0,5)};
+}
+function hubSvg(id){
+  const d=hubTop(hubData(id));
+  const groups=[
+    {col:'#8f2d20',items:d.postavy.map(x=>({t:first(x.id),sub:x.vzt,go:x.id,foto:fotoOf(x.id),pid:x.id}))},
+    {col:'#9c7a2e',items:d.dokazy.map(x=>({t:x.cas,sub:x.nazov,go:x.id}))},
+    {col:'#5f7d3f',items:d.miesta.map(x=>({t:'',sub:x.nazov.replace(' — MIESTO ČINU',''),go:'m-'+x.id}))},
+    {col:'#5b4934',items:d.cas.map(x=>({t:'',sub:x.cas,go:null}))}
+  ].filter(g=>g.items.length);
+  const W=980,H=700,cx=W/2,cy=H/2,CR=58;
+  const flat=[];
+  groups.forEach(g=>g.items.forEach(it=>{const L=(it.sub||it.t||'').length;
+    flat.push({...it,col:g.col,w:it.foto?1.8:Math.max(.75,Math.min(2.1,0.5+L/15))});}));
+  const totalW=flat.reduce((a,x)=>a+x.w,0)||1;
+  let acc=0, nodes='', links='', defs='';
+  flat.forEach((it,i)=>{
+    const a=-Math.PI/2+((acc+it.w/2)/totalW)*2*Math.PI; acc+=it.w;
+    const stag=it.foto?1:(i%2?0.84:1.02);
+    const x=cx+(it.foto?330:352)*Math.cos(a), y=cy+(it.foto?250:268)*Math.sin(a)*stag;
+    links+=`<path d="M${cx} ${cy} Q${((cx+x)/2).toFixed(1)} ${((cy+y)/2+(cy-y)*0.08).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}"
+      fill="none" stroke="${it.col}" stroke-width="1.5" opacity=".4"/>`;
+    if(it.foto){
+      defs+=`<clipPath id="hcp-${it.pid}"><circle cx="0" cy="0" r="25"/></clipPath>`;
+      nodes+=`<g class="node" data-hubgo="${it.go}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})">
+        <circle class="bg" r="25" fill="#3a2d1d" stroke="${it.col}" stroke-width="2.5"/>
+        <image href="${it.foto}" x="-25" y="-25" width="50" height="50" preserveAspectRatio="xMidYMin slice" clip-path="url(#hcp-${it.pid})"/>
+        <circle r="25" fill="none" stroke="${it.col}" stroke-width="2.5"/>
+        <text y="41" text-anchor="middle" font-family="Cinzel,serif" font-size="12.5" fill="#2a1e14">${esc(it.t)}</text>
+        <text y="55" text-anchor="middle" font-family="EB Garamond,serif" font-size="11.5" fill="${it.col}">${esc(it.sub)}</text></g>`;
+    } else {
+      const lab=(it.sub||it.t);
+      const w=Math.max(58,Math.min(168,Math.min(lab.length,24)*6.3+22));
+      nodes+=`<g class="node" ${it.go?`data-goto="${it.go}"`:''} transform="translate(${x.toFixed(1)},${y.toFixed(1)})">
+        <rect class="bg" x="${(-w/2).toFixed(1)}" y="-15" width="${w.toFixed(1)}" height="30" rx="2" fill="#f7efdb" stroke="${it.col}" stroke-width="1.6"/>
+        <text y="5" text-anchor="middle" font-family="EB Garamond,serif" font-size="13" fill="#2a1e14">${esc(lab.length>24?lab.slice(0,23)+'…':lab)}</text>
+        ${it.t?`<text y="-21" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10.5" fill="${it.col}">${esc(it.t)}</text>`:''}</g>`;
+    }
+  });
+  const center=`<g transform="translate(${cx},${cy})">
+    <circle r="${CR}" fill="#3a2d1d" stroke="#8f2d20" stroke-width="5"/>
+    <image href="${fotoOf(id)}" x="${-CR}" y="${-CR}" width="${CR*2}" height="${CR*2}" preserveAspectRatio="xMidYMin slice" clip-path="url(#hub-center)"/>
+    <circle r="${CR}" fill="none" stroke="#8f2d20" stroke-width="5"/>
+    <text y="${CR+24}" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="700" fill="#2a1e14">${esc(first(id))}</text></g>`;
+  return `<svg class="hub" viewBox="0 0 ${W} ${H}" role="img" aria-label="Mapa súvislostí">
+    <defs>${defs}<clipPath id="hub-center"><circle cx="0" cy="0" r="${CR}"/></clipPath></defs>
+    ${links}${center}${nodes}</svg>`;
+}
+function renderSuvislosti(){
+  if(!hubId) hubId=DATA.obet.id;
+  const d=hubData(hubId);
+  const all=DATA.postavy.concat([DATA.obet]);
+  const card=(ic,title,items)=>items.length?`<div class="linkcard"><h4>${svg(ic)}${title}</h4><ul>${items.join('')}</ul></div>`:'';
+  $('#v-suvislosti').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Súvislosti</h2>
+    <p class="lede">Vyber postavu a uvidíš všetko, čo sa jej dotýka — koho obviňuje, ktoré dôkazy na ňu ukazujú, kde bola a kedy. Klikni na tvár v schéme a mapa sa prekreslí okolo nej.</p></div>
+  <div class="picker noprint">${all.map(x=>`<button class="pick" data-hub="${x.id}" aria-pressed="${x.id===hubId}">
+    <img class="ph" src="${x.foto}" alt="" loading="lazy"><span class="lbl">${esc(first(x.id))}</span></button>`).join('')}</div>
+  <div class="hubwrap">${hubSvg(hubId)}</div>
+
+  <div class="linkcols">
+    ${card('people','Väzby na ľudí', d.postavy.map(x=>
+      `<li><span class="ilink" data-hub2="${x.id}">${esc(first(x.id))}</span>
+        <span class="quiet"> · ${esc(x.vzt)}</span><div class="xs quiet">${esc(x.popis)}</div></li>`))}
+    ${card('glass','Dôkazy, ktoré sa jej týkajú', d.dokazy.map(x=>
+      `<li><span class="k">${esc(x.cas)}</span><span class="ilink" data-goto="${x.id}">${esc(x.nazov)}</span>
+        <div class="xs quiet">${esc(x.dokazuje).slice(0,130)}…</div></li>`))}
+    ${card('map','Miesta', d.miesta.map(x=>
+      `<li><span class="ilink" data-goto="m-${x.id}">${esc(x.nazov.replace(' — MIESTO ČINU',''))}</span></li>`))}
+    ${card('clock','Kľúčové hodiny', d.cas.map(x=>
+      `<li><span class="k">${esc(x.cas)}</span>${x.den==='pon'?'<span class="quiet xs">(po) </span>':''}${esc(x.text)}</li>`))}
+    ${card('doc','Spomína sa v listinách', d.dokumenty.map(x=>
+      `<li><span class="ilink" data-goto="${x.id}">${esc(x.nazov)}</span></li>`))}
+  </div>
+  ${nextNav('suvislosti')}</div>`;
+  const go=id=>{hubId=id;renderSuvislosti();window.scrollTo({top:0});};
+  $$('#v-suvislosti [data-hub]').forEach(b=>b.onclick=()=>go(b.dataset.hub));
+  $$('#v-suvislosti [data-hub2]').forEach(b=>b.onclick=()=>go(b.dataset.hub2));
+  $$('#v-suvislosti [data-hubgo]').forEach(b=>b.onclick=()=>go(b.dataset.hubgo));
+  wireNext($('#v-suvislosti'));
+}
+
+/* ===================== MAPA ===================== */
+function renderMapa(){
+  const m=DATA.mapa;
+  $('#v-mapa').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Mapa Lesovíc</h2>
+    <p class="lede">Trinásť miest. Klikni na číslo a uvidíš, čo sa tam v deň vraždy dialo.</p></div>
+  <div class="mapframe" id="mapframe"><img src="${m.obrazok}" alt="Mapa Lesovíc">
+    ${m.body.map((b,i)=>`<button class="pin${b.id==='agnes-dom'?' crime':''}" style="left:${b.x}%;top:${b.y}%"
+      data-pin="${b.id}" aria-pressed="false" title="${esc(b.nazov)}">${i+1}</button>`).join('')}</div>
+  <div id="mapinfo"></div>
+  <div class="placelist">${m.body.map((b,i)=>`<div class="leaf tight" id="m-${b.id}">
+    <div class="rubric">${ROMAN[i+1]} · ${b.id==='agnes-dom'?'Miesto činu':'Miesto'}</div>
+    <h3 style="font-size:18.5px;margin-bottom:6px">${esc(b.nazov.replace(' — MIESTO ČINU',''))}</h3>
+    ${b.postavy.length?`<p class="xs quiet" style="margin:0 0 8px">${b.postavy.map(x=>esc(first(x))).join(' · ')}</p>`:''}
+    <div class="blk" style="margin:0"><ul>${b.udalosti.map(u=>`<li class="xs">${esc(u)}</li>`).join('')}</ul></div></div>`).join('')}</div>
+  ${nextNav('mapa')}</div>`;
+  $$('#v-mapa [data-pin]').forEach(btn=>btn.onclick=()=>{
+    $$('#v-mapa .pin').forEach(x=>x.setAttribute('aria-pressed',x===btn?'true':'false'));
+    const b=m.body.find(x=>x.id===btn.dataset.pin);
+    $('#mapinfo').innerHTML=`<div class="leaf" style="margin-top:16px"><div class="rubric">Na mieste</div>
+      <h3 style="font-size:20px;margin-bottom:10px">${esc(b.nazov)}</h3>
+      <div class="blk" style="margin:0"><ul>${b.udalosti.map(u=>`<li>${esc(u)}</li>`).join('')}</ul></div>
+      ${b.postavy.length?`<p class="sm" style="margin:12px 0 0">${b.postavy.map(x=>ilink(x)).join(' · ')}</p>`:''}</div>`;
+  });
+  wireNext($('#v-mapa'));
+}
+
+/* ===================== ČASOVÁ OS ===================== */
+let tlWho='all', tlKey=false;
+function renderOs(){
+  const co=DATA.casovaOs;
+  let h=`<div class="wrap"><div class="pagehead"><h2>Časová os</h2>
+    <p class="lede">Kto bol kde, hodinu po hodine. Červený riadok o 18:30 je vražda.</p></div>
+  <div class="tools noprint">
+    <button class="chip" data-who="all" aria-pressed="${tlWho==='all'}">Všetci</button>
+    ${co.poradie.map(id=>`<button class="chip" data-who="${id}" aria-pressed="${tlWho===id}">${esc(first(id))}</button>`).join('')}
+    <button class="chip rub" data-key="1" aria-pressed="${tlKey}">Len kľúčové</button></div>`;
+  co.dni.forEach(d=>{
+    const rows=co.zaznamy.filter(z=>z.den===d.id).filter(z=>!tlKey||z.klic).filter(z=>tlWho==='all'||z.r[tlWho]);
+    if(!rows.length) return;
+    const cols=tlWho==='all'?co.poradie:[tlWho];
+    h+=`<div class="dayhead">${esc(d.nazov)}</div>
+    <div class="tablewrap"><table class="tl">
+      <thead><tr><th class="time">Čas</th>${cols.map(c=>`<th>${esc(first(c))}</th>`).join('')}</tr></thead>
+      <tbody>${rows.map(z=>{const murder=z.cas==='18:30'&&z.den==='ned';
+        return `<tr class="${murder?'murder':(z.klic?'key':'')}"><td class="time">${z.cas}</td>${
+          cols.map(c=>`<td>${z.r[c]?esc(z.r[c]):''}</td>`).join('')}</tr>`;}).join('')}</tbody></table></div>
+    <div class="tlcards">${rows.map(z=>{const murder=z.cas==='18:30'&&z.den==='ned';
+      return `<div class="tlcard${murder?' murder':''}"><div class="h">${z.cas}${z.klic?' ✦':''}</div>
+        ${cols.filter(c=>z.r[c]).map(c=>`<p><b>${esc(first(c))}</b> — ${esc(z.r[c])}</p>`).join('')}</div>`;}).join('')}</div>`;
+  });
+  h+=nextNav('os')+`</div>`;
+  $('#v-os').innerHTML=h;
+  $$('#v-os [data-who]').forEach(b=>b.onclick=()=>{tlWho=b.dataset.who;renderOs();});
+  $$('#v-os [data-key]').forEach(b=>b.onclick=()=>{tlKey=!tlKey;renderOs();});
+  wireNext($('#v-os'));
+}
+
+/* ===================== DÔKAZY ===================== */
+function renderDokazy(){
+  $('#v-dokazy').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Dôkazy</h2>
+    <p class="lede">Trinásť dôkazov v poradí, v akom ich brat Martin počas večera vypúšťa.</p></div>
+  ${DATA.dokazy.map(d=>`<div class="ev ${d.typ.includes('Kľúčový')?'key':''}" id="ev-${d.id}">
+    <span class="em">${svg(EV_ICON(d))}</span>
+    <div class="body">
+      <div class="hd"><span class="tm">${esc(d.cas)}</span><span class="nm">${esc(d.nazov)}</span><span class="ty">${esc(d.typ)}</span></div>
+      <p class="sm quiet" style="margin:0 0 8px">${esc(d.kde)}</p>
+      <p class="sm" style="margin:0">${esc(d.dokazuje)}</p>
+      ${d.obrazok?`<img src="${d.obrazok}" alt="${esc(d.nazov)}" style="max-width:220px;margin-top:12px;border:1px solid var(--rule)">`:''}
+      ${(d.postavy&&d.postavy.length)||d.dokument?`<div class="linkline">${(d.postavy||[]).map(x=>ilink(x)).join(' · ')}
+        ${d.dokument?`${d.postavy&&d.postavy.length?' &nbsp;·&nbsp; ':''}<span class="ilink" data-goto="${d.dokument}">čítať dokument →</span>`:''}</div>`:''}
+    </div></div>`).join('')}
+  ${nextNav('dokazy')}</div>`;
+  wireNext($('#v-dokazy'));
+}
+
+/* ===================== DOKUMENTY ===================== */
+function renderDokumenty(){
+  $('#v-dokumenty').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Dokumenty</h2>
+    <p class="lede">Plné znenie všetkého, čo tímy počas večera dostanú do rúk.</p></div>
+  <div class="doclist noprint">${DATA.dokumenty.map(d=>`<button class="chip" data-goto="${d.id}">${esc(d.nazov)}</button>`).join('')}</div>
+  <div class="stack">${DATA.dokumenty.map(d=>`<div class="sheet" id="doc-${d.id}">
+    <h3>${esc(d.nazov)}</h3><p class="sub">${esc(d.podnazov||'')}</p>
+    <div class="txt">${esc(d.text)}</div></div>`).join('')}</div>
+  ${nextNav('dokumenty')}</div>`;
+  wireNext($('#v-dokumenty'));
+}
+
+/* ===================== RIEŠENIE ===================== */
+function renderRiesenie(){
+  const r=DATA.riesenie;
+  $('#v-riesenie').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Riešenie</h2><p class="lede">Celé rozuzlenie — kto, prečo a ako sa k tomu tímy dopracujú.</p></div>
+  <div class="callout"><p><b>Pozor:</b> táto sekcia obsahuje kompletné riešenie vrátane páchateľa.</p></div>
+  <div class="leaf" style="border-left:4px solid var(--rub);display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+    <img class="ph" src="${fotoOf('agnes')}" alt="" style="width:110px;aspect-ratio:3/3.6;object-fit:cover;object-position:center 15%;border:1px solid var(--rule);flex:none">
+    <div style="flex:1;min-width:240px"><div class="rubric">Verdikt</div>
+      <p style="font-size:1.06em;max-width:none;margin:0">${esc(r.zhrnutie)}</p></div></div>
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h3>Reťaz dôkazov</h3><p class="lede">Osem krokov od tela k Agnes.</p></div>
+  <div class="cols">${r.kroky.map((k,i)=>`<div class="leaf tight">
+    <div class="rubric">Krok ${ROMAN[i+1]}</div>
+    <h3 style="font-size:18.5px;margin-bottom:6px">${esc(k.nadpis.replace(/^\d+\.\s*/,''))}</h3>
+    <p class="sm" style="margin:0;max-width:none">${esc(k.text)}</p></div>`).join('')}</div>
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h3>Falošné stopy</h3><p class="lede">Desať smerov, ktorými sa tímy vydajú — a prečo nevedú k cieľu.</p></div>
+  <div class="cols">${r.falosneStopy.map(f=>`<div class="leaf tight">
+    <div class="rubric">Falošná stopa</div>
+    <h3 style="font-size:17.5px;margin-bottom:6px">${esc(f.nazov)}</h3>
+    <p class="sm" style="margin:0;max-width:none">${esc(f.text)}</p></div>`).join('')}</div>
+  ${nextNav('riesenie')}</div>`;
+  wireNext($('#v-riesenie'));
+}
+
+/* ===================== RÉŽIA + SCENÁR ===================== */
+const LS='kliatba-rekvizity-v2', LSS='kliatba-scenar-v1';
+const loadJ=k=>{try{return JSON.parse(localStorage.getItem(k))||{}}catch(e){return{}}};
+const saveJ=(k,o)=>{try{localStorage.setItem(k,JSON.stringify(o))}catch(e){}};
+function renderRezia(){
+  const done=loadJ(LS), sdone=loadJ(LSS);
+  DATA.rekvizity.forEach((r,i)=>{if(!(i in done)) done[i]=!!r.hotovo;});
+  const n=DATA.rekvizity.length,k=Object.values(done).filter(Boolean).length;
+  const pts=DATA.dotaznik.reduce((a,x)=>a+x.body,0);
+  const sc=DATA.scenar;
+
+  $('#v-rezia').innerHTML=`<div class="wrap">
+  <div class="pagehead"><h2>Réžia</h2>
+    <p class="lede">Všetko, čo počas večera potrebuje brat Martin — moderátor hry.</p></div>
+
+  ${sc?`
+  <div class="leaf" style="margin-bottom:20px"><div class="rubric">Kto je brat Martin</div>
+    <p style="margin:0;max-width:none">${esc(sc.kto)}</p></div>
+
+  <div class="cols" style="margin-bottom:20px">
+    <div class="leaf"><div class="rubric">Zlaté pravidlá moderátora</div>
+      <div class="blk" style="margin:0"><ul>${sc.zlatePravidla.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>
+    <div class="leaf"><div class="rubric">Príprava pred príchodom tímov</div>
+      <div class="blk" style="margin:0"><ul>${sc.priprava.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>
+  </div>
+
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h2>Priebeh hry krok za krokom</h2>
+    <p class="lede">Čo odovzdať, kedy, komu a čo pri tom povedať. Odškrtnutie sa ukladá v tomto prehliadači.</p></div>
+  ${sc.kroky.map((s,i)=>`<div class="step${i===sc.kroky.length-1?' final':''}">
+    <div class="when">${esc(s.cas)}<div class="noprint" style="margin-top:8px">
+      <input type="checkbox" data-step="${i}" ${sdone[i]?'checked':''} aria-label="hotovo"></div></div>
+    <div>
+      <h3>${esc(s.nadpis)}</h3>
+      <div class="what"><b>Odovzdať:</b> ${esc(s.co)}</div>
+      <dl>
+        <dt>Komu</dt><dd>${esc(s.komu)}</dd>
+        <dt>Čo povedať</dt><dd>${esc(s.ako)}</dd>
+        <dt>Čo tým otvoríš</dt><dd>${esc(s.otvara)}</dd>
+      </dl>
+    </div></div>`).join('')}
+
+  <div class="callout" style="margin-top:22px"><p><b>Na čo si dať pozor</b></p>
+    <ul>${sc.poznamky.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+  <div class="orn"><span>❦</span></div>`:''}
+
+  <div class="cols">
+    <div class="leaf"><div class="rubric">Harmonogram v skratke</div>
+      <table class="sched"><tbody>${DATA.harmonogram.map(x=>
+        `<tr><td class="t">${esc(x.cas)}</td><td>${esc(x.co)}<div class="xs quiet">${esc(x.kto)}</div></td></tr>`).join('')}</tbody></table></div>
+    <div class="leaf"><div class="rubric">Výstupný dotazník — ${pts} bodov</div>
+      <table class="qz"><tbody>${DATA.dotaznik.map(d=>
+        `<tr><td>${esc(d.otazka)}<div class="ans">${esc(d.odpoved)}</div></td><td class="pt">${d.body} b.</td></tr>`).join('')}</tbody></table></div></div>
+
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h3>Rekvizity</h3><p class="lede">${k} z ${n} hotových.</p></div>
+  <div class="bar"><i style="width:${Math.round(k/n*100)}%"></i></div>
+  <div class="tools noprint">
+    <button class="chip" data-rf="all" aria-pressed="true">Všetko</button>
+    <button class="chip" data-rf="must" aria-pressed="false">Must-have</button>
+    <button class="chip rub" data-rf="todo" aria-pressed="false">Ešte chýba</button></div>
+  <div class="tablewrap" style="display:block"><table class="props" id="props">
+    <thead><tr><th style="width:34px"></th><th>Rekvizita</th><th>Popis</th><th>Ks</th><th>Odkiaľ</th><th>Priorita</th></tr></thead>
+    <tbody>${DATA.rekvizity.map((r,i)=>`<tr data-pri="${esc(r.priorita)}" data-done="${done[i]?1:0}" class="${done[i]?'done':''}">
+      <td><input type="checkbox" data-idx="${i}" ${done[i]?'checked':''} aria-label="${esc(r.nazov)}"></td>
+      <td><b>${esc(r.nazov)}</b><div class="xs quiet">${esc(r.typ)}</div></td>
+      <td class="sm">${esc(r.popis)}</td><td>${r.ks||'—'}</td><td class="sm">${esc(r.odkial)}</td>
+      <td class="sm">${esc(r.priorita)}</td></tr>`).join('')}</tbody></table></div>
+
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h3>Kontrola konzistencie</h3>
+    <p class="lede">Prepočítava sa pri každom načítaní webu.</p></div>
+  <div id="checks"></div>
+  ${nextNav('rezia')}</div>`;
+
+  $$('#v-rezia input[data-idx]').forEach(cb=>cb.onchange=()=>{
+    const d=loadJ(LS); d[cb.dataset.idx]=cb.checked; saveJ(LS,d); renderRezia();});
+  $$('#v-rezia input[data-step]').forEach(cb=>{
+    if(cb.checked) cb.closest('.step').style.opacity='.55';
+    cb.onchange=()=>{const d=loadJ(LSS); d[cb.dataset.step]=cb.checked; saveJ(LSS,d);
+      cb.closest('.step').style.opacity=cb.checked?'.55':'';};});
+  $$('#v-rezia [data-rf]').forEach(b=>b.onclick=()=>{
+    $$('#v-rezia [data-rf]').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+    const f=b.dataset.rf;
+    $$('#props tbody tr').forEach(tr=>{tr.style.display=
+      (f==='all'||(f==='must'&&tr.dataset.pri==='Must-have')||(f==='todo'&&tr.dataset.done==='0'))?'':'none';});});
+  runChecks(); wireNext($('#v-rezia'));
+}
+function runChecks(){
+  const out=[];
+  const M={'január':1,'február':2,'marec':3,'apríl':4,'máj':5,'jún':6,'júl':7,'august':8,'september':9,'október':10,'november':11,'december':12};
+  DATA.postavy.forEach(p=>{
+    if(!p.foto) out.push(`<b>${esc(p.meno)}</b> nemá priradenú fotku.`);
+    const m=/(\d{1,2})\.\s*([a-záäčďéíĺľňóôŕšťúýž]+)\s*(\d{4})/i.exec(p.narodenie||''); if(!m) return;
+    const mo=M[m[2].toLowerCase()]; if(!mo) return;
+    let age=1503-(+m[3]); if(mo>10||(mo===10&&+m[1]>23)) age--;
+    if(age!==p.vek) out.push(`<b>${esc(p.meno)}</b>: uvedený vek ${p.vek}, z dátumu narodenia vychádza k 23. 10. 1503 vek ${age}.`);
+  });
+  const ids=new Set(Object.keys(P));
+  DATA.postavy.forEach(p=>['vztahy','obvinuje','chrani'].forEach(k=>(p[k]||[]).forEach(r=>{
+    if(!ids.has(r.kto)) out.push(`<b>${esc(p.meno)}</b> → odkaz na neznámu postavu „${esc(r.kto)}“.`);})));
+  DATA.dokazy.forEach(d=>{(d.postavy||[]).forEach(x=>{if(!ids.has(x)) out.push(`Dôkaz „${esc(d.nazov)}“ → neznáma postava.`)});
+    if(d.dokument&&!DATA.dokumenty.some(k=>k.id===d.dokument)) out.push(`Dôkaz „${esc(d.nazov)}“ → neznámy dokument.`);});
+  DATA.mapa.body.forEach(b=>(b.postavy||[]).forEach(x=>{if(!ids.has(x)) out.push(`Bod mapy „${esc(b.nazov)}“ → neznáma postava.`)}));
+  DATA.casovaOs.zaznamy.forEach(z=>Object.keys(z.r).forEach(x=>{if(!ids.has(x)) out.push(`Časová os ${esc(z.cas)} → neznáma postava „${esc(x)}“.`)}));
+  const pts=DATA.dotaznik.reduce((a,x)=>a+x.body,0);
+  if(pts!==18) out.push(`Výstupný dotazník má spolu ${pts} bodov — v pravidlách sa uvádza 18.`);
+  DATA.postavy.forEach(p=>{
+    const t=DATA.casovaOs.zaznamy.filter(z=>z.den==='ned'&&z.r[p.id]).map(z=>z.cas);
+    if(!t.length){out.push(`<b>${esc(p.meno)}</b> nemá v časovej osi ani jeden záznam.`);return;}
+    if(t[t.length-1]<'18:00') out.push(`<b>${esc(p.meno)}</b>: posledný nedeľný záznam je o ${t[t.length-1]}.`);});
+  DATA.dokazy.filter(d=>/^\d{2}:\d{2}$/.test(d.cas)).forEach(d=>{
+    if(!DATA.harmonogram.some(h=>h.cas===d.cas)) out.push(`Dôkaz „${esc(d.nazov)}“ má čas ${esc(d.cas)}, ale v harmonograme taký čas nie je.`);});
+  if(DATA.scenar) DATA.scenar.kroky.forEach(s=>{
+    if(!DATA.harmonogram.some(h=>h.cas===s.cas)) out.push(`Krok scenára „${esc(s.nadpis)}“ (${esc(s.cas)}) nemá páru v harmonograme.`);});
+  if(DATA.uvod) DATA.uvod.podozrivi.forEach(x=>{
+    if(!P[x.id]) out.push(`Podozrivý v zadaní „${esc(x.meno)}“ nemá páru medzi postavami.`);});
+  $('#checks').innerHTML=out.length
+    ?`<div class="callout"><p><b>${out.length} vec${out.length===1?'':(out.length<5?'i':'í')} na pozretie:</b></p><ul>${out.map(x=>`<li>${x}</li>`).join('')}</ul></div>`
+    :`<div class="callout ok"><p><b>Všetko sedí.</b> Veky, fotky, odkazy medzi postavami, dôkazmi, mapou a časovou osou, harmonogram, scenár aj bodovanie dotazníka sú v poriadku.</p></div>`;
+}
+
+/* ===================== HĽADANIE ===================== */
+let INDEX=[];
+function buildIndex(){
+  const add=(kde,nadpis,text,goto)=>INDEX.push({kde,nadpis,text:String(text||''),goto});
+  DATA.pribeh.forEach(k=>add('Príbeh',k.nadpis,k.text.join(' '),k.id));
+  DATA.postavy.concat([DATA.obet]).forEach(p=>add('Postava',p.meno,[p.rola,p.opis,p.motiv,p.vztahSObetou,
+    (p.vlastnosti||[]).join(' '),(p.vzdyHovori||[]).join(' '),(p.taji||[]).join(' '),
+    (p.faq||[]).map(f=>f.q+' '+f.a).join(' '),
+    (p.vztahy||[]).map(r=>nameOf(r.kto)+' '+r.popis).join(' ')].join(' '),p.id));
+  if(DATA.uvod){ DATA.uvod.podozrivi.forEach(x=>add('Zadanie prípadu',x.meno,x.povolanie+' '+x.text,x.id));
+    add('Zadanie prípadu','Obeť — '+DATA.uvod.obet.meno,DATA.uvod.obet.text.join(' '),DATA.obet.id);
+    add('Zadanie prípadu','Úvod pre tímy',DATA.uvod.intro.join(' '),null); }
+  DATA.pozadie.forEach(x=>add('Postava v pozadí',x.meno,x.rola+' '+x.text,null));
+  (DATA.momenty||[]).forEach(x=>add('Moment',x.cas+' — '+x.nadpis,x.text,null));
+  DATA.mapa.body.forEach(b=>add('Mapa',b.nazov,b.udalosti.join(' '),'m-'+b.id));
+  DATA.dokazy.forEach(d=>add('Dôkaz',d.nazov,[d.cas,d.typ,d.kde,d.dokazuje].join(' '),d.id));
+  DATA.dokumenty.forEach(d=>add('Dokument',d.nazov,d.text,d.id));
+  DATA.rekvizity.forEach(r=>add('Rekvizita',r.nazov,[r.popis,r.odkial,r.postava].join(' '),null));
+  if(DATA.scenar) DATA.scenar.kroky.forEach(s=>add('Scenár',s.cas+' — '+s.nadpis,[s.co,s.komu,s.ako,s.otvara].join(' '),null));
+  DATA.riesenie.kroky.forEach(k=>add('Riešenie',k.nadpis,k.text,null));
+  DATA.riesenie.falosneStopy.forEach(f=>add('Falošná stopa',f.nazov,f.text,null));
+  DATA.dotaznik.forEach(d=>add('Dotazník',d.otazka,d.odpoved,null));
+  DATA.casovaOs.zaznamy.forEach(z=>Object.keys(z.r).forEach(id=>add('Časová os',`${z.cas} — ${nameOf(id)}`,z.r[id],id)));
+}
+function doSearch(qv){
+  const term=qv.trim().toLowerCase();
+  if(term.length<2){ if(view==='hladanie') show('prehlad'); return; }
+  const hits=INDEX.map(x=>{const i=(x.nadpis+' '+x.text).toLowerCase().indexOf(term);
+    return i<0?null:{...x,score:x.nadpis.toLowerCase().includes(term)?0:1};})
+    .filter(Boolean).sort((a,b)=>a.score-b.score).slice(0,60);
+  const rx=new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+  $('#hitbox').innerHTML=`<div class="pagehead"><h2>Hľadanie</h2>
+    <p class="lede">${hits.length?hits.length+' výsledkov pre „'+esc(qv)+'“':'Pre „'+esc(qv)+'“ sa nič nenašlo.'}</p></div>`+
+    hits.map(h=>{const t=h.text,i=t.toLowerCase().indexOf(term),from=Math.max(0,i-90);
+      const snip=(from>0?'… ':'')+t.slice(from,i+term.length+150)+(i+150<t.length?' …':'');
+      return `<div class="hit" ${h.goto?`data-goto="${h.goto}"`:''}>
+        <div class="w">${esc(h.kde)}</div><div class="h">${esc(h.nadpis)}</div>
+        <p class="sm quiet">${esc(snip).replace(rx,'<mark>$1</mark>')}</p></div>`;}).join('');
+  $$('main > section').forEach(s=>s.hidden=true);
+  $('#v-hladanie').hidden=false;
+  $$('[data-tab]').forEach(a=>a.setAttribute('aria-current','false'));
+  view='hladanie';
+}
+
+/* ===================== init ===================== */
+buildNav();
+renderPrehlad(); renderPripad(); renderPribeh(); renderPostavy(); renderMapa();
+renderOs(); renderSuvislosti(); renderDokazy(); renderDokumenty(); renderRiesenie(); renderRezia();
+buildIndex();
+$('#sbtn').onclick=()=>{const r=$('#searchrow');r.classList.toggle('on');if(r.classList.contains('on'))$('#q').focus();};
+let tmr=null;
+$('#q').addEventListener('input',e=>{clearTimeout(tmr);tmr=setTimeout(()=>doSearch(e.target.value),140);});
+addEventListener('scroll',()=>$('#topbar').classList.toggle('solid',scrollY>10),{passive:true});
+const readHash=()=>{const h=(location.hash||'#prehlad').slice(1).split('/');show(h[0],h[1]);};
+addEventListener('hashchange',readHash);
+readHash();
+</script>
+</body>
+</html>
