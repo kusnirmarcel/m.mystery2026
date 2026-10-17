@@ -37,44 +37,6 @@ meta: {
 },
 
 /* ------------------------------------------------------------------ */
-/* ÚVODNÉ TEXTY — bez spoilerov. Toto vidia aj tímy.                   */
-uvod: {
-  intro: [
-    "Rok 1503. Dedina Lesovice sa ešte stále spamätáva z morovej epidémie, ktorá pred vyše dvadsiatimi rokmi pripravila o život mnohých jej obyvateľov. Čierna smrť, úmor veliký, vtedy preriedila ich rady a mnohých pripravila o rodičov či manželov.",
-    "Lesovičania žijú v strachu z povier, ktorý ešte umocnil mor a podozrenie, že medzi nimi žije čarodejnica.",
-    "Navonok je to pokojná, ničím výnimočná dedina. V srdciach jej obyvateľov to však hnije a takmer každý z nich si stráži nejaké tajomstvo.",
-    "Teraz miestnych zachvátil nový strach. Tamojšieho richtára našli mŕtveho s prerezaným hrdlom a medzi dedinčanmi sa začínajú šíriť reči o čarodejníctve. Z vraždy aj dávnej morovej nákazy obviňujú ženu, ktorá vraj uzavrela pakt s diablom a privolala na dedinu kliatbu.",
-    "Biskup vás preto vysiela do Lesovíc, aby ste oddelili zrno pravdy od pliev babských povier. Je za smrťou richtára skutočne temná mágia, alebo sa niekto pokúša ukryť svoj zločin za strach a povery? Kto zavraždil richtára a prečo? A je obvinená žena skutočne čarodejnica, alebo len obeťou poverčivosti?"
-  ],
-  obet: {
-    meno: "Tadeus Schwarzenberg", vek: 30, povolanie: "richtár lesovický",
-    text: [
-      "Tadeus sa narodil v Lesoviciach ako syn richtára Helmuta Schwarzenberga. Mor, ktorý sa dedinou prehnal, keď bol ešte chlapec, mu navždy ostal v pamäti. Vyrastal medzi čerstvými hrobmi a prázdnymi domami. Možno aj preto sa už ako mladík tak pevne primkol k viere a k poriadku.",
-      "Otec ho odmalička pripravoval na svoj úrad. Brával ho so sebou, keď vyberal dávky pre zemepána, obchádzal hranice polí a rozsudzoval spory medzi susedmi. Keď Tadeus úrad richtára prevzal, viedol dedinu v otcovom duchu. Zastupoval ju pred zemepánom, dohliadal na poriadok, vyberal poplatky a riešil drobné krivdy, od zatúlaného dobytka až po nesplatené dlhy. Ľudia si ho vážili ako spravodlivého a zásadového muža, ktorý dal viac na Božie prikázania než na reči v šenku.",
-      "Bol zbožný až prísne. Na omši nechýbal a modlil sa ráno i večer. Ctil si ako Boha, tak aj svojich blízkych. Okolo krku vždy nosil krížik a na znak úcty nikdy nesnímal prsteň, dar od otca. Pitiu sa vyhýbal, v šenku ho bolo vídať len zriedka a o zábavu veľmi nestál.",
-      "S peniazmi narábal opatrne, až šetrne, a úspory držal doma v zamknutej truhlici. Navonok pôsobil pokojne a zdržanlivo. Kto ho však poznal bližšie, vedel, že keď ho niečo zraní, dokáže vzkypieť hnevom, z ktorého sa potom kajá.",
-      "V nedeľu 22. októbra chýbal na rannej omši, podľa ľudí po prvý raz v živote. V pondelok 23. októbra okolo siedmej ráno ho našli mŕtveho v kroví za šenkom, na brehu rieky, s ranou na hrdle. Čo sa s cnostným richtárom v posledný deň jeho života stalo, zatiaľ nevie nikto."
-    ]
-  },
-  podozrivi: [
-    { id: "benedikt", meno: "Otec Benedikt Muntz", povolanie: "miestny duchovný",
-      text: "Vzdelaný kňaz, ktorý sa stal farárom v Lesoviciach po smrti otca Ondreja. V kázňach hovorí o kliatbe čarodejnice, ktorú vraj na dedinu uvalila, a vyzýva veriacich, aby sa od bylinkárky Grety dištancovali, ako aj od hriechu vo všetkých podobách. Nepriamo často poukazuje na skazenosť samotných Lesovičanov, keďže ako znalec hriechov pozná mnohé ich tajomstvá." },
-    { id: "greta", meno: "Greta", povolanie: "bylinkárka",
-      text: "Mladá samotárka, ktorú dedinčania odvrhujú a majú za bosorku. Greta im to nijako neuľahčuje: je drzá, uštipačná a o dedinčanov nemá záujem. Svojím správaním ich zámerne straší, aby si ich nepripúšťala k telu. Do dediny chodí len po jačmeň do mlyna, inak si vystačí sama." },
-    { id: "ester", meno: "Ester Schwarzenberg", povolanie: "richtárova vdova",
-      text: "Rodičov jej vzal mor, keď mala dva roky. Prichýlila ju rodina Schwarzenbergovcov, a keď dospela, vydala sa za ich syna Tadeusa. Je emotívna, ľahko prepadne hystérii a správa sa povýšenecky. Ako mnohí v Lesoviciach, aj ona sa bojí Grety a verí, že je bosorka." },
-    { id: "viliam", meno: "Viliam König", povolanie: "drevorubač",
-      text: "Statný, no nesmierne tichý chlap, ktorý chodí s hlavou večne sklopenou. Osirel, keď zúril mor, a odvtedy býva sám. Žije pre dve veci: prácu a alkohol. Že je pijan, vie celá dedina, do kostola však chodí. Práve on v pondelok ráno našiel richtárovo telo." },
-    { id: "agnes", meno: "Agnes Schultz", povolanie: "vdova",
-      text: "Chudobná vdova, ktorej mor vzal manžela skôr, než stihli mať dieťa. Ostala zatrpknutá, závistlivá a poverčivá. Veľa kričí, súdi a prežehnáva sa na každom rohu. V kostole je vždy prvá a kázne hltá bez kritiky a pochybností. Nesmierne sa bojí čarodejníctva, šenk odsudzuje, lebo podnecuje k hriechu, a pitie má za ťažký hriech." },
-    { id: "karol", meno: "Karol Kolmann", povolanie: "krčmár a mlynár",
-      text: "Nalieva celej dedine a stará sa najmä o to, aby si namastil kapsy. Okrem šenku vedie aj mlyn, jačmeň a pšenicu predáva do každej domácnosti a vo veľkom vyrába pivo. Nebudí dobrý dojem, pôsobí zákerne a ľudia si naňho dávajú pozor. Je samotár. V nedeľu ráno mu richtár pred kostolom vrazil do tváre a zlomil mu nos." },
-    { id: "moritz", meno: "Moritz Hüter", povolanie: "bača",
-      text: "Prostoduchý mladík, ktorému sa celý svet točí okolo oviec, a zo všetkých najviac okolo Vilmy, jeho najmilšej. Nie je rodák z Lesovíc: ako malý chlapec sa raz vynoril z lesa, celý špinavý, a natrafil na Agnes Schultz. Odkiaľ prišiel, nevie nikto. Ovce pasie a stráži, a keď príde čas, mäso spracuje pre celú dedinu. Mnohí ho pre jeho jednoduchosť ľutujú. Agnes je preňho ako mama a Viliam ako starší brat." }
-  ]
-},
-
-/* ------------------------------------------------------------------ */
 pribeh: [
   {
     id: "mor",
@@ -163,8 +125,8 @@ pribeh: [
     nadpis: "IX. Zahladzovanie stôp",
     text: [
       "Keď šok a hrôza nad tým, čo urobila, opadli, Agnes začala zakrývať stopy. Vyzliekla Tadeusovo zakrvavené oblečenie — prekryla mu iba rozkrok plátnom — a najskôr ho len pohodila vedľa koša so špinavým prádlom, ktoré mala vyprať pre celú dedinu.",
-      "Potom oblečenie Tadeusa zhužvala (nechtiac k nemu prihodila aj kusy oblečenia, čo mala prať, konkrétne Viliamovu košeľu a blúzku Ester) a prihodila k nemu aj Tadeusov prsteň, čo nosil na ľavej ruke. Stiahla mu aj strieborný krížik z krku, pričom mu zamazala tvár od jeho krvi a trochu ho aj poškriabala po tvári dlhými nechtami. Krížik pohodila na stôl. Potom začala drhnúť dlážku.",
-      "Keď vysala krv z dlážky, zbehla po fúrik a pristavila ho k dverám. Naložila naň jeho telo, potom do fúrika hodila aj guču oblečenia, v ktorej bol aj prsteň. Na krížik zabudla, nechala ho u seba na stole. Prekryla telo plachtou a vyrazila ním tmavou dedinou. Mierila k domu Viliama, na ktorého chcela vraždu hodiť.",
+      "Potom oblečenie Tadeusa zhužvala (nechtiac k nemu prihodila aj kusy oblečenia, čo mala prať, konkrétne Viliamovu košeľu a blúzku Ester) a prihodila k nemu aj Tadeusov prsteň, čo nosil na ľavej ruke. Stiahla mu aj strieborný ruženec z krku, pričom mu zamazala tvár od jeho krvi a trochu ho aj poškriabala po tvári dlhými nechtami. Ruženec pohodila na stôl. Potom začala drhnúť dlážku.",
+      "Keď vysala krv z dlážky, zbehla po fúrik a pristavila ho k dverám. Naložila naň jeho telo, potom do fúrika hodila aj guču oblečenia, v ktorej bol aj prsteň. Na ruženec zabudla, nechala ho u seba na stole. Prekryla telo plachtou a vyrazila ním tmavou dedinou. Mierila k domu Viliama, na ktorého chcela vraždu hodiť.",
       "Kráčajúc dedinou stretla Benedikta, ktorý sa vracal od Karola. Agnes mu povedala, že ide s fúrikom k Viliamovi po drevo, lebo jej došlo. Keď Benedikt zmizol, trhla vozíkom a pokračovala ďalej, no uzrela Moritza, ktorý sa motal dedinou, hľadajúc ovcu Vilmu. Zabočila tak v zmätku ku krčme, počas čoho si nevšimla, že Tadeusov prsteň vypadol z fúrika.",
       "Vyložila telo za šenkom v kroví, guču oblečenia odhodila do krovia pri rieke, ktoré však potom skĺzlo až do rieky a neskôr ho vyplaví pri brehu Viliamovho domu. To celé pozoroval cez rieku Viliam, no videl len siluetu, nevidel tvár Agnes. Tá potom zamierila naspäť k domu, iba s plachtou vo fúriku."
     ]
@@ -182,7 +144,6 @@ pribeh: [
 /* ------------------------------------------------------------------ */
 obet: {
   id: "tadeus",
-  foto: "assets/postavy/tadeus.jpg",
   meno: "Tadeus Schwarzenberg",
   rola: "Richtár lesovický — obeť",
   vek: 30,
@@ -195,7 +156,6 @@ obet: {
 postavy: [
   {
     id: "benedikt",
-    foto: "assets/postavy/benedikt.jpg",
     meno: "Benedikt Muntz",
     rola: "Miestny duchovný",
     herec: "Marcel",
@@ -226,7 +186,7 @@ postavy: [
       "Je nástupcom otca Ondreja, ktorý zomrel krátko potom, ako Helena — preto sa stal farárom v Lesoviciach.",
       "Zapisuje si zhrnutia spovedí.",
       "Niekedy sa po západe slnka chodí dívať na Gretu.",
-      "Kupuje si potajme alkohol od Karola a zapíja ním smútok z nenaplneného vzťahu s dcérou, čítajúc jej krstný list.",
+      "Kupuje si potajme alkohol od Viliama a zapíja ním smútok z nenaplneného vzťahu s dcérou, čítajúc jej krstný list.",
       "Má dlhé nechty.",
       "Vie čítať aj písať."
     ],
@@ -245,15 +205,14 @@ postavy: [
       { q: "Odkiaľ má istotu, že Greta je jeho dcéra?", a: "Potvrdzuje to okrem matriky aj ľúbostný list, ktorý po matke zostal — našiel ho v papieroch zosnulého otca Ondreja, ktorého v Lesoviciach nahradil." },
       { q: "Ako sa dozvedel o nevere Ester s Viliamom?", a: "Zistil to až od Karola, v deň vraždy, keď sa večer u Karola zastavil, a ten mu všetko rozpovedal." },
       { q: "Kde fyzicky drží zoznam hriechov, krstný list a víno?", a: "V kostole, kde aj vzadu býva v malej izbe. Prehľadá to tam brat Martin a postupne predostrie dôkazy." },
-      { q: "Videl ho niekedy niekto, ako sa po západe slnka chodí dívať na Gretu?", a: "Agnes — síce k nemu chová úctu, no bude tvrdiť, že vídavala viackrát Benedikta prechádzať sa po dedine v noci. Videla ho rovno na ceste pred domom." },
+      { q: "Videl ho niekedy niekto, ako sa po západe slnka chodí dívať na Gretu?", a: "Nikto ho nevidel, no tuší to Agnes — síce k nemu chová úctu, no bude tvrdiť, že vídavala viackrát Benedikta prechádzať sa po dedine v noci. Videla ho rovno na ceste pred domom." },
       { q: "Keď sa otcovstvo prevalí, odvolá svoje kázne o kliatbe čarodejnice?", a: "Potom zmäkne." }
     ]
   },
 
   {
     id: "greta",
-    foto: "assets/postavy/greta.jpg",
-    meno: "Greta",
+    meno: "Greta (Muntz)",
     rola: "(Údajná) čarodejnica, bylinkárka",
     herec: "Soňa",
     vek: 20,
@@ -306,7 +265,6 @@ postavy: [
 
   {
     id: "ester",
-    foto: "assets/postavy/ester.jpg",
     meno: "Ester Schwarzenberg",
     rola: "Mladá richtárova žena",
     herec: "Adelka",
@@ -358,7 +316,6 @@ postavy: [
 
   {
     id: "viliam",
-    foto: "assets/postavy/viliam.jpg",
     meno: "Viliam König",
     rola: "Drevorubač / alkoholik",
     herec: "Dávid",
@@ -413,7 +370,6 @@ postavy: [
 
   {
     id: "agnes",
-    foto: "assets/postavy/agnes.jpg",
     meno: "Agnes Schultz",
     rola: "Poverčivá dedinská tetka — PÁCHATEĽKA",
     herec: "Megi",
@@ -447,11 +403,11 @@ postavy: [
       "Perie odevy celej dedine (nájde sa zakrvavená guča oblečenia Tadeusa so zamiešanou košeľou Viliama a blúzou Ester, vyplavená pri Viliamovom dome).",
       "Ničí sudy s pivom Karolovi.",
       "Keď sa jej opýtajú na fúrik, povie, že ho má každý — no ostatní to budú popierať.",
-      "Priamo ju môže zlomiť strieborný krížik alebo kutáč — bude tvrdiť, že kutáč doma nemá.",
+      "Priamo ju môže zlomiť strieborný ruženec alebo kutáč — bude tvrdiť, že kutáč doma nemá.",
       "Nevie čítať ani písať."
     ],
     vzdyHovori: [
-      "Že nevie o afére — toto musí hovoriť, nakoľko podľa výpovede Ester bola celý deň sama a stretla iba Moritza. Prítomnosť Ester tají. Nemala sa tak o afére odkiaľ dozvedieť, v čase vyšetrovania to nevie každá postava.",
+      "Že nevie o afére — toto musí hovoriť, nakoľko podľa výpovede Ester bola celý deň sama a stretla iba Moritza. Nemala sa tak o afére odkiaľ dozvedieť, v čase vyšetrovania to nevie každá postava.",
       "Že u nej bol Moritz — priznáva obe návštevy.",
       "Že u nej bol Tadeus hľadať Ester o 12:30."
     ],
@@ -459,18 +415,17 @@ postavy: [
       "Prítomnosť Tadeusa v dome — prizná iba jeho popoludňajšiu návštevu na dverách o 12:30.",
       "Prítomnosť Ester v dome — bude vravieť, že bola u Viliama, a ak to Viliam bude popierať, bude poukazovať na to, že Viliam bol celý deň opitý a mimo domu, čo dosvedčí Greta.",
       "Znalosť aféry — ak by priznala, že to vie, priznala by, že v deň vraždy bola s Ester, čo bude popierať.",
-      "SAMOTNÚ VRAŽDU — prizná sa až pod ťarchou strieborného krížika alebo kutáča."
+      "SAMOTNÚ VRAŽDU — prizná sa až pod ťarchou strieborného ruženca alebo kutáča."
     ],
     faq: [
       { q: "Zabila Tadeusa úmyselne, alebo v afekte?", a: "Nebol to úmysel, iba inštinktívna reakcia po tom, ako ju sotil na zem a naštvaný sa k nej vyrútil." },
-      { q: "Ako sa do zakrvavenej guče prania dostala Viliamova košeľa a Esterina blúza?", a: "Náhoda. Oblečenie pri vyzliekaní tela pohodila k špinavému, zhodou okolností ku košeli Viliama a blúzke Ester, ktoré potom omylom zbalila s Tadeusovým oblečením." },
-      { q: "Čo presne musia detektívi urobiť, aby ju to zlomilo?", a: "O krížiku musia s istotou vedieť, že je jediná, čo má krížik iný ako drevený — ako všetci ostatní. O kutáči im treba iba sa spýtať, či doma kutáč má — a ten bude mať doma každý okrem Moritza. Ester nevie, či ho doma majú, Greta to nepotvrdí ani nepoprie." }
+      { q: "Ako sa do zakrvavenej guče prania dostala Viliamova košeľa a Esterina blúza?", a: "Náhoda. Oblečenie pri vyzliekaní tela pohodila k vypranému, zhodou okolností ku košeli Viliama a blúzke Ester, ktoré potom omylom zbalila s Tadeusovým oblečením." },
+      { q: "Čo presne musia detektívi urobiť, aby ju to zlomilo?", a: "O ruženci musia s istotou vedieť, že je jediná, čo má krížik iný ako drevený — ako všetci ostatní. O kutáči im treba iba sa spýtať, či doma kutáč má — a ten bude mať doma každý okrem Moritza. Ester nevie, či ho doma majú, Greta to nepotvrdí ani nepoprie." }
     ]
   },
 
   {
     id: "karol",
-    foto: "assets/postavy/karol.jpg",
     meno: "Karol Kolmann",
     rola: "Krčmár / mlynár",
     herec: "Gabo",
@@ -524,7 +479,6 @@ postavy: [
 
   {
     id: "moritz",
-    foto: "assets/postavy/moritz.jpg",
     meno: "Moritz Hüter",
     rola: "Bača",
     herec: "Adam",
@@ -553,6 +507,7 @@ postavy: [
       { kto: "viliam", popis: "Má ho rád, lebo mu pomáha" }
     ],
     vlastnosti: [
+      "Matne si pamätá, že Benedikt bol v Lesoviciach pred 21 rokmi. Benedikt to bude popierať, dokiaľ sa nenájde dôkaz — list od Heleny.",
       "Dnes, 23. októbra, má 25. narodeniny a rád o tom bude každému hovoriť. Nebude však hovoriť, koľko rokov má, dokiaľ sa ho na to niekto priamo neopýta.",
       "Neustále hľadá svoju ovcu Vilmu.",
       "Nemá doma kutáč.",
@@ -579,7 +534,6 @@ pozadie: [
   { meno: "Helena", rola: "Bylinkárka, matka Grety", text: "Prišla do Lesovíc v roku 1480, nikto nevie odkiaľ. Dedina ju považovala za čarodejnicu. Pomáhala Benediktovi liečiť počas moru 1482, splanuli láskou. Porodila Gretu 12. júna 1483 a dala ju potajme pokrstiť otcom Ondrejom. Zomrela v roku 1502. Dedinčania ju odmietli pochovať — pochovala ju Greta pri ich dome. Zanechala list pre Benedikta, ktorý odovzdala otcovi Ondrejovi." },
   { meno: "Otec Ondrej", rola: "Predošlý farár lesovický", text: "Viedol matriku pokrstených. Pokrstil Gretu s poznámkou „Otec: ignotus“. Dostal od Heleny list pre Benedikta, ale nikdy ho neodovzdal — chcel aféru cirkevného brata utajiť. Zomrel krátko po Helene. Benedikt je jeho nástupca a v jeho papieroch našiel ten list." },
   { meno: "Brat Martin", rola: "Prísažný lekár a ohliadač zo sídla biskupského", text: "Moderátor hry. Vykonal obhliadku tela a spísal protokol. Dal prehľadať dedinu a oba brehy rieky — našiel guču oblečenia pod mólom pri Viliamovom dome. Počas hry postupne vypúšťa ďalšie dôkazy." },
-  { meno: "Sestra Brunhilda", rola: "Mníška, asistentka brata Martina", text: "Pokorné dievča oddané službe Bohu a cirkvi. Pri vyšetrovaní asistuje bratovi Martinovi — všetko, čo z mŕtveho či z dediny vyjde, doručuje vyšetrovateľom ona. V réžii je to osoba, ktorá tímom fyzicky rozdáva dôkazy a dokumenty." },
   { meno: "Biskup", rola: "Odosielateľ inkvizítorov", text: "Poslal tímom pozvánku a mandát. Žiada oddeliť zrno pravdy od pliev babských povier — a konať s rozvahou, nie horlivosťou viery zaslepenou." },
   { meno: "Helmut Schwarzenberg", rola: "Bývalý richtár, Tadeusov otec", text: "Rodina Schwarzenbergovcov prichýlila osirelú Ester po more v roku 1483. Keď dospela, vydala sa za Tadeusa." }
 ],
@@ -607,7 +561,7 @@ mapa: {
       "18:00 — Tadeus ich vidí kŕmiť svine a vtrhne dnu.",
       "18:30 — VRAŽDA pri kozube. Kutáč do hrdla.",
       "19:00–20:00 — Agnes čistí dlážku, balí telo, nakladá do fúrika.",
-      "Strieborný krížik ostáva na stole — na ten zabudla."
+      "Strieborný ruženec ostáva na stole — na ten zabudla."
     ]},
     { id: "moritz-dom", x: 23.5, y: 37, nazov: "Moritzov dom a košiar", postavy: ["moritz"], udalosti: [
       "Celý deň: Moritz kŕmi ovce, šúpe jablká, pečie koláč (dvakrát neúspešne).",
@@ -681,7 +635,7 @@ casovaOs: {
   zaznamy: [
     { den: "ned", cas: "05:00", klic: false, r: { tadeus: "Skoré prebudenie", benedikt: "Prebudenie a ranná hygiena", greta: "Prebudenie", agnes: "Prebudenie", moritz: "Prebudenie" } },
     { den: "ned", cas: "05:30", klic: false, r: { tadeus: "Ďalej pije", benedikt: "Ranné modlitby", greta: "Natrhanie zeleniny v záhrade", agnes: "Ranná modlitba", moritz: "Kŕmenie oviec" } },
-    { den: "ned", cas: "06:00", klic: true, r: { benedikt: "Príprava na kázeň", greta: "Raňajky", ester: "Prebudenie u Viliama", agnes: "Raňajky a príprava do kostola, nasadzuje si krížik", karol: "Prebudenie", moritz: "Umývanie" } },
+    { den: "ned", cas: "06:00", klic: true, r: { benedikt: "Príprava na kázeň", greta: "Raňajky", ester: "Prebudenie u Viliama", agnes: "Raňajky a príprava do kostola, nasadzuje si ruženec", karol: "Prebudenie", moritz: "Umývanie" } },
     { den: "ned", cas: "07:00", klic: false, r: { greta: "Čítanie zborníka o liečivých nektároch", agnes: "Postávanie pri kostole a sledovanie príchodu ostatných, pričom na nich pod nosom šomre", karol: "Raňajky — klobása a pivo", moritz: "Chlieb s vodou na raňajky" } },
     { den: "ned", cas: "08:00", klic: true, r: { tadeus: "Postáva pri kostole a čaká, či vyjde Karol", benedikt: "Ranná omša — kázeň o bosorkách", greta: "Zber šípok na čistinách", ester: "Vyparila sa počas omše, aby ju nikto nevidel, a utiekla k domu Agnes", agnes: "Ranná omša", karol: "Ranná omša", moritz: "Ranná omša" } },
     { den: "ned", cas: "09:00", klic: true, r: { tadeus: "Konfrontácia s Karolom, potom odchádza domov", benedikt: "Svedok bitky Tadeusa a Karola", greta: "Sušenie šípok", ester: "Čaká za domom Agnes", viliam: "Prebudenie doma", agnes: "Svedok bitky Tadeusa a Karola", karol: "BITKA S TADEUSOM — zlomený nos", moritz: "Svedok bitky Tadeusa a Karola" } },
@@ -696,7 +650,7 @@ casovaOs: {
     { den: "ned", cas: "13:00", klic: false, r: { tadeus: "Vracia sa domov, aby si ešte vypil", greta: "Lov na králika", ester: "Príprava obeda spolu s Agnes", agnes: "Príprava obeda spolu s Ester" } },
     { den: "ned", cas: "13:30", klic: false, r: { tadeus: "Klope na Karolove dvere, ale neotvára", benedikt: "Zapisuje si posledné udalosti v Lesoviciach", karol: "Prebudí ho klopanie, ale neotvára, keď počuje kričať Tadeusa", moritz: "Koláč mu spadol" } },
     { den: "ned", cas: "14:00", klic: false, r: { tadeus: "Prichádza k Viliamovmu domu, ale ani ten neotvára — nie je doma", greta: "Vzdala to", ester: "Obed s Agnes", agnes: "Obed s Ester", karol: "Vyberá víno a pije", moritz: "Jedol jablká zo zeme a rozmýšľal, čo ďalej" } },
-    { den: "ned", cas: "14:30", klic: false, r: { tadeus: "Vyráža k mlynu a rybárskemu miestu, Viliam ho uvidí prichádzať a schová sa na okraji lesa", benedikt: "Začína písať kázeň podľa svojich poznámok", greta: "Odseknutie hlavy sliepke na jej statku a varenie", ester: "Keď sa opäť Moritz vrátil, tentokrát sa radšej schovala", viliam: "Keď uzrie prichádzať Tadeusa, rýchlo uteká schovať sa medzi stromy na okraji lesa, kým neodíde, potom sa vracia na rybárske miesto a ďalej pije", agnes: "Prišiel Moritz po ďalšie jablká", moritz: "Cesta k Agnes po ďalšie jablká — všimol si, že Ester tam už nie je" } },
+    { den: "ned", cas: "14:30", klic: false, r: { tadeus: "Vyráža k mlynu a rybárskemu miestu, Viliam ho uvidí prichádzať", benedikt: "Začína písať kázeň podľa svojich poznámok", greta: "Odseknutie hlavy sliepke na jej statku a varenie", ester: "Keď sa opäť Moritz vrátil, tentokrát sa radšej schovala", viliam: "Keď uzrie prichádzať Tadeusa, rýchlo uteká schovať sa medzi stromy na okraji lesa, kým neodíde, potom sa vracia na rybárske miesto a ďalej pije", agnes: "Prišiel Moritz po ďalšie jablká", moritz: "Cesta k Agnes po ďalšie jablká — všimol si, že Ester tam už nie je" } },
     { den: "ned", cas: "15:00", klic: false, r: { tadeus: "Opäť prichádza domov vypiť si", benedikt: "Počas písania kázne otvára víno a pije", ester: "Upratovanie", agnes: "Upratovanie", moritz: "Šúpanie jabĺk" } },
     { den: "ned", cas: "15:30", klic: true, r: { tadeus: "Navštevuje ešte Moritza — NECHÁVA OTVORENÚ BRÁNKU KOŠIARA", benedikt: "Vyťahuje krstný list Grety a podnapitý plače (víno pofŕka list)", greta: "Príprava na neskorý obed", moritz: "Prerušil ho Tadeus hľadaním Ester" } },
     { den: "ned", cas: "16:00", klic: true, r: { tadeus: "Prichádza opitý ku Grete", benedikt: "Ďalej píše kázeň", greta: "Príchod opitého Tadeusa", ester: "Modlitby s Agnes", agnes: "Modlitby s Ester", karol: "Opitý zaspí", moritz: "Začiatok prípravy ďalšieho koláča" } },
@@ -705,7 +659,7 @@ casovaOs: {
     { den: "ned", cas: "17:30", klic: false, r: { ester: "Začiatok kŕmenia svíň", agnes: "Začiatok kŕmenia svíň", moritz: "Strúhanie flauty na dvore" } },
     { den: "ned", cas: "18:00", klic: true, r: { tadeus: "Odchod od Gréty. ZOČENIE ESTER U AGNES", greta: "Tadeus odchádza, trochu triezvejší, než prišiel", ester: "Je videná rozzúreným Tadeusom, odchádzajúcim od Gréty, ako pasie svine spolu s Agnes — hneď zalezie do domu", agnes: "S Ester pasie svine, keď uvidia rozzúreného Tadeusa, zalezú do domu" } },
     { den: "ned", cas: "18:10", klic: true, r: { tadeus: "Kričí na Ester aj Agnes, Ester zatiaľ utečie", benedikt: "Oblieka sa na cestu ku Karolovi", greta: "Upratovanie", ester: "ÚTEK — beží dedinou k Viliamovi", agnes: "Ester unikla — Agnes zdržiava Tadeusa", moritz: "Uvedomenie si, že koláč sa pečie" } },
-    { den: "ned", cas: "18:15", klic: true, r: { tadeus: "Začiatok hádky s Agnes", benedikt: "Vidí bežať uplakanú Ester na ceste od domu Viliama, volá na ňu, tá ale rýchlo zalezie do domu", ester: "Viliam nie je doma — tak uteká k sebe domov, po ceste ju uplakanú zazrie Benedikt", agnes: "Hádka s Tadeusom o tom, aký je zlý manžel", moritz: "Koláč sa spálil" } },
+    { den: "ned", cas: "18:15", klic: true, r: { tadeus: "Začiatok hádky s Agnes", benedikt: "Vidí bežať uplakanú Ester, volá na ňu, tá ale rýchlo zalezie do domu", ester: "Viliam nie je doma — tak uteká k sebe domov, po ceste ju uplakanú zazrie Benedikt", agnes: "Hádka s Tadeusom o tom, aký je zlý manžel", moritz: "Koláč sa spálil" } },
     { den: "ned", cas: "18:30", klic: true, r: { tadeus: "† SMRŤ", benedikt: "Návšteva Karola — kontrola rán", greta: "Zatváranie zvierat do ohrád a klietok", ester: "Plíži sa do domu z obavy, že tam už bude Tadeus — keď sa uistí, že nie, trpne sediac na posteli", viliam: "Opitý spí", agnes: "★ VRAŽDA — kutáč do hrdla", karol: "Príchod Benedikta", moritz: "Krájanie koláča, či v ňom nie je niečo požívateľné" } },
     { den: "ned", cas: "19:00", klic: true, r: { benedikt: "Karol sa modlí a spovedá zo všetkých svojich hriechov — tu prezradí, že má zápisky s tajomstvami dedinčanov", greta: "Večera jačmennú kašu", ester: "Plače a plače", agnes: "Zabalenie tela", karol: "Prezrádza všetko, čo vie o Ester a Viliamovi, ako aj o tom, ako ich vydieral", moritz: "Vzdal to" } },
     { den: "ned", cas: "19:30", klic: true, r: { benedikt: "Dostáva zápisník od Karola", agnes: "Čistenie dlážky od krvi, zbalenie krvavého oblečenia do guče a spolu s prsteňom hodenie do fúrika", karol: "Dáva Benediktovi svoj zápisník", moritz: "Kŕmenie oviec" } },
@@ -736,7 +690,7 @@ dokazy: [
     dokazuje: "Vizuálna opora k protokolu z obhliadky — rana na krku, poloha tela.", obrazok: "assets/telo.jpg" },
   { id: "d4", cas: "17:00", poradie: 1, nazov: "Protokol z obhliadky tela", typ: "Kľúčový dokument",
     kde: "Od brata Martina, na úvod", postavy: ["tadeus"],
-    dokazuje: "Čas smrti (18:00–19:00), nástroj (roztrhnutá rana, hrdzavé šupiny = kuté železo, NIE nôž), telo bolo presunuté (málo krvi pod ním), krv na tvári rozotretá post mortem, štyri škrabance od dlhých nechtov, chýba prsteň aj krížik.", dokument: "protokol" },
+    dokazuje: "Čas smrti (18:00–19:00), nástroj (roztrhnutá rana, hrdzavé šupiny = kuté železo, NIE nôž), telo bolo presunuté (málo krvi pod ním), krv na tvári rozotretá post mortem, štyri škrabance od dlhých nechtov, chýba prsteň a ruženec.", dokument: "protokol" },
   { id: "d5", cas: "17:00", poradie: 1, nazov: "Mapa Lesovíc", typ: "Vizuálna pomôcka",
     kde: "Od brata Martina, na úvod", postavy: [],
     dokazuje: "Priestorová orientácia, umožňuje overiť trasy a alibi." },
@@ -755,8 +709,8 @@ dokazy: [
   { id: "d10", cas: "19:45", poradie: 6, nazov: "Matrika pokrstených (krstný záznam Grety)", typ: "Kľúčový dokument",
     kde: "V kostole, nájde brat Martin", postavy: ["greta", "benedikt", "ester"],
     dokazuje: "Greta, narodená 12. júna 1483, matka Helena, otec: IGNOTUS. Červené fľaky — majú vyzerať ako od krvi, sú však od vína. Pozor: je tu aj zápis o krste inej Ester (dcéra Hansa Dietricha) — falošná stopa.", dokument: "matrika" },
-  { id: "d11", cas: "20:00", poradie: 7, nazov: "List od Heleny", typ: "Kľúčový dokument",
-    kde: "Od brata Martina — našiel ho v krbe na fare, Benedikt ho chcel spáliť", postavy: ["benedikt", "greta"],
+  { id: "d11", cas: "na vyžiadanie", poradie: 7, nazov: "List od Heleny", typ: "Kľúčový dokument",
+    kde: "Od Benedikta, až po prepojení jeho otcovstva", postavy: ["benedikt", "greta"],
     dokazuje: "Dôkaz o otcovstve Benedikta. Dôvod na prelomenie spovedného tajomstva. Ofŕkaný od vína — má to pôsobiť ako krv.", dokument: "list" },
   { id: "d12", cas: "20:10", poradie: 8, nazov: "Spis o nájdenom oblečení", typ: "Kľúčový dokument",
     kde: "Od brata Martina — posledný dôkaz, cca 20 minút pred koncom hry", postavy: ["viliam", "ester", "agnes", "tadeus"],
@@ -774,17 +728,17 @@ rekvizity: [
   { nazov: "Protokol z obhliadky tela", typ: "Vizuálna pomôcka", popis: "Opis nálezu tela, rany na krku, miesto nálezu (pri krčme)", ks: 11, odkial: "Od nás", postava: "Tadeus (obeť)", priorita: "Must-have", hotovo: true },
   { nazov: "Mapa Lesovíc", typ: "Vizuálna pomôcka", popis: "Mapa dediny so všetkými domami a krčmou/mlynom", ks: 11, odkial: "Od nás", postava: "Všetky postavy", priorita: "Must-have", hotovo: true },
   { nazov: "Bylinkár", typ: "Vizuálna pomôcka", popis: "Zápisník liečivých nápojov Gréty. Niekde pri kvetinách.", ks: 11, odkial: "V priestore", postava: "Greta", priorita: "Must-have", hotovo: true },
-  { nazov: "Fľaštička so zvyškom odvaru na vytriezvenie", typ: "Fyzický dôkaz", popis: "Flakón s odvarom pohodený pri richtárovom dome, s nápisom „Pre Tadeusa“. Musí byť z neho citeľná mäta.", ks: 1, odkial: "Od nás", postava: "Greta, Tadeus", priorita: "Must-have", hotovo: true },
+  { nazov: "Fľaštička so zvyškom odvaru na vytriezvenie", typ: "Fyzický dôkaz", popis: "Flakón s odvarom pohodený pri richtárovom dome, s nápisom „Pre Tadeusa“. Musí byť z neho citeľná mäta.", ks: 1, odkial: "Od nás", postava: "Greta, Tadeus", priorita: "Must-have", hotovo: false },
   { nazov: "Karolov zápisník", typ: "Fyzický dôkaz", popis: "Píše si poznámky o ľuďoch v dedine", ks: 11, odkial: "Od nás", postava: "Karol, Ester", priorita: "Must-have", hotovo: true },
   { nazov: "Benediktove záznamy spovedí a hriechov", typ: "Fyzický dôkaz", popis: "Ofŕkané od vína — má to pôsobiť ako krv", ks: 11, odkial: "V priestore", postava: "Tadeus, Karol, Ester", priorita: "Must-have", hotovo: true },
   { nazov: "Krstný/cirkevný záznam Gréty (matrika)", typ: "Fyzický dôkaz", popis: "Zápis o krste, meno otca neuvedené. Musí mať červené fľaky od vína.", ks: 11, odkial: "Od nás", postava: "Greta, Benedikt", priorita: "Must-have", hotovo: true },
-  { nazov: "List od Heleny", typ: "Fyzický dôkaz", popis: "Dôkaz o otcovstve Benedikta. Ofŕkaný od vína. Nájde sa v krbe na fare — Benedikt ho chcel spáliť.", ks: 11, odkial: "Od nás", postava: "Benedikt, Greta", priorita: "Must-have", hotovo: true },
+  { nazov: "List od Heleny", typ: "Fyzický dôkaz", popis: "Dôkaz o otcovstve Benedikta. Ofŕkaný od vína.", ks: 11, odkial: "Od nás", postava: "Benedikt, Greta", priorita: "Must-have", hotovo: true },
   { nazov: "Spis o nájdenom oblečení", typ: "Fyzický dôkaz", popis: "Posledný dôkaz, cca 20 minút pred koncom hry", ks: 11, odkial: "Od nás", postava: "Viliam, Ester, Agnes", priorita: "Must-have", hotovo: true },
   { nazov: "Výstupný dotazník", typ: "Dokument", popis: "Finálne výstupy detektívov so súčtom 18 možných bodov", ks: 11, odkial: "Od nás", postava: "—", priorita: "Must-have", hotovo: true },
   { nazov: "Richtárov prsteň", typ: "Osobný predmet", popis: "Nájdený a nosený Moritzom, dôvod na podozrenie z vraždy", ks: 1, odkial: "Herci", postava: "Tadeus, Moritz", priorita: "Must-have", hotovo: false },
-  { nazov: "Drevené krížiky", typ: "Osobný predmet", popis: "Nosíme všetci okrem Agnes — odlíšenie od strieborného krížika Agnes", ks: 6, odkial: "Herci", postava: "Všetci", priorita: "Must-have", hotovo: true },
-  { nazov: "Strieborný krížik", typ: "Osobný predmet", popis: "Majetok zavraždeného Tadeusa, ktorý si nechtiac odela Agnes v to ráno, keď našli telo. PRIAMA STOPA.", ks: 1, odkial: "Herci", postava: "Agnes", priorita: "Must-have", hotovo: true },
-  { nazov: "Kuracie kosti", typ: "Fyzická pomôcka", popis: "Zvyšky zo sliepok, hádzané na dvor Agnes. Nosí ich vo vreckách, aby ich ukazovala inkvizítorom.", ks: 10, odkial: "Agnes, v priestore", postava: "Agnes, Greta", priorita: "Must-have", hotovo: true },
+  { nazov: "Drevené krížiky", typ: "Osobný predmet", popis: "Nosíme všetci okrem Agnes — odlíšenie od strieborného ruženca", ks: 6, odkial: "Herci", postava: "Všetci", priorita: "Must-have", hotovo: false },
+  { nazov: "Strieborný ruženec", typ: "Osobný predmet", popis: "Majetok zavraždeného Tadeusa, ktorý si nechtiac odela Agnes v to ráno, keď našli telo. PRIAMA STOPA.", ks: 1, odkial: "Herci", postava: "Agnes", priorita: "Must-have", hotovo: false },
+  { nazov: "Kuracie kosti", typ: "Fyzická pomôcka", popis: "Zvyšky zo sliepok, hádzané na dvor Agnes. Nosí ich vo vreckách, aby ich ukazovala inkvizítorom.", ks: 10, odkial: "Agnes, v priestore", postava: "Agnes, Greta", priorita: "Must-have", hotovo: false },
   { nazov: "Fľaša vína", typ: "Fyzická pomôcka", popis: "Víno, ktoré Benedikt popíjal pri čítaní matričného listu. Príčina červených škvŕn.", ks: 1, odkial: "Od nás, Benedikt", postava: "Benedikt", priorita: "Must-have", hotovo: false },
   { nazov: "Fľaša domácej pálenky", typ: "Fyzická pomôcka", popis: "Použitá fľaša, časť obsahu vypitá. Musia z nej byť citeľné čerešne.", ks: 1, odkial: "V priestore", postava: "Viliam", priorita: "Nice-to-have", hotovo: false },
   { nazov: "Svätená voda", typ: "Fyzická pomôcka", popis: "Rekvizita Agnes, ktorú bude používať na svoju ochranu", ks: 1, odkial: "Agnes", postava: "Agnes, Greta", priorita: "Nice-to-have", hotovo: false },
@@ -794,148 +748,168 @@ rekvizity: [
 
 /* ------------------------------------------------------------------ */
 dokumenty: [
-  { id: "prejav", nazov: "Úvodný prejav otca Benedikta", podnazov: "Privítanie vyšetrovateľov v Lesoviciach · čítané o 17:00", text: `PREJAV BENEDIKTA
-
-In nomine Patris, et Filii, et Spiritus Sancti. Amen.
-
-Bratia a sestry, vitajte v Lesoviciach.
-
-Nevítam vás ale s radosťou, lebo dnes tu niet čomu sa radovať. Telo sa našlo sotva pred pár hodinami a vy ste prišli naozaj veľmi rýchlo. Dobre ste tak učinili. Lebo kým vinník trestu uteká, pamäť sa kalí a stopy miznú. Ja tú moc pýtať sa a súdiť nemám. Ja mám len kazateľnicu a dedinu, ktorá žije v strachu.
-
-Som Benedikt Muntz, farár tunajší. A poviem vám, aká hrôza otriasa Lesovicami.
-
-Dnes ráno na svitaní našiel Viliam, náš drevorubač, za šenkom v kroví telo. Bol to Tadeus Schwarzenberg, richtár lesovický. Hrdlo mal preťaté od ucha nadol a prázdny pohľad, ktorý som mu rukou zatváral, keď mi jeho telo ukázali.
-
-A ten, kto mu vzal život, chodí medzi nami. Je tu dnes v tejto miestnosti, a vy ste boli povolaní, aby ste zistili, kto to je.
-
-Vox sanguinis fratris tui clamat ad me de terra. Hlas krvi tvojho brata volá ku mne zo zeme, ako písmo vraví. Tá krv tu stále kričí a nikto jej neodpovedá.
-
-Dedina má svoju odpoveď hotovú. Kliatba. Čarodejnica. Ľud prostý si hľadá vinníka, lebo s vinníkom sa lepšie spí. Ja vám nepoviem, že sa mýlia. Ale nepoviem vám ani, že majú pravdu. To rozhodnete vy.
-
-Brat Martin, prísažný lekár a obhliadač zo sídla biskupského, telo zavraždeného ohliadol a spis napísal. Počas večera bude obhliadať dedinu a všetko, čo z mŕtveho či z dediny vyjde, vám od neho doručí sestra Brunhilda, vo svojej službe ako mníška voči Bohu oddaná.
-
-A teraz predstavím tých, ktorých sa budete pýtať.
-
-Ester Schwarzenbergová, richtárova žena, dnes už vdova.
-
-Viliam König, drevorubač náš lesovický. Ten, čo telo richtára našiel.
-
-Agnes Schultzová, vdova, žena v dedine veľmi vážená a zbožná.
-
-Karol Kolmann, miestny šenkár, pod ktorého strechou sa schádza a opája pol dediny.
-
-Moritz Hüter, bača. Chlapec prostý, bez rodiny, ktorý si žije na statku pri svojich ovciach.
-
-Greta, bylinkárka, na samote za dedinou žijúca. Tá, na ktorú prsty s vinou otŕča celá dedina, lebo v nej vidí bosorku.
-
-A ja. Nevynímam sa. Poznám hriechy tejto dediny lepšie než ktokoľvek iný a to zo mňa robí podozrivého rovnako ako z nich. Pýtajte sa ma na čokoľvek, a ak budem klamať, nech ma Pán za to súdi tvrdšie než vás.
-
-Nihil opertum quod non revelabitur. Nič nie je zakryté, čo sa neodhalí, ako praví Hospodin. A nič nie je skryté, čo sa nedozvie. Údel dozvedieť sa a odhaliť vraha padol na vás.
-
-Hľadajte, pýtajte sa a neverte nikomu — ani mne.
-
-Nech vás vedie múdrosť Božia, ktorá vás sem do Lesovíc priviedla.
-
-Amen.` },
-
-  { id: "pozvanka", nazov: "Pozvánka vyšetrovateľom", podnazov: "List a mandát biskupský", text: `In nomine Patris,
-et Filii, et Spiritus Sancti
+  { id: "pozvanka", nazov: "Pozvánka vyšetrovateľom", podnazov: "List a mandát biskupský", text: `In nomine Patris, et Filii, et Spiritus Sancti
 Amen
 
+†
+
 My, z vôle Božej a milosti Stolice Apoštolskej, týmto listom a mandátom naším oslovujeme a mocou nám zverenou poverujeme Vás, verných synov a dcéry Cirkvi svätej a spravodlivosti znalých.
-Do sluchu nášho od brata Benedikta doľahli chýry prežalostné z farnosti lesovickej. Richtár tamojší, svetskej moci predstaviteľ, bol nájdený bez dychu života, s krkom preukrutne preťatým. Aká sila nečistá tento skutok ohavný vykonala, zostáva zatiaľ pred zrakom ľudským zahalené.
+
+Do sluchu nášho od brata Benedikta doľahli chýrniky prežalostné z farnosti lesovickej. Richtár tamojší, svetskej moci predstaviteľ, bol nájdený bez dychu života, s krkom preukrutne preťatým. Aká sila nečistá tento skutok ohavný vykonala, zostáva zatiaľ pred zrakom ľudským zahalené.
+
 Ťažko skúšaná je táto pospolitosť. Ešte v pamäti starcov živá je spomienka spred dvadsaťjeden liet, kedy čierna smrť, úmor veliký, rady ich preriedila. A hľa, sotva sa z rán týchto pozviechali, nová nákaza, horšia moru, duše ich máta.
+
 Strach a povery zatemnili rozum ľudu prostého. Kričia o maleficium – diabolskom škodení – a prstom ukazujú na ženu z ich stredu, že táto, súc v spolku s nepriateľom ľudského pokolenia, skazu morovú a smrť richtárovi privodila a kliatbu na dedinu uvrhla.
+
 Preto Vás, ako oči naše bedlivé a ruku našu trestajúcu, do Lesovíc vysielame. Vašou povinnosťou svätou jest oddeliť zrno pravdy od pliev babských povier. Telo znetvorené ohliadnite, svedkov s prísnosťou vypočujte, no hlasu davu rozvášneného slepo neverte.
+
 Ak čarodejníctvo nezvratne preukážete, podľa práva kánonického tvrdo zakročte, by duša vinníčky ohňom očistená bola. Ak však ľudská podlosť za tým väzí, nech vinník právu útrpnému a majstrovi katovi vydaný jest.
+
 Konajte s rozvahou a svetlom rozumu, nie len horlivosťou viery zaslepenou.
 
 Dané v sídle našom biskupskom, roku Pána 1503` },
 
   { id: "protokol", nazov: "Protokol z obhliadky tela", podnazov: "Protocollum inspectionis corporis · Tadeus, richtár lesovický", text: `†
+
 In nomine Patris, et Filii, et Spiritus Sancti
+
 PROTOCOLLUM INSPECTIONIS CORPORIS
 PROTOKOL Z OBHLIADKY TELA
 Tadeus, richtár lesovický
+
 Lesovice, dňa XXIII. mensis Octobris, Anno Domini MDIII
 
-I. DE LOCO  -  Miesto a poloha tela
-Telo bolo nájdené v pondelok dvadsiateho tretieho októbra, na svitaní - okolo siedmej hodiny rannej - v kroví za šenkom, na okraji rieky. Našiel ho Viliam, drevorubač lesovický, keď od vody domov mieril. Pod prísahou vypovedal, že sa tela nedotkol, neobracal ho ani nič z neho nesňal, lež odbehol rovno po pochopa; nič, čo som na tele našiel, tomu neodporuje.
+I. DE LOCO — Miesto a poloha tela
+
+Telo bolo nájdené v pondelok dvadsiateho tretieho októbra, na svitaní — okolo siedmej hodiny rannej — v kroví za šenkom, na okraji rieky. Našiel ho Viliam, drevorubač lesovický, keď od vody domov mieril. Pod prísahou vypovedal, že sa tela nedotkol, neobracal ho ani nič z neho nesňal, lež odbehol rovno po pochopa; nič, čo som na tele našiel, tomu neodporuje.
+
 Telo nebolo nahé celkom: odeté bolo jedine hrubým plátnom, niekoľko ráz obtočeným okolo bedier, tak ako som to zaznamenal na kresbe k tomuto protokolu pripojenej. Iného odevu na ňom nebolo a ani pri tele, ani v kroví blízkom sa odev žiaden nenašiel. Koža je zaprášená a od rannej rosy celkom mokrá; vlasy vlhké, na chrbte prilepené steblá a lístie.
+
 Krvi bolo pod telom sotva na dlaň, hoci z rany muselo jej vyjsť množstvo veliké. Striekancov krvi na kroví ani na zemi navôkol niet, ani stôp zápasu.
 
-II. DE TEMPORE MORTIS  -  Kedy smrť nastala
+Čo povedať teraz môžem je že miesto, kde telo drevorubačom bolo nájdené, niet miestom, kde richtár Tadeus dokonal.
+
+II. DE TEMPORE MORTIS — Kedy smrť nastala
+
 Sánka, krk i údy nebohého sú stuhnuté celkom a ohnúť sa nedajú; stuhnutie je práve dokonané, no povoľovať ešte nezačalo. Tuhosť tá na mŕtve telo neprichádza hneď, lež po niekoľkých hodinách, a celé ho zmocní ku koncu pol dňa; povoľovať začína až o deň neskôr.
-Na stranách, na ktorých telo ležalo, presvitá koža do tmava, akoby podliata - to krv, keď srdce stíchne, klesá v tele nadol a tam sa usadzuje. Pritlačil som na tie miesta palcom a farba pod prstom už nevybledla; kým je krv čerstvo klesnutá, pod tlakom ustúpi a zas sa vráti, a keď neustúpi, je usadená napevno, čo trvá temer pol dňa. Telo je pritom studené skrz-naskrz, i pod pazuchou a v slabinách, kde sa teplo drží najdlhšie; to samo osebe málo znamená, lebo noc bola chladná a telo ležalo takmer nahé pri vode.
-Súdim teda, že richtár Tadeus dokonal ešte v nedeľu, dňa dvadsiateho druhého októbra, podvečer - najskôr o šiestej a najneskôr o siedmej hodine večernej, teda okolo pol siedmej. Od tej hodiny do chvíle, keď ho Viliam našiel, prešlo dvanásť a pol hodiny. O hodinu skôr či neskôr mýliť sa môžem; o pol dňa nie.
 
-III. DE VULNERE  -  Rana na hrdle
+Na stranách, na ktorých telo ležalo, presvitá koža do tmava, akoby podliata — to krv, keď srdce stíchne, klesá v tele nadol a tam sa usadzuje. Pritlačil som na tie miesta palcom a farba pod prstom už nevybledla; kým je krv čerstvo klesnutá, pod tlakom ustúpi a zas sa vráti, a keď neustúpi, je usadená napevno, čo trvá temer pol dňa. Telo je pritom studené skrz-naskrz, i pod pazuchou a v slabinách, kde sa teplo drží najdlhšie; to samo osebe málo znamená, lebo noc bola chladná a telo ležalo takmer nahé pri vode.
+
+Súdim teda, že richtár Tadeus dokonal ešte v nedeľu, dňa dvadsiateho druhého októbra, podvečer — najskôr o šiestej a najneskôr o siedmej hodine večernej, teda okolo pol siedmej. Od tej hodiny do chvíle, keď ho Viliam našiel, prešlo dvanásť a pol hodiny. O hodinu skôr či neskôr mýliť sa môžem; o pol dňa nie.
+
+III. DE VULNERE — Rana na hrdle
+
 Rana je na ľavej strane hrdla, počína pod uchom a vedie šikmo nadol k jamke hrdelnej, na dĺžku štyroch prstov.
-Okraje rany nie sú zubaté, roztrhané a po stranách do šírky palca rozmliaždené; rana je viac sprudka roztrhnutá než rezaná. Hĺbka nie je rovnaká: najhlbšia hneď pod uchom, ku koncu sa stráca. Na dolnom konci vybieha do boku krátka trhlina zahnutá, na spôsob háčika.
-V rane a na jej okrajoch sú šupinky čierne, tvrdé, a prach hrdzavočervený - také, aké vídať na železe kutom a v ohni prechovávanom.
-Rez taký, aký zanecháva nôž, dýka či britva - rovný, hladký, s okrajmi čistými - som na tele nenašiel nikde.
 
-IV. DE SANGUINE FACIEI  -  Krv na tvári
-Krv na tvári nebohého nie je zaschnutá v prúdoch, ako by sama stiekla, ale je rozotretá do strán - po líci, brade a čele - rukou, ktorá sa jej dotýkala, kým bola ešte vlhká.
+Okraje rany nie sú zubaté, roztrhané a po stranách do šírky palca rozmliaždené; rana je viac roztrhnutá než rezaná. Hĺbka nie je rovnaká: najhlbšia hneď pod uchom, ku koncu sa stráca. Na dolnom konci vybieha do boku krátka trhlina zahnutá, na spôsob háčika.
+
+V rane a na jej okrajoch sú šupinky čierne, tvrdé, a prach hrdzavočervený — také, aké vídať na železe kutom a v ohni prechovávanom.
+
+Rez taký, aký zanecháva nôž, dýka či britva — rovný, hladký, s okrajmi čistými — som na tele nenašiel nikde.
+
+IV. DE SANGUINE FACIEI — Krv na tvári
+
+Krv na tvári nebohého nie je zaschnutá v prúdoch, ako by sama stiekla, ale je rozotretá do strán — po líci, brade a čele — rukou, ktorá sa jej dotýkala, kým bola ešte vlhká.
+
 V rozotretej krvi sú zreteľné odtlačky prstov. Či to bola ruka ženská, či ruka mladíka alebo muža, z toho určiť nemožno a tvrdiť sa to neopovažujem.
-Okrem krvi sú na tvári i ryhy - štyri plytké škrabance na lícach. Rozstupy medzi nimi sa zhodujú s prstami ruky, ktorá po tvári krv rozotrela.
-Tie škrabance nekrvácali. Okraje ich sú suché a bledé, bez opuchu a bez červeného lemu, aký sa okolo poranenia živého tela do hodiny ukáže. Ruka teda prešla po tvári až vtedy, keď srdce už netĺklo - post mortem, po smrti - a nie v zápase o život.
 
-V. DE MANIBUS  -  Ruky nebohého
+Okrem krvi sú na tvári i ryhy — štyri plytké škrabance na lícach. Rozstupy medzi nimi sa zhodujú s prstami ruky, ktorá po tvári krv rozotrela.
+
+Tie škrabance nekrvácali. Okraje ich sú suché a bledé, bez opuchu a bez červeného lemu, aký sa okolo poranenia živého tela do hodiny ukáže. Ruka teda prešla po tvári až vtedy, keď srdce už netĺklo — post mortem, po smrti — a nie v zápase o život.
+
+V. DE MANIBUS — Ruky nebohého
+
 Pravá ruka: hánky boli obviazané pásom plátna, nedbalo uviazaným. Pod obväzom je koža na hánkach ukazováka a prostredníka strhnutá do živého, s chrastami čerstvými a opuchom navôkol. Plátno je zafarbené len krvou z hánok samotných, krvou z hrdla nie.
-Ľavá ruka: na prstenníku je pás kože zreteľne bledší než koža okolitá, na šírku prsteňa, a mierne vhĺbený.
-Na zadnej strane krku, tesne pod vlasmi, je úzky bledý pás do kože mierne vhĺbený, aký zanecháva remienok či šnúrka dlho nosená; modriny ani odretej kože v ňom niet. To, čo na nej viselo, pri tele nebolo.
+
+Ľavá ruka: na prstenníku je pás kože zreteľne bledší než koža okolitá, na šírku prsteňa, a mierne vhĺbený. Prsteň pri tele nebol.
+
+Na zadnej strane krku, tesne pod vlasmi, je úzky bledý pás do kože mierne vhĺbený, aký zanecháva remienok či šnúrka dlho nosená; modriny ani odretej kože v ňom niet. To, čo na nej viselo, pri tele nebolo, rovnako ako prsteň.
+
 Na predlaktiach ani dlaniach niet porezaní či modrín, akými sa bránia tí, čo pred ostrím uhýbajú. Nechty sú celé.
 
 Telo je uložené v chlade, prikryté plachtou, a nikto k nemu bez môjho vedomia prístupu nemá.
+
 Toto všetko som zapísal verne, ničoho nepridávajúc a ničoho nezamlčujúc, na spásu duše svojej prisahám.
+
 Dané v Lesoviciach, dňa dvadsiateho tretieho októbra, roku Pána tisíc päťsto tretieho.
 
 Brat Martin, prísažný lekár a ohliadač zo sídla biskupského
+
 †` },
 
   { id: "oblecenie", nazov: "Spis o nájdenom oblečení", podnazov: "Relatio de vestibus repertis", text: `†
+
 In nomine Patris, et Filii, et Spiritus Sancti
+
 RELATIO DE VESTIBUS REPERTIS
 ZÁZNAM O NÁJDENÝCH DÔKAZOCH
+
 Lesovice, dňa XXIII. mensis Octobris, Anno Domini MDIII
 
-I. DE LOCO - Miesto nálezu
+I. DE LOCO — Miesto nálezu
+
 Po obhliadke tela dal som prehľadať dedinu i oba brehy rieky. Na dolnom konci, pri dome drevorubačovom, jest mólo z dosák do vody vybiehajúce. Pod ním, medzi kolmi, kde sa prúd láme, zachytila sa guča odevu.
+
 Z brehu ju vidieť nebolo. Našiel som ju až vtedy, keď som zišiel k vode a pod dosky nazrel. Odev bol vodou nasiaknutý celkom; medzi látkou uviazlo riečne lístie a riasa.
-II. DE VESTIBUS - Čo sa našlo
+
+II. DE VESTIBUS — Čo sa našlo
+
 Kusy tri, jeden od druhého neoddelené, ale do seba zamotané.
+
 Prvý: košeľa mužská, z plátna hrubšieho, veľkosti statného muža. Po prednej strane a na ľavom pleci zafarbená hnedočerveno, farbou zaschnutej krvi; voda ju vylúhovala, no nevyprala. Na ľavej strane goliera jest látka preťatá a roztrhnutá, rez ide šikmo nadol.
-Druhý: blúzka ženská, z hodvábneho zamatu. Krvi na nej niet nijakej. Zašpinená jest len tak, ako býva odev nosený a na pranie odložený - pod pazuchami a na golieri.
+
+Druhý: blúzka ženská, z hodvábneho zamatu. Krvi na nej niet nijakej. Zašpinená jest len tak, ako býva odev nosený a na pranie odložený — pod pazuchami a na golieri.
+
 Tretí: košeľa mužská, z ľanu, hrubo šitá a mnoho ráz nosená. Krvi na nej tiež niet. Zato zamazaná jest hlinou a blatom, a vo švoch na rukávoch i za golierom uviazli triesky drevené.
-III. DE ORDINE - Ako ležali
-Tri tie kusy boli zhúžvané do jednej guče a tá guča zaseknutá tak, že ju drevo móla držalo. Neboli poskladané, ani zavesené, ani jeden od druhého odložený. Ktokoľvek s nimi naposledy narábal, nerobil to s poriadkom.
-IV. CONCLUSIO - Záver
+
+III. DE ORDINE — Ako ležali
+
+Tri tie kusy boli zhúžvané do jednej guče a tá guča vtisnutá pod dosky tak, že ju drevo držalo. Neboli poskladané, ani zavesené, ani jeden od druhého odložený. Ktokoľvek s nimi naposledy narábal, nerobil to s poriadkom.
+
+IV. CONCLUSIO — Záver
+
 Čo z toho plynie, nesúdim. Zaznamenal som len to, čo oko vidí: kde odev ležal, z čoho jest a v akom stave.
+
 Veci tieto sú uložené v chlade a nikto k nim bez môjho vedomia prístupu nemá.
+
 Dané v Lesoviciach, dňa dvadsiateho tretieho októbra, roku Pána tisíc päťsto tretieho.
+
 Brat Martin, prísažný lekár a ohliadač zo sídla biskupského` },
 
-  { id: "matrika", nazov: "Matrika pokrstených", podnazov: "Matricula baptizatorum ecclesiae lesovicensis · roku 1483", text: `Matricula baptizatorum ecclesiae lesovicensis
+  { id: "matrika", nazov: "Matrika pokrstených", podnazov: "Matricula baptizatorum ecclesiae lesovicensis · roku 1483", text: `†
+
+Matricula baptizatorum ecclesiae lesovicensis
+
 MATRIKA POKRSTENÝCH
 farnosť lesovická
 roku Pána tisíc štyristo osemdesiateho tretieho
-Aj roku tohto, ako i roku predošlého, navštívil kraj mor veliký. Pokrstených jest pre nákazu málo, pochovaných mnoho. Knihu túto vedie rukou svojou Ondrej, farár lesovický.
-Dňa dvadsiateho prvého januára. Pokrstená Ester, dcéra Hansa Dietricha, tkáča, a manželky jeho Margaréty. Krstní rodičia: Matej mlynár a Katarína, žena jeho. Krstil: Ondrej, farár lesovický.
-Dňa dvadsiateho ôsmeho marca. Pokrstená Anna, dcéra Michala pastiera a manželky jeho Barbory. Krstní rodičia: Štefan kováč a Uršuľa, žena jeho. Krstil: Ondrej, farár lesovický.
-†  zomrela v mesiaci auguste toho istého roku, na mor.
-Dňa siedmeho apríla. Pokrstený Blažej, syn Mateja mlynára a manželky jeho Kataríny. Krstní rodičia: Pavol oráč a Alžbeta, žena jeho. Krstil: Ondrej, farár lesovický.
-Dňa pätnásteho júna. Pokrstená Greta, narodená dňa dvanásteho júna. Matka: Helena, bylinkárka, prišelkyňa, prebývajúca za dedinou pri lese. Otec: ignotus. Krstní rodičia: žiadni. Krstil: Ondrej, farár lesovický.
-Dňa druhého septembra. Pokrstený Ondrej, syn Pavla oráča a manželky jeho Alžbety. Krstní rodičia: Michal pastier a Barbora, žena jeho. Krstil: Ondrej, farár lesovický.
-†  zomrel v mesiaci októbri toho istého roku, na mor.
-Dňa dvadsiateho novembra. Pokrstená Katarína, dcéra Štefana kováča a manželky jeho Uršule. Krstní rodičia: Hans Dietrich, tkáč, a Margaréta, žena jeho. Krstil: Ondrej, farár lesovický.
-Toho roku pokrstených šesť. Zomrelých v knihe pohrebnej zapísaných sedemdesiat a štyri.` },
 
-  { id: "list", nazov: "List od Heleny", podnazov: "Nájdený v krbe na fare — Benedikt ho chcel spáliť", text: `Môj milovaný,
+Aj roku tohto, ako i roku predošlého, navštívil kraj mor veliký. Pokrstených jest pre nákazu málo, pochovaných mnoho. Knihu túto vedie rukou svojou Ondrej, farár lesovický.
+
+Dňa dvadsiateho prvého januára. Pokrstená Ester, dcéra Hansa Dietricha, tkáča, a manželky jeho Margaréty. Krstní rodičia: Matej mlynár a Katarína, žena jeho. Krstil: Ondrej, farár lesovický.
+
+Dňa dvadsiateho ôsmeho marca. Pokrstená Anna, dcéra Michala pastiera a manželky jeho Barbory. Krstní rodičia: Štefan kováč a Uršuľa, žena jeho. Krstil: Ondrej, farár lesovický.
+† zomrela v mesiaci auguste toho istého roku, na mor.
+
+Dňa siedmeho apríla. Pokrstený Blažej, syn Mateja mlynára a manželky jeho Kataríny. Krstní rodičia: Pavol oráč a Alžbeta, žena jeho. Krstil: Ondrej, farár lesovický.
+
+Dňa pätnásteho júna. Pokrstená Greta, narodená dňa dvanásteho júna. Matka: Helena, bylinkárka, prišelkyňa, prebývajúca za dedinou pri lese. Otec: ignotus. Krstní rodičia: žiadni. Krstil: Ondrej, farár lesovický.
+
+Dňa druhého septembra. Pokrstený Ondrej, syn Pavla oráča a manželky jeho Alžbety. Krstní rodičia: Michal pastier a Barbora, žena jeho. Krstil: Ondrej, farár lesovický.
+† zomrel v mesiaci októbri toho istého roku, na mor.
+
+Dňa dvadsiateho novembra. Pokrstená Katarína, dcéra Štefana kováča a manželky jeho Uršule. Krstní rodičia: Hans Dietrich, tkáč, a Margaréta, žena jeho. Krstil: Ondrej, farár lesovický.
+
+Toho roku pokrstených šesť. Zomrelých v knihe pohrebnej zapísaných sedemdesiat a štyri.
+
+†` },
+
+  { id: "list", nazov: "List od Heleny", podnazov: "Nájdený v papieroch otca Ondreja", text: `Môj milovaný,
 
 viem, že hanba za lásku, čo v nás vzplanula, Ťa umára, a tak Tvoje kroky odo mňa viedli späť do náruče Božej. Vedz, že tak rovnako, ako Teba porušenie sľubu Pánovi trápi, tak moju dušu Tvoje opustenie láme. V samote lesovickej mi Tvoja náruč jedinou útechou bola a Tvoj odchod mi ďalší bôľ privodil.
 
 Smútok zo straty Teba ale o toľko utíšený je, že naša láska zrodila ďalšiu. Naša dcéra, ktorej som meno Greta po Margaréte z Antiochie dala, mi bude spomienkou na Teba, ktorá nevybledne.
+
 Dňom i nocou, v moru útrapách či kvitnúcej jari radosti, budeme Ťa vyčkávať, ak Ťa srdce do Lesovíc opäť zavedie.
 
 Či už Ťa tieto riadky zastihnú alebo nie, vedz, že láska, ktorou som k Tebe zahorela, opustí tento svet až s mojím posledným výdychom.
@@ -944,141 +918,116 @@ Navždy Tvoja Helena` },
 
   { id: "zapisky", nazov: "Karolove zápisky", podnazov: "„Špina špinavcov špinavých“", text: `Špina špinavcov špinavých
 
-Ester
+ESTER
 Minule si ústa sa svojho muža otvorila. Za dverami richtárovho domu, zdá sa, mizéria prebýva. Manžel akoby tam ani nebol a záujem o svoju ženu neprejaví.
-Nevernica! Cez deň cudné žieňa v očiach všetkých slepých, no v noci diabol vedie jej mlsný jazyk. Práve v dnešnú noc som ju uzrel, ako smilní s tým valibukom Viliamom! Striebro sa už leje!
+
+Nevernica! Cez deň cudné žieňa v očiach všetkých slepých, no v noci diabol vedie jej mlstný jazyk. Práve v dnešnú noc som ju uzrel, ako smilní s tým valibukom Viliamom! Striebro sa už leje"
+
 Aspoň niečo z toho mám, keď už na sekeru popíja, a za chrbtom richtára tak robí
 
-Viliam
+VILIAM
 Ten čerešňový šunt, čo vyrába, by som ani do sračiek nevylial! Z tých aspoň hnojiva jest. Keby ostatní vedeli, že to robí z tej vody špinavej, čo dole riekou tečie, keď tá stará fúria perie.
+
 Ale čo, predáva mi ho aj tak za minimum, a hlupák, keď sa ožerie, ešte aj za vlastnú pálenku znova zaplatí, keď sa domov dvíha. Veď by aj skúsil hubu si otvoriť, hneď sa richtár o jeho záletoch dozvie.
 
-Benedikt
+BENEDIKT
 Toľko vína, čo pýta, na omšu je veľa pre celý Rím. Ten musí mať stále ovlažené hrdlo.
+
 Už tu bol, ešte za čias moru, ešte v roku 1482! Musel to byť on! Bol som dieťa, ale pamäť mi vždy slúžila dobre a dodnes tak tomu je. Zase som skúšal niečo o ňom viac zistiť, no nepodarilo sa.
+
 Stále nosí nejaký zdrap pri sebe. Minule si tu bol po ďalšie víno a nejaký papier vytratil. Hodil sa naň sťa sup. A na bránu nebeskú prisahám, že v sákristii minule, keď som mu tam vína doniesol, sa nad tým istým zdrapom hrbil. Napochytre ho ale schoval!
 
-Agnes
+AGNES
 Tá stará ropucha mi určite ničí sudy! Ostatní splachujú krky u mňa skoro každý deň, kto iný by to urobil? Už tretí sud za mesiac vytiekol! Pritom ten valibuk, keď mi ich vyrába, vždy dodáva kvalitu. Keď ja ju pristihnem, do rieky ju šmarím!!
 
-Greta
+GRETA
 |||||  |||||  |||||  |||||   |||||  ||` },
 
-  { id: "spovede", nazov: "Spovede obyvateľov lesovických", podnazov: "Zápisky otca Benedikta — v priebehu dní posledných", text: `Spovede obyvateľov Lesovických v priebehu dní posledných
+  { id: "spovede", nazov: "Spovede obyvateľov lesovických", podnazov: "Zápisky otca Benedikta — v priebehu dní posledných", text: `Spovede obyvateľov lesovických v priebehu dní posledných
 
-Tadeus Schwarzenberg
+TADEUS SCHWARZENBERG
 Richtára lesovického starosti o vlastné zisky mátajú. Strach ho obopína, že v jeho dome zbojník vraj bol. Strieborné mince mu z truhlice zmizli a on sa len za ochranu Božiu modlí. Cnostný to muž, však keď strasti mu do života prídu, démon zloby do jeho vnútra vstúpi. Potom hnev sa prederie na povrch a slušný človek sťa diabol kľaje. Dlho som upokojoval jeho zvieraciu náturu skrytú v pozlátku mladíka podľa pravidiel nebeských i svetských žijúceho.
 
-Ester Schwarzenberg
-O myšlienkach necudných v spovednici rozprávala, tak ako mnohokrát predtým sa už udialo. Dievča prosí o odpustenie a hreší v mysli, o rozkoši fantazírujúc. Toľko len povedala, že jej muž predmetom jej túžob nebol. Ťažko krotiť vášne dievčaťa, nuž nech rozhrešenie utišuje srdce Evou skazené.
+ESTER SCHWARZENBERG
+O myšlienkach necudných v kazateľnici rozprávala, tak ako mnohokrát predtým sa už udialo. Dievča prosí o odpustenie a hreší v mysli, o rozkoši fantazírujúc. Toľko len povedala, že jej muž predmetom jej túžob nebol. Ťažko krotiť vášne dievčaťa, nuž nech rozhrešenie utišuje srdce Evou skazené.
 
-Viliam König
-Že Viliam pijanom je, to dedina celá zná. Však že pri mlyne sa pôžitku opojnému oddáva a do vnútra mlyna Karolovho sa vkráda, doznal sa v chvíli slabej. Kým dedinčania sily zo sveta pekelného myslia, že začuli, to len rumázganie ožrana sa vetrom nieslo. Tak hrôzy, ktoré jeho hlas vzbudzoval, môžem teraz svetským vysvetlením tíšiť.
+VILIAM KÖNIG
+Že Viliam pijanom je, to dedina celá zná. Však že pri mlyne sa pôžitku opojnému oddáva a do vnútra mlyna Karolovho sa vkráda, doznal sa v chvíli slabej. Kým dedinčania sily zo sveta pekelného myslia že začuli, to len rumázganie ožrana sa vetrom nieslo. Tak hrôzy, ktoré jeho hlas vzbudzoval, môžem teraz svetským vysvetlením tíšiť.
+
 Však ďalší hriech v moci opojenia vyjadril, a to, že s richtárom Tadeusom problémy môže mať, lebo sa zlého činu voči nemu dopustil. Tak jeho slová zneli a iba tie vyriekol. Potom ho strach schvátil a pobral sa preč, bez rozhrešenia.
 
-Agnes Schultz
-K hriechu sa doznala, že pri praní košieľ dedinčanom tú, ktorá šenkárovi Karolovi patrila, v moči prasacom vymáčala. Tak mu šaty vrátila, vraviac, že voda plná špiny bola.
+AGNES SCHULTZ
+K hriechu sa doznala, že pri praní košieľ dedinčanom tú, ktorá šenkerovi Karolovi patrila, v moči prasacom vymáčala. Tak mu šaty vrátila, vraviac, že voda plná špiny bola.
+
 Tvrdí, že ju trescú zlé sily za to, že hriech páchala, lebo znamenia zlé na dvore svojom našla. Tam kosti kureniec sa z ničoho nič začali povaľovať a hrôzu do jej srdca zasievať. Agnes s hrôzou ráno vstáva a vždy nové kosti nachádza. Na sily čarodejné pomýšľa a vníma to ako trest Boží v šate sily nečistej.
 
-Moritz Hüter
+MORITZ HÜTER
 Chlapec s duchom prostým v utorok hriech špinavý spáchal. Vtedy sa necnostne cez plot na Ester, idúcu po ceste, díval, pokiaľ do domu Agnes nevstúpila. Chlapca zlé myšlienky premohli a k skutku sebanečistoty doviedli.
 
-Karol Kolmann
+KAROL KOLMANN
 Karol na jednu devu zálusk má, však na ktorú, to nechce prezradiť. Svedomie ho aspoň natoľko hrýzie, že sa zveril s týmto hriechom do milosti Božej, a vyjavil, že v stredu tejto deve necudné návrhy dával, aby s ním do jedného lôžka zaľahla.
+
 Ešte k tomu mamon jeho ruky vedie, keď biednym, nečítajúcim dedinčanom mince má prerátať, a tak si berie viac, než jeho službám náleží. To hriech je, ktorý v dome Božom nepriznal, no nie jeden dedinčan s týmito chýrmi za mnou prišiel.` },
 
-  { id: "odvary", nazov: "Bylinkárske odvary", podnazov: "Zápisník Grety", text: `Odvary z byliniek
+  { id: "odvary", nazov: "Bylinkárske odvary", podnazov: "Zápisník Grety", text: `ODVARY Z BYLINIEK
 
-Harmančekový odvar
-Zloženie: Sušené kvety harmančeka pravého, zaliate vriacou vodou a ponechané na lúhovanie.
-Postup: Dve hrste suchého kvetu daj do hlineného hrnca, zalej vriacou vodou a prikry. Nechaj, kým sa tri razy Otčenáš pomodlíš. Prelej cez plátno a pi teplé.
+1. HARMANČEKOVÝ ODVAR
+Zloženie: Sušené kvety harmančeka pravého, zaliate vriacou vodou a nechané lúhovať.
+Postup: Dve hrste suchého kvetu daj do hlineného hrnca, zalej vriacou vodou a prikry. Nechaj stáť, kým sa tri razy Otčenáš pomodlíš. Sceď cez plátno a pi teplé.
+Účel: Upokojenie žalúdka, hojenie drobných rán, navodenie spánku.
 Efekt: Mierne upokojujúci a protizápalový účinok, uľavuje od kŕčov v bruchu.
-Nežiaduce následky: Pri nadmernom užívaní únava; u citlivejších osôb možná alergická vyrážka.
+Nežiaduce následky: Pri nadmernom užívaní ospalosť; u citlivejších osôb možná alergická vyrážka.
 
-Žihľavový odvar
+2. ŽIHĽAVOVÝ ODVAR
 Zloženie: Čerstvé alebo sušené listy žihľavy dvojdomej, krátko povarené.
-Postup: Listy chytaj cez plátno, nech ťa nepopália, a opláchni ich v pramenitej vode. Zalej vodou na dva prsty nad ne a prevar, nie dlhšie než jeden Otčenáš. Sceď a pi vlažné nalačno.
-Efekt: Močopudný účinok, podporuje trávenie, čistí krv.
-Nežiaduce následky: Vo väčšom množstve dráždi žalúdok; nie pre tehotné ženy.
+Postup: Listy chytaj cez plátno, nech nepopália, a opláchni ich v pramenitej vode. Zalej vodou na dva prsty nad ne a nechaj prejsť varom, nie dlhšie než jeden Otčenáš. Sceď a pi vlažné nalačno.
+Účel: Jarné „prečistenie krvi“, posilnenie organizmu, zastavenie krvácania.
+Efekt: Močopudný účinok, podporuje trávenie, mierne stavia krv.
+Nežiaduce následky: Vo väčšom množstve dráždi žalúdok; neodporúčalo sa tehotným ženám.
 
-Lipový kvetový odvar
+3. LIPOVÝ KVETOVÝ ODVAR
 Zloženie: Sušený kvet lipy zaliaty horúcou vodou.
-Postup: Suchý kvet zalej vodou horúcou, no nie vriacou. Prudký var vôňu vyženie. Prikry a nechaj lúhovať, kým sa dva razy Otčenáš pomodlíš. Sceď a pi pred spaním.
+Postup: Suchý kvet zalej vodou horúcou, no nie vriacou – prudký var vôňu vyženie. Prikry a nechaj lúhovať, kým sa dva razy Otčenáš pomodlíš. Sceď a pi pred spaním.
+Účel: Liečba prechladnutia a horúčky, upokojenie pred spaním.
 Efekt: Potopudný a upokojujúci účinok, uvoľňuje priedušky.
 Nežiaduce následky: Pri dlhodobom a nadmernom užívaní môže zaťažovať srdce.
 
-Odvar na vytriezvenie
-Zloženie: Palina pravá, rebríček obyčajný a mäta, voda, med a kúsok chleba.
+4. ODVAR NA VYTRIEZVENIE (PRE TADEUSA)
+Zloženie: Palina pravá, rebríček obyčajný a MÄTA, zaliate vriacou vodou a preliate medom; podávané spolu s kúskom chleba.
 Postup: Paliny vezmi máličko, len čo na tri prsty uchytíš, rebríčka a mäty po hrsti. Zalej vriacou vodou, prikry a nechaj stáť tri Otčenáše. Sceď cez plátno, vmiešaj lyžicu medu a podaj s kúskom chleba.
-Efekt: Horký odvar podporuje trávenie a činnosť žalúdka, med dodá chýbajúci cukor, chlieb naviaže zvyšný alkohol v žalúdku. Spolu navodia pocit úľavy a jasnejšiu hlavu.
-Nežiaduce následky: Vo väčšom množstve môže palina spôsobiť nevoľnosť.
+Účel: Uľaviť od opilosti a navodiť rýchlejšie vytriezvenie – pripravené Grétou pre podnapitého Tadeusa v deň jeho návštevy.
+Efekt: Horký odvar podporuje trávenie a činnosť žalúdka, med dodá chýbajúci cukor, chlieb naviaže zvyšný alkohol v žalúdku – spolu navodia pocit úľavy a jasnejšiu hlavu.
+Nežiaduce následky: Vo väčšom množstve môže palina spôsobiť nevoľnosť; inak ide o mierny a bežne používaný domáci prostriedok bez vážnejších rizík.
 
-Odvar z dubovej kôry
+5. ODVAR Z DUBOVEJ KÔRY
 Zloženie: Nastrúhaná kôra dubu letného, dlhšie varená vo vode.
-Postup: Kôru z mladých konárov zoškrab a nastrúhaj. Zalej studenou vodou, priveď k varu a nechaj vrieť dlho, kým voda nestmavne ako pivo. Sceď a používaj vychladnuté, na obklad alebo na vyplachovanie.
+Postup: Kôru z mladých konárov zoškrab a nastrúhaj. Zalej studenou vodou, priveď k varu a nechaj vrieť dlho, kým voda nestmavne ako pivo. Sceď a používaj vychladnuté – na obklad alebo na vyplachovanie.
+Účel: Hojenie rán, zastavenie hnisania, liečba hnačky.
 Efekt: Silno zvieravý (trieslovinový) účinok, spomaľuje krvácanie.
 Nežiaduce následky: Pri vnútornom užívaní vo väčšom množstve zápcha a podráždenie žalúdka.
 
-Odvar zo skorocelu
+6. ODVAR ZO SKOROCELU
 Zloženie: Čerstvé listy skorocelu kopijovitého, krátko povarené alebo lúhované.
 Postup: Čerstvé listy pomni v dlaniach, nech pustia šťavu. Zalej vriacou vodou a nechaj prejsť krátkym varom. Sceď. Na ranu prikladaj vlažné na plátenku, na kašeľ pi teplé.
+Účel: Hojenie rán a uhryznutí hmyzom, upokojenie dýchacích ciest.
 Efekt: Protizápalový a hojivý účinok, mierne tlmí kašeľ.
 Nežiaduce následky: Zriedkavo alergická reakcia na koži.
 
-Odvar z bazových kvetov
+7. ODVAR Z BAZOVÝCH KVETOV
 Zloženie: Sušené kvety čierneho bazu, zaliate vriacou vodou.
 Postup: Suchý kvet zalej vriacou vodou a prikry tesne, nech para neujde. Nechaj stáť tri Otčenáše, sceď a pi horúce. Hneď nato ľahni a prikry sa, nech sa pot dostaví.
+Účel: Liečba horúčky a nádchy.
 Efekt: Silný potopudný účinok, pomáha „vyhnať“ horúčku potením.
 Nežiaduce následky: Pri použití nezrelých bobúľ či listov namiesto kvetov hrozí otrava jedovatými glykozidmi – dôležité je použiť len kvety.
 
-Odvar zo šípok
+8. ODVAR ZO ŠÍPOK
 Zloženie: Sušené plody voľne rastúcej šípky, dlhšie varené vo vode.
 Postup: Suché plody rozdrv v mažiari, zalej studenou vodou a var dlho na miernom ohni, kým nezmäknú. Sceď dvakrát cez husté plátno, aby chĺpky neostali. Pi vlažné.
+Účel: Posilnenie organizmu, doplnenie síl po chorobe.
 Efekt: Povzbudzujúci účinok, priaznivo pôsobí na chuť do jedla a celkovú vitalitu.
-Nežiaduce následky: Pri väčšom množstve tráviace ťažkosti, ak nie sú z plodov dôkladne odstránené jemné dráždivé chĺpky.` },
-
-  { id: "zaver", nazov: "Záverečné slovo otca Benedikta", podnazov: "Rozuzlenie — čítané pri vyhodnotení po 20:30 · SPOILER", text: `†
-INQUISITIO CASUS
-Kliatba Lesovíc
-Záverečné slovo otca Benedikta
-
-Vážení vyšetrovatelia, kliatba, ktorá doľahla na Lesovice, nepochádzala z pekla. Zrodila sa v srdciach ľudí, ktorých ste dnes vypočúvali.
-
-Všetko sa začalo roku 1482, keď som do morom skúšaných Lesovíc prvýkrát prišiel ja, vtedy mladý kňaz. Pri liečení chorých mi pomáhala bylinkárka Helena, žena, ktorú dedina mala za čarodejnicu. Vzplanula medzi nami láska, ktorú som pred Bohom oľutoval, a z dediny som odišiel. Nikdy som sa nedozvedel, že mi Helena porodila dcéru. Keď som sa po dvadsiatich rokoch vrátil, spoznal som v Grete tvár jej matky a v Heleninom liste, ktorý som našiel medzi listinami otca Ondreja, aj vlastnú vinu. Aby som ochránil seba i ju pred pravdou o našej krvi, kázal som tak, aby Greta ostala na okraji dediny.
-
-Greta pochovala matku sama, lebo dedina to odmietla. Žila osamote a z nudy hádzala Agnes do dvora kuracie kosti, ktoré tá pokladala za trest Boží.
-
-Šenkár Karol nalieval, aby mohol počúvať, a dedinčanov, čo nevedeli rátať, okrádal pri každom platení. V stredu dával Grete necudné návrhy. V auguste zbadal pri mlyne richtárovu ženu Ester v náručí drevorubača Viliama a svoje mlčanie jej predal za striebro.
-
-Ester, ktorej manžel videl len Boha a moje kázne, platila Karolovi z mužovej truhlice. Zlatú mincu nevzala ani jednu, brala len striebro, dokopy 30 strieborných grošov. V sobotu ju Tadeus pri tom prichytil. Priznala neveru i vydieranie a utiekla.
-
-Viliam, sirota po more, ktorého hriala len čerešňovica z vlastnej pálenice, pil celú nedeľu od žiaľu a strachu, až zaspal na rybárskom mieste.
-
-Tadeus v nedeľu ráno, ešte opitý, zlomil Karolovi pred kostolom nos. Potom chodil od dverí k dverám a hľadal ženu. U Moritza, ktorý dnes oslavuje 25 rokov, nechal otvorenú bránku košiara a ovca Vilma ušla. Nakoniec zaklopal u Grety, ktorú celý život odsudzoval. Ona ho vypočula a uvarila mu odvar na vytriezvenie, z ktorého bolo cítiť mätu. O šiestej odchádzal domov s ľahším srdcom.
-
-Domov však nikdy nedošiel.
-
-Cestou zazrel na jednom dvore Ester. Ušla do domu a Tadeus sa vrútil za ňou. Tam mu cestu zastala žena, ktorá Ester milovala ako vlastnú dcéru. Ester využila chvíľu a utiekla do tmy. Ostali sami dvaja. Krik, výčitky, zúrivosť. Tadeus ju sotil o kozub a vrhol sa na ňu. Jej ruka nahmatala jediné, čo ležalo pri ohni, železný kutáč. Jeden úder, do hrdla. Richtár Lesovíc padol na dlážku a už nevstal.
-
-Žena, ktorá prala košele celej dedine a v každej kosti na dvore videla diabla, si v ten večer zmývala krv z vlastnej dlážky.
-
-✠   ✠   ✠
-
-Tadeusa Schwarzenberga zabila
-AGNES SCHULTZ
-
-Nie z nenávisti a nie pre Ester, tá už v dome nebola. Zabila ho v sebaobrane, v smrteľnom strachu o vlastný život.
-
-✠   ✠   ✠
-
-Keď hrôza opadla, telo vyzliekla, a keď mu strhávala krížik z krku, rozmazala mu krv po tvári a poškriabala ho nechtami. Šaty zhúžvala spolu s prádlom, ktoré mala prať, s Viliamovou košeľou a Esterinou blúzkou. Telo naložila na fúrik, prikryla plachtou a viezla k Viliamovi, aby naňho hodila vinu. Mne cestou zaklamala, že ide po drevo. Keď zbadala Moritza hľadajúceho ovcu, v panike zabočila ku krčme a telo vyložila v kroví za šenkom. Prsteň jej cestou vypadol, krížik zabudla na stole a šaty vyplavila rieka k Viliamovmu mólu. Viliam to všetko videl cez rieku, no len ako tieň.
-
-Nebola to kliatba ani čarodejnica. Bol to strach, hanba a tajomstvá, ktoré sa v Lesoviciach nedali pochovať.
-
-V Lesoviciach, 23. októbra roku Pána 1503
-†` }
-
+Nežiaduce následky: Pri väčšom množstve tráviace ťažkosti, ak nie sú z plodov dôkladne odstránené jemné dráždivé chĺpky.` }
 ],
+
 /* ------------------------------------------------------------------ */
 riesenie: {
   zhrnutie: "Tadeusa zabila AGNES SCHULTZ, v sebaobrane, kutáčom, vo vlastnom dome, v nedeľu 22. októbra okolo 18:30. Nešlo o ochranu Ester — tá v tej chvíli už v dome nebola. Tadeus sotil Agnes o kozub a vyrútil sa na ňu; ona sa intuitívne chopila kutáča a zasiahla ho do hrdla. Potom telo vyzliekla, prevážala fúrikom a vyložila za šenkom, aby vraždu hodila na Viliama.",
@@ -1086,11 +1035,11 @@ riesenie: {
     { nadpis: "1. Telo bolo presunuté", text: "Pod telom sotva na dlaň krvi, žiadne striekance, žiadne stopy zápasu. Človek s prerezaným hrdlom vykrváca na mieste — tam by bolo krvi veľa. Miesto nálezu nie je miesto činu." },
     { nadpis: "2. Nástroj nie je nôž", text: "Rana je roztrhnutá, nie rezaná, okraje rozmliaždené, na konci háčik. V rane čierne šupiny a hrdzavočervený prach — kuté železo prechovávané v ohni. To je kutáč od kozuba, nie čepeľ." },
     { nadpis: "3. S telom manipuloval niekto s dlhými nechtami", text: "Krv na tvári je rozotretá rukou post mortem, štyri plytké škrabance bez opuchu a červeného lemu. Dlhé nechty majú v dedine iba traja: Greta, Agnes a Benedikt." },
-    { nadpis: "4. Chýba prsteň aj krížik", text: "Bledý pás na prstenníku a bledý pás na krku — obe veci pri tele neboli. Prsteň nájde Moritz o 20:45 medzi kostolom a šenkom. Krížik Agnes zabudla na stole a ráno si ho omylom odela — ako jediná v dedine nosí strieborný, všetci ostatní drevený." },
+    { nadpis: "4. Chýba prsteň a ruženec", text: "Bledý pás na prstenníku a bledý pás na krku — obe veci pri tele neboli. Prsteň nájde Moritz o 20:45 medzi kostolom a šenkom. Ruženec Agnes zabudla na stole a ráno si ho omylom odela — ako jediná v dedine nosí strieborný, všetci ostatní drevený." },
     { nadpis: "5. Fúrik", text: "Agnes stretla o 20:30 Benedikta s fúrikom. Tvrdila, že ide k Viliamovi po drevo. Viliam počul a videl o 20:45 siluetu pri šenku a vŕzganie kolieska. Keď sa jej opýtajú na fúrik, povie, že ho má každý — ostatní to popierajú." },
     { nadpis: "6. Oblečenie", text: "Guča troch kusov pod mólom pri Viliamovom dome: Tadeusova zakrvavená košeľa, Esterina blúzka bez krvi a Viliamova košeľa bez krvi. Prečo by boli spolu? Lebo Agnes perie celej dedine — mala ich v koši na pranie a nechtiac ich zabalila k telu." },
     { nadpis: "7. Čas", text: "Smrť medzi 18:00 a 19:00. Benedikt bol v tom čase u Karola (18:30–20:30), Greta doma, Ester utekala domov (videl ju Benedikt o 18:15), Viliam spal opitý na rybárskom mieste, Moritz pri peci. Bez alibi ostáva Agnes." },
-    { nadpis: "8. Zlomenie", text: "Stačia dve otázky: „Prečo máte strieborný krížik, keď všetci ostatní majú drevený?“ a „Máte doma kutáč?“ Kutáč má doma každý okrem Moritza — Agnes bude tvrdiť, že nemá." }
+    { nadpis: "8. Zlomenie", text: "Stačia dve otázky: „Prečo máte strieborný ruženec, keď všetci ostatní majú drevený?“ a „Máte doma kutáč?“ Kutáč má doma každý okrem Moritza — Agnes bude tvrdiť, že nemá." }
   ],
   falosneStopy: [
     { nazov: "Škrabance na tvári → Greta", text: "Greta má dlhé nechty a navyše v stredu poškriabala Karola po líci. Škrabance ukazujú na ňu, hoci ich spravila Agnes." },
@@ -1132,69 +1081,6 @@ momenty: [
 ],
 
 /* ------------------------------------------------------------------ */
-/* SCENÁR PRE BRATA MARTINA — moderátora. Krok za krokom.              */
-scenar: {
-  kto: "Brat Martin, prísažný lekár a ohliadač zo sídla biskupského. V hre je to on, kto telo obhliadol, dedinu dal prehľadať a inkvizítorom postupne predkladá, čo sa našlo. Moderátor nehrá podozrivého — stojí nad hrou, drží čas a vypúšťa dôkazy.",
-  zlatePravidla: [
-    "Neprezrádzať, kto je vrah, ani nenaznačovať, kto ním nie je. Na priamu otázku odpovedať, že brat Martin zapísal len to, čo oko vidí.",
-    "Dôkazy vypúšťať v presných časoch, aj počas prebiehajúceho vypočúvania. Rytmus drží napätie.",
-    "Každý dôkaz odovzdať všetkým tímom naraz a nahlas povedať, kde sa našiel. Miesto nálezu býva dôležitejšie než samotný predmet.",
-    "Zaseknutému tímu nepomáhať odpoveďou, ale otázkou. Napríklad: „Overili ste si u všetkých, kto má doma kutáč?“",
-    "Herci priznávajú tajomstvá až pod ťarchou konkrétneho dôkazu. Kým tím dôkaz nemá, herec klame — to je správne, nie chyba.",
-    "Sledovať čas. O 20:30 je koniec vyšetrovania, aj keby boli tímy uprostred vety."
-  ],
-  priprava: [
-    "Rozložiť na stôl rekvizity na vydávanie: zapečatené obálky s dôkazmi v poradí, pečať a vosk.",
-    "Skontrolovať, že Agnes má na krku strieborný krížik a všetci ostatní drevený. Bez toho sa prípad nedá dotiahnuť.",
-    "Skontrolovať, že Moritz má na ruke richtárov prsteň a Karol prelepený nos.",
-    "Fľaštička s odvarom musí byť cítiť mätou, fľaša pálenky čerešňami.",
-    "Bylinkár položiť k Gretinmu stanovisku medzi kvetiny. Záznamy spovedí, krstný list a fľašu vína k Benediktovi, list od Heleny do krbu.",
-    "Rozdať každému tímu hárok na poznámky a ceruzku. Vstupenky vyberať pri príchode."
-  ],
-  kroky: [
-    { cas: "17:00", nadpis: "Privítanie a zadanie", co: "Pozvánka biskupa · Zoznam podozrivých · Mapa Lesovíc · Protokol z obhliadky tela · Ilustrácia tela",
-      komu: "Každý tím dostane celú sadu.",
-      ako: "Úvodné slovo má otec Benedikt — jeho prejav je v Dokumentoch. Potom sa predstaviť ako brat Martin a nahlas prečítať pozvánku od biskupa — tón udáva celý večer. Spomenúť, že telo obhliadol osobne a protokol je jeho zápis. Upozorniť, že do 20:30 treba odovzdať vyplnený dotazník.",
-      otvara: "Tímy sa dozvedia čas smrti, že telo bolo presunuté a že rana nepochádza od noža." },
-    { cas: "17:30", nadpis: "Bylinkár Grety", co: "Zápisník odvarov",
-      komu: "Všetkým tímom.",
-      ako: "Uviesť, že dom bylinkárky bol prehľadaný, lebo dedina kričí o bosoráctve — a našlo sa toto. Obsah nekomentovať.",
-      otvara: "Je tam odvar na vytriezvenie s mätou. Zatiaľ to nič neznamená. O pol hodiny bude." },
-    { cas: "18:00", nadpis: "Fľaštička pri richtárovom dome", co: "Flakón so zvyškom odvaru, nápis „Pre Tadeusa“",
-      komu: "Všetkým tímom, s možnosťou privoňať.",
-      ako: "Povedať, kde presne sa našla — pohodená pod oknom richtárovho domu. Nič viac.",
-      otvara: "Spojí Gretu s miestom činu v deň vraždy. Vyzerá to ako otrava — nie je. Greta prizná návštevu až po tomto dôkaze." },
-    { cas: "18:30", nadpis: "Karolov zápisník", co: "Zápisky o dedinčanoch",
-      komu: "Všetkým tímom.",
-      ako: "Uviesť, že zápisník odovzdal otec Benedikt — dostal ho od krčmára pri spovedi.",
-      otvara: "Aféra Ester a Viliama, vydieranie, 30 grošov. A zmienka o Benediktovi z roku 1482 — tá sa zíde neskôr. Karol o vydieraní prehovorí až po konfrontácii s týmto zápisníkom." },
-    { cas: "19:15", nadpis: "Benediktove záznamy spovedí", co: "Zoznam hriechov obyvateľov, ofŕkaný vínom",
-      komu: "Všetkým tímom.",
-      ako: "Uviesť, že fara bola prehľadaná. Na otázku o červených škvrnách odpovedať len toľko, že sa zatiaľ neurčujú.",
-      otvara: "Hriechy všetkých naraz — Karolova streda, Moritzov utorok, Agnesin moč v košeli, Viliamovo priznanie o zlom čine voči richtárovi. Škvrny vyzerajú ako krv. Nie sú." },
-    { cas: "19:45", nadpis: "Matrika pokrstených", co: "Krstný záznam Grety, otec: ignotus",
-      komu: "Všetkým tímom.",
-      ako: "Tiež z fary. Škvrny opäť bez komentára.",
-      otvara: "Greta nemá uvedeného otca. Pozornosť sa otáča na Benedikta. V matrike je aj iná Ester — falošná stopa, ktorú netreba vyvracať." },
-    { cas: "20:00", nadpis: "List od Heleny", co: "Ľúbostný list, nájdený v krbe",
-      komu: "Všetkým tímom.",
-      ako: "Povedať, kde sa našiel: v krbe na fare, nespálený. Niekto ho chcel zničiť a nestihol.",
-      otvara: "Benedikt po tomto prizná otcovstvo. Podozrenie naňho vyvrcholí — a práve preto je ďalší dôkaz tam, kde je." },
-    { cas: "20:10", nadpis: "Spis o nájdenom oblečení", co: "Záznam o guči odevu spod móla pri Viliamovom dome",
-      komu: "Všetkým tímom. Posledný dôkaz.",
-      ako: "Nahlas prečítať, čo sa našlo: tri kusy, jeden zakrvavený, dva čisté, zhúžvané do jednej guče. Potom mlčať.",
-      otvara: "Toto je kľúč. Prečo by bola richtárova košeľa zabalená s Viliamovou a Esterinou? Kto v dedine perie všetkým?" },
-    { cas: "20:30", nadpis: "Koniec vyšetrovania", co: "Výstupný dotazník",
-      komu: "Jeden hárok na tím.",
-      ako: "Ukončiť vypočúvanie aj uprostred rozhovoru. Dotazník vypĺňajú tímy bez hercov. Vyzbierať a zapečatiť voskom.",
-      otvara: "Desať otázok, spolu 18 bodov." },
-    { cas: "po 20:30", nadpis: "Vyhodnotenie", co: "Odhalenie páchateľa a vyhlásenie víťazov",
-      komu: "Všetkým naraz, aj hercom.",
-      ako: "Prejsť odpovede nahlas, bod po bode. Priznanie Agnes pred všetkými je najsilnejší moment večera. Rozuzlenie prednáša otec Benedikt — Záverečné slovo v Dokumentoch. Potom prejsť reťaz dôkazov a vysvetliť falošné stopy.",
-      otvara: "Koniec hry." }
-  ]
-},
-/* ------------------------------------------------------------------ */
 harmonogram: [
   { cas: "17:00", co: "Štart — pozvánka biskupa, zoznam podozrivých, mapa, protokol z obhliadky, ilustrácia tela", kto: "Brat Martin" },
   { cas: "17:30", co: "Bylinkár Grety (nájdený pri prehliadke jej domu)", kto: "Brat Martin" },
@@ -1202,10 +1088,10 @@ harmonogram: [
   { cas: "18:30", co: "Karolov zápisník", kto: "Brat Martin" },
   { cas: "19:15", co: "Benediktove záznamy spovedí a hriechov", kto: "Brat Martin" },
   { cas: "19:45", co: "Matrika pokrstených — krstný záznam Grety", kto: "Brat Martin" },
-  { cas: "20:00", co: "List od Heleny — nájdený v krbe na fare", kto: "Brat Martin" },
   { cas: "20:10", co: "Spis o nájdenom oblečení — posledný dôkaz", kto: "Brat Martin" },
   { cas: "20:30", co: "Výstupný dotazník, koniec vyšetrovania", kto: "Brat Martin" },
-  { cas: "po 20:30", co: "Vyhodnotenie, odhalenie páchateľa, vyhlásenie víťazov", kto: "Brat Martin" }
+  { cas: "po 20:30", co: "Vyhodnotenie, odhalenie páchateľa, vyhlásenie víťazov", kto: "Brat Martin" },
+  { cas: "kedykoľvek", co: "List od Heleny — až keď tímy prepoja Benediktovo otcovstvo", kto: "Benedikt" }
 ]
 
 };
