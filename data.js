@@ -579,6 +579,7 @@ pozadie: [
   { meno: "Helena", rola: "Bylinkárka, matka Grety", text: "Prišla do Lesovíc v roku 1480, nikto nevie odkiaľ. Dedina ju považovala za čarodejnicu. Pomáhala Benediktovi liečiť počas moru 1482, splanuli láskou. Porodila Gretu 12. júna 1483 a dala ju potajme pokrstiť otcom Ondrejom. Zomrela v roku 1502. Dedinčania ju odmietli pochovať — pochovala ju Greta pri ich dome. Zanechala list pre Benedikta, ktorý odovzdala otcovi Ondrejovi." },
   { meno: "Otec Ondrej", rola: "Predošlý farár lesovický", text: "Viedol matriku pokrstených. Pokrstil Gretu s poznámkou „Otec: ignotus“. Dostal od Heleny list pre Benedikta, ale nikdy ho neodovzdal — chcel aféru cirkevného brata utajiť. Zomrel krátko po Helene. Benedikt je jeho nástupca a v jeho papieroch našiel ten list." },
   { meno: "Brat Martin", rola: "Prísažný lekár a ohliadač zo sídla biskupského", text: "Moderátor hry. Vykonal obhliadku tela a spísal protokol. Dal prehľadať dedinu a oba brehy rieky — našiel guču oblečenia pod mólom pri Viliamovom dome. Počas hry postupne vypúšťa ďalšie dôkazy." },
+  { meno: "Sestra Brunhilda", rola: "Mníška, asistentka brata Martina", text: "Pokorné dievča oddané službe Bohu a cirkvi. Pri vyšetrovaní asistuje bratovi Martinovi — všetko, čo z mŕtveho či z dediny vyjde, doručuje vyšetrovateľom ona. V réžii je to osoba, ktorá tímom fyzicky rozdáva dôkazy a dokumenty." },
   { meno: "Biskup", rola: "Odosielateľ inkvizítorov", text: "Poslal tímom pozvánku a mandát. Žiada oddeliť zrno pravdy od pliev babských povier — a konať s rozvahou, nie horlivosťou viery zaslepenou." },
   { meno: "Helmut Schwarzenberg", rola: "Bývalý richtár, Tadeusov otec", text: "Rodina Schwarzenbergovcov prichýlila osirelú Ester po more v roku 1483. Keď dospela, vydala sa za Tadeusa." }
 ],
@@ -793,6 +794,50 @@ rekvizity: [
 
 /* ------------------------------------------------------------------ */
 dokumenty: [
+  { id: "prejav", nazov: "Úvodný prejav otca Benedikta", podnazov: "Privítanie vyšetrovateľov v Lesoviciach · čítané o 17:00", text: `PREJAV BENEDIKTA
+
+In nomine Patris, et Filii, et Spiritus Sancti. Amen.
+
+Bratia a sestry, vitajte v Lesoviciach.
+
+Nevítam vás ale s radosťou, lebo dnes tu niet čomu sa radovať. Telo sa našlo sotva pred pár hodinami a vy ste prišli naozaj veľmi rýchlo. Dobre ste tak učinili. Lebo kým vinník trestu uteká, pamäť sa kalí a stopy miznú. Ja tú moc pýtať sa a súdiť nemám. Ja mám len kazateľnicu a dedinu, ktorá žije v strachu.
+
+Som Benedikt Muntz, farár tunajší. A poviem vám, aká hrôza otriasa Lesovicami.
+
+Dnes ráno na svitaní našiel Viliam, náš drevorubač, za šenkom v kroví telo. Bol to Tadeus Schwarzenberg, richtár lesovický. Hrdlo mal preťaté od ucha nadol a prázdny pohľad, ktorý som mu rukou zatváral, keď mi jeho telo ukázali.
+
+A ten, kto mu vzal život, chodí medzi nami. Je tu dnes v tejto miestnosti, a vy ste boli povolaní, aby ste zistili, kto to je.
+
+Vox sanguinis fratris tui clamat ad me de terra. Hlas krvi tvojho brata volá ku mne zo zeme, ako písmo vraví. Tá krv tu stále kričí a nikto jej neodpovedá.
+
+Dedina má svoju odpoveď hotovú. Kliatba. Čarodejnica. Ľud prostý si hľadá vinníka, lebo s vinníkom sa lepšie spí. Ja vám nepoviem, že sa mýlia. Ale nepoviem vám ani, že majú pravdu. To rozhodnete vy.
+
+Brat Martin, prísažný lekár a obhliadač zo sídla biskupského, telo zavraždeného ohliadol a spis napísal. Počas večera bude obhliadať dedinu a všetko, čo z mŕtveho či z dediny vyjde, vám od neho doručí sestra Brunhilda, vo svojej službe ako mníška voči Bohu oddaná.
+
+A teraz predstavím tých, ktorých sa budete pýtať.
+
+Ester Schwarzenbergová, richtárova žena, dnes už vdova.
+
+Viliam König, drevorubač náš lesovický. Ten, čo telo richtára našiel.
+
+Agnes Schultzová, vdova, žena v dedine veľmi vážená a zbožná.
+
+Karol Kolmann, miestny šenkár, pod ktorého strechou sa schádza a opája pol dediny.
+
+Moritz Hüter, bača. Chlapec prostý, bez rodiny, ktorý si žije na statku pri svojich ovciach.
+
+Greta, bylinkárka, na samote za dedinou žijúca. Tá, na ktorú prsty s vinou otŕča celá dedina, lebo v nej vidí bosorku.
+
+A ja. Nevynímam sa. Poznám hriechy tejto dediny lepšie než ktokoľvek iný a to zo mňa robí podozrivého rovnako ako z nich. Pýtajte sa ma na čokoľvek, a ak budem klamať, nech ma Pán za to súdi tvrdšie než vás.
+
+Nihil opertum quod non revelabitur. Nič nie je zakryté, čo sa neodhalí, ako praví Hospodin. A nič nie je skryté, čo sa nedozvie. Údel dozvedieť sa a odhaliť vraha padol na vás.
+
+Hľadajte, pýtajte sa a neverte nikomu — ani mne.
+
+Nech vás vedie múdrosť Božia, ktorá vás sem do Lesovíc priviedla.
+
+Amen.` },
+
   { id: "pozvanka", nazov: "Pozvánka vyšetrovateľom", podnazov: "List a mandát biskupský", text: `In nomine Patris,
 et Filii, et Spiritus Sancti
 Amen
@@ -990,7 +1035,49 @@ Odvar zo šípok
 Zloženie: Sušené plody voľne rastúcej šípky, dlhšie varené vo vode.
 Postup: Suché plody rozdrv v mažiari, zalej studenou vodou a var dlho na miernom ohni, kým nezmäknú. Sceď dvakrát cez husté plátno, aby chĺpky neostali. Pi vlažné.
 Efekt: Povzbudzujúci účinok, priaznivo pôsobí na chuť do jedla a celkovú vitalitu.
-Nežiaduce následky: Pri väčšom množstve tráviace ťažkosti, ak nie sú z plodov dôkladne odstránené jemné dráždivé chĺpky.` }
+Nežiaduce následky: Pri väčšom množstve tráviace ťažkosti, ak nie sú z plodov dôkladne odstránené jemné dráždivé chĺpky.` },
+
+  { id: "zaver", nazov: "Záverečné slovo otca Benedikta", podnazov: "Rozuzlenie — čítané pri vyhodnotení po 20:30 · SPOILER", text: `†
+INQUISITIO CASUS
+Kliatba Lesovíc
+Záverečné slovo otca Benedikta
+
+Vážení vyšetrovatelia, kliatba, ktorá doľahla na Lesovice, nepochádzala z pekla. Zrodila sa v srdciach ľudí, ktorých ste dnes vypočúvali.
+
+Všetko sa začalo roku 1482, keď som do morom skúšaných Lesovíc prvýkrát prišiel ja, vtedy mladý kňaz. Pri liečení chorých mi pomáhala bylinkárka Helena, žena, ktorú dedina mala za čarodejnicu. Vzplanula medzi nami láska, ktorú som pred Bohom oľutoval, a z dediny som odišiel. Nikdy som sa nedozvedel, že mi Helena porodila dcéru. Keď som sa po dvadsiatich rokoch vrátil, spoznal som v Grete tvár jej matky a v Heleninom liste, ktorý som našiel medzi listinami otca Ondreja, aj vlastnú vinu. Aby som ochránil seba i ju pred pravdou o našej krvi, kázal som tak, aby Greta ostala na okraji dediny.
+
+Greta pochovala matku sama, lebo dedina to odmietla. Žila osamote a z nudy hádzala Agnes do dvora kuracie kosti, ktoré tá pokladala za trest Boží.
+
+Šenkár Karol nalieval, aby mohol počúvať, a dedinčanov, čo nevedeli rátať, okrádal pri každom platení. V stredu dával Grete necudné návrhy. V auguste zbadal pri mlyne richtárovu ženu Ester v náručí drevorubača Viliama a svoje mlčanie jej predal za striebro.
+
+Ester, ktorej manžel videl len Boha a moje kázne, platila Karolovi z mužovej truhlice. Zlatú mincu nevzala ani jednu, brala len striebro, dokopy 30 strieborných grošov. V sobotu ju Tadeus pri tom prichytil. Priznala neveru i vydieranie a utiekla.
+
+Viliam, sirota po more, ktorého hriala len čerešňovica z vlastnej pálenice, pil celú nedeľu od žiaľu a strachu, až zaspal na rybárskom mieste.
+
+Tadeus v nedeľu ráno, ešte opitý, zlomil Karolovi pred kostolom nos. Potom chodil od dverí k dverám a hľadal ženu. U Moritza, ktorý dnes oslavuje 25 rokov, nechal otvorenú bránku košiara a ovca Vilma ušla. Nakoniec zaklopal u Grety, ktorú celý život odsudzoval. Ona ho vypočula a uvarila mu odvar na vytriezvenie, z ktorého bolo cítiť mätu. O šiestej odchádzal domov s ľahším srdcom.
+
+Domov však nikdy nedošiel.
+
+Cestou zazrel na jednom dvore Ester. Ušla do domu a Tadeus sa vrútil za ňou. Tam mu cestu zastala žena, ktorá Ester milovala ako vlastnú dcéru. Ester využila chvíľu a utiekla do tmy. Ostali sami dvaja. Krik, výčitky, zúrivosť. Tadeus ju sotil o kozub a vrhol sa na ňu. Jej ruka nahmatala jediné, čo ležalo pri ohni, železný kutáč. Jeden úder, do hrdla. Richtár Lesovíc padol na dlážku a už nevstal.
+
+Žena, ktorá prala košele celej dedine a v každej kosti na dvore videla diabla, si v ten večer zmývala krv z vlastnej dlážky.
+
+✠   ✠   ✠
+
+Tadeusa Schwarzenberga zabila
+AGNES SCHULTZ
+
+Nie z nenávisti a nie pre Ester, tá už v dome nebola. Zabila ho v sebaobrane, v smrteľnom strachu o vlastný život.
+
+✠   ✠   ✠
+
+Keď hrôza opadla, telo vyzliekla, a keď mu strhávala krížik z krku, rozmazala mu krv po tvári a poškriabala ho nechtami. Šaty zhúžvala spolu s prádlom, ktoré mala prať, s Viliamovou košeľou a Esterinou blúzkou. Telo naložila na fúrik, prikryla plachtou a viezla k Viliamovi, aby naňho hodila vinu. Mne cestou zaklamala, že ide po drevo. Keď zbadala Moritza hľadajúceho ovcu, v panike zabočila ku krčme a telo vyložila v kroví za šenkom. Prsteň jej cestou vypadol, krížik zabudla na stole a šaty vyplavila rieka k Viliamovmu mólu. Viliam to všetko videl cez rieku, no len ako tieň.
+
+Nebola to kliatba ani čarodejnica. Bol to strach, hanba a tajomstvá, ktoré sa v Lesoviciach nedali pochovať.
+
+V Lesoviciach, 23. októbra roku Pána 1503
+†` }
+
 ],
 /* ------------------------------------------------------------------ */
 riesenie: {
@@ -1067,7 +1154,7 @@ scenar: {
   kroky: [
     { cas: "17:00", nadpis: "Privítanie a zadanie", co: "Pozvánka biskupa · Zoznam podozrivých · Mapa Lesovíc · Protokol z obhliadky tela · Ilustrácia tela",
       komu: "Každý tím dostane celú sadu.",
-      ako: "Predstaviť sa ako brat Martin a nahlas prečítať pozvánku od biskupa — tón udáva celý večer. Spomenúť, že telo obhliadol osobne a protokol je jeho zápis. Upozorniť, že do 20:30 treba odovzdať vyplnený dotazník.",
+      ako: "Úvodné slovo má otec Benedikt — jeho prejav je v Dokumentoch. Potom sa predstaviť ako brat Martin a nahlas prečítať pozvánku od biskupa — tón udáva celý večer. Spomenúť, že telo obhliadol osobne a protokol je jeho zápis. Upozorniť, že do 20:30 treba odovzdať vyplnený dotazník.",
       otvara: "Tímy sa dozvedia čas smrti, že telo bolo presunuté a že rana nepochádza od noža." },
     { cas: "17:30", nadpis: "Bylinkár Grety", co: "Zápisník odvarov",
       komu: "Všetkým tímom.",
@@ -1103,7 +1190,7 @@ scenar: {
       otvara: "Desať otázok, spolu 18 bodov." },
     { cas: "po 20:30", nadpis: "Vyhodnotenie", co: "Odhalenie páchateľa a vyhlásenie víťazov",
       komu: "Všetkým naraz, aj hercom.",
-      ako: "Prejsť odpovede nahlas, bod po bode. Priznanie Agnes pred všetkými je najsilnejší moment večera. Potom prejsť reťaz dôkazov a vysvetliť falošné stopy.",
+      ako: "Prejsť odpovede nahlas, bod po bode. Priznanie Agnes pred všetkými je najsilnejší moment večera. Rozuzlenie prednáša otec Benedikt — Záverečné slovo v Dokumentoch. Potom prejsť reťaz dôkazov a vysvetliť falošné stopy.",
       otvara: "Koniec hry." }
   ]
 },

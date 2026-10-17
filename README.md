@@ -43,12 +43,12 @@ Ak sa web po úprave nenačíta, je to takmer vždy toto.
 | Prehľad | cover s headlinom, kľúčové fakty, deň vraždy v 7 momentoch, obsadenie s portrétmi, dlaždice na všetky sekcie |
 | Prípad | zadanie bez spoilerov pre tímy, profil obete a 7 podozrivých s portrétmi |
 | Príbeh | 10 kapitol od moru 1482 po nález tela |
-| Postavy | 7 hrateľných + obeť s portrétmi, sieť obvinení (kto koho obviňuje/chráni), postavy v pozadí; tlačiteľná karta pre herca |
+| Postavy | 7 hrateľných + obeť s portrétmi, sieť obvinení (kto koho obviňuje/chráni), postavy v pozadí (vrátane sestry Brunhildy); tlačiteľná karta pre herca |
 | Súvislosti | klikacia myšlienková mapa — vyber postavu a uvidíš jej väzby, dôkazy, miesta a hodiny |
 | Mapa | 13 bodov, klikacie, s udalosťami na mieste |
 | Časová os | 41 záznamov, filter podľa postavy, „len kľúčové“, na mobile ako zoznam |
 | Dôkazy | 13 dôkazov v poradí vypúšťania, prekliky na postavy a dokumenty |
-| Dokumenty | plné znenie 8 herných dokumentov |
+| Dokumenty | plné znenie 10 herných dokumentov vrátane úvodného prejavu a záverečného slova otca Benedikta |
 | Riešenie | zhrnutie, reťaz dôkazov (8 krokov), 10 falošných stôp |
 | Réžia | scenár pre brata Martina krok za krokom (čo a kedy odovzdať, komu, čo povedať), zlaté pravidlá, príprava, harmonogram, dotazník s bodovaním, rekvizity s odškrtávaním, kontrola konzistencie |
 
