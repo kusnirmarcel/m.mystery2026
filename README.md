@@ -50,14 +50,14 @@ Ak sa web po úprave nenačíta, je to takmer vždy toto.
 | Dôkazy | 13 dôkazov v poradí vypúšťania, prekliky na postavy a dokumenty |
 | Dokumenty | plné znenie 10 herných dokumentov vrátane úvodného prejavu a záverečného slova otca Benedikta |
 | Riešenie | zhrnutie, reťaz dôkazov (8 krokov), 10 falošných stôp |
-| Réžia | scenár pre brata Martina krok za krokom (čo a kedy odovzdať, komu, čo povedať), ako sa veci dostanú k ľuďom (čo sa rozdáva a čo umiestňuje Brunhilda do priestoru), zlaté pravidlá, príprava, harmonogram, dotazník s bodovaním, rekvizity s odškrtávaním, kontrola konzistencie |
+| Réžia | scenár pre brata Martina krok za krokom (čo a kedy odovzdať, komu, čo povedať), ako sa veci dostanú k ľuďom (čo sa rozdáva a čo umiestňuje Brunhilda do priestoru), samostatná príručka pre herečku Brunhildy, zlaté pravidlá, príprava, harmonogram, dotazník s bodovaním, rekvizity s odškrtávaním, kontrola konzistencie |
 
 Vyhľadávanie (lupa vpravo hore) hľadá naraz vo všetkom.
 Každá sekcia má dole preklik na ďalšie dve sekcie.
 
 ## Scenár pre moderátora
 
-Blok `scenar:` v `data.js` — `kto`, `zlatePravidla`, `priprava`, `doruc` (ako sa veci dostanú k ľuďom), `kroky` (každý krok má
+Blok `scenar:` v `data.js` — `kto`, `zlatePravidla`, `priprava`, `doruc` (ako sa veci dostanú k ľuďom), `brunhilda` (príručka pre herečku), `kroky` (každý krok má
 `cas`, `nadpis`, `co`, `komu`, `ako`, `otvara`). Časy krokov musia sedieť
 s blokom `harmonogram:`, inak to vypíše kontrola konzistencie.
 

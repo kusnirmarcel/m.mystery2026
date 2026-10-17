@@ -1137,7 +1137,7 @@ scenar: {
     "Neprezrádzať, kto je vrah, ani nenaznačovať, kto ním nie je. Na priamu otázku odpovedať, že brat Martin zapísal len to, čo oko vidí.",
     "Dôkazy vypúšťať v presných časoch, aj počas prebiehajúceho vypočúvania. Rytmus drží napätie.",
     "Každý dôkaz odovzdať všetkým tímom naraz a nahlas povedať, kde sa našiel. Miesto nálezu býva dôležitejšie než samotný predmet.",
-    "Zaseknutému tímu nepomáhať odpoveďou, ale otázkou. Napríklad: „Overili ste si u všetkých, kto má doma kutáč?“",
+    "Tímy nenavádzať. Žiadne nápovedy, žiadne otázky, ktoré ukazujú smer, žiadne narážky nad rámec toho, čo hovoria pravidlá, réžia a samotné dôkazy. Zaseknutý tím sa zasekne — to je súčasť hry.",
     "Herci priznávajú tajomstvá až pod ťarchou konkrétneho dôkazu. Kým tím dôkaz nemá, herec klame — to je správne, nie chyba.",
     "Sledovať čas. O 20:30 je koniec vyšetrovania, aj keby boli tímy uprostred vety."
   ],
@@ -1169,7 +1169,31 @@ scenar: {
     pozor: [
       "Brunhilda je zároveň ruka, ktorá nosí dôkazy od brata Martina k tímom. Hovorí málo a na otázky o obsahu odpovedá, že ona len nesie, čo jej brat Martin dal.",
       "Benedikt o nevere Ester a Viliama nepovie nič, kým na ňu tím nepoukáže na základe dôkazu.",
-      "Zaseknutému tímu pomôcť otázkou, nie odpoveďou — napríklad či už niekto prehľadal Gretino stanovisko."
+      "Nikoho nenavádzať. Nič nad rámec toho, čo je v réžii a v dôkazoch — žiadne nápovedy ani narážky, ani keď sa tím zasekne."
+    ]
+  },
+  brunhilda: {
+    nadpis: "Sestra Brunhilda — pre herečku",
+    kto: "Mníška, ktorá asistuje bratovi Martinovi pri vyšetrovaní. Pokorné dievča oddané službe Bohu a cirkvi. Nevyšetruje, nehádže teórie a nikoho nenaviguje — nosí, čo jej brat Martin dá, a umiestňuje, čo jej povie umiestniť.",
+    rola: [
+      "Hovoriť málo a potichu. Oči skôr dolu než do očí. Žiadne vtipy, žiadna familiárnosť.",
+      "Na každú otázku o obsahu dôkazu odpovedať, že ona iba nesie, čo jej brat Martin dal, a že posudzovať to jej neprislúcha.",
+      "Nikdy nehovoriť, kto je podozrivý, čo si o kom myslí, ani čo by mal tím urobiť. Žiadne nápovedy a žiadne narážky nad rámec toho, čo je napísané nižšie.",
+      "Keď sa niekto pýta na niečo, čo nevie, povedať, že sa spýta brata Martina — a naozaj sa ho spýtať."
+    ],
+    priprava: [
+      "Pred príchodom tímov si prevziať od brata Martina tri veci: Bylinkár, Karolove poznámky a záznamy spovedí. Držať ich pri sebe, nie na stole.",
+      "Vedieť, kde je Gretino stanovisko a kde sú kvetiny — tam sa o 17:30 kladie Bylinkár.",
+      "Mať prehľad o časoch nižšie. Časy sa dodržiavajú aj vtedy, keď práve prebieha vypočúvanie."
+    ],
+    kroky: [
+      { cas: "17:30", co: "Bylinkár (zápisník odvarov Grety)", ako: "Položiť ho k Gretinmu stanovisku medzi kvetiny. Potom nahlas povedať tímom, že pri prehliadke domu bylinkárky sa našiel jej zápisník a kde leží. Obsah nekomentovať." },
+      { cas: "18:30", co: "Karolove poznámky (špina)", ako: "Položiť ich do priestoru potajme, keď sa nikto nepozerá. Nič nehovoriť, na nič neupozorňovať. Ak sa niekto spýta, čo tam robila, povedať, že nič — že len prechádzala." },
+      { cas: "19:15", co: "Benediktove záznamy spovedí", ako: "Položiť ich do priestoru a potom o tom povedať — ale opatrne a akoby nerada. Ako cudnej mníške sa jej neprieči len to, že ide o spovede, ale aj to, že poukazuje na špinu farára. Povedať to stručne, so sklopenými očami, a hneď odísť." }
+    ],
+    nosenie: [
+      "Všetko ostatné, čo brat Martin počas večera vypúšťa, roznáša Brunhilda tímom — každému tímu rovnako a naraz.",
+      "Pri odovzdaní zopakovať len to, čo povedal brat Martin o mieste nálezu. Nič nepridávať."
     ]
   },
   kroky: [

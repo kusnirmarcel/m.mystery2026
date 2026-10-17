@@ -1086,6 +1086,23 @@ function renderRezia(){
   <div class="leaf" style="margin-bottom:20px"><div class="rubric">Na čo nezabudnúť pri odovzdávaní</div>
     <div class="blk" style="margin:0"><ul>${sc.doruc.pozor.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`:''}
 
+  ${sc.brunhilda?`
+  <div class="orn"><span>❦</span></div>
+  <div class="pagehead"><h2>${esc(sc.brunhilda.nadpis)}</h2>
+    <p class="lede">${esc(sc.brunhilda.kto)}</p></div>
+  <div class="cols" style="margin-bottom:20px">
+    <div class="leaf"><div class="rubric">Ako hrať</div>
+      <div class="blk" style="margin:0"><ul>${sc.brunhilda.rola.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>
+    <div class="leaf"><div class="rubric">Príprava</div>
+      <div class="blk" style="margin:0"><ul>${sc.brunhilda.priprava.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>
+  </div>
+  ${sc.brunhilda.kroky.map((x,i)=>`<div class="step${i===sc.brunhilda.kroky.length-1?' final':''}">
+    <div class="when">${esc(x.cas)}</div>
+    <div><h3>${esc(x.co)}</h3>
+      <dl><dt>Čo robiť</dt><dd>${esc(x.ako)}</dd></dl></div></div>`).join('')}
+  <div class="leaf" style="margin:20px 0"><div class="rubric">Roznášanie ostatných dôkazov</div>
+    <div class="blk" style="margin:0"><ul>${sc.brunhilda.nosenie.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`:''}
+
   <div class="orn"><span>❦</span></div>
   <div class="pagehead"><h2>Priebeh hry krok za krokom</h2>
     <p class="lede">Čo odovzdať, kedy, komu a čo pri tom povedať. Odškrtnutie sa ukladá v tomto prehliadači.</p></div>
