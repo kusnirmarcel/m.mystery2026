@@ -1074,8 +1074,17 @@ function renderRezia(){
       <div class="blk" style="margin:0"><ul>${sc.priprava.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>
   </div>
 
-  ${sc.doruc?`<div class="leaf" style="margin-bottom:20px"><div class="rubric">${esc(sc.doruc.nadpis)}</div>
-    <div class="blk" style="margin:0"><ul>${sc.doruc.body.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`:''}
+  ${sc.doruc?`
+  <div class="pagehead"><h2>${esc(sc.doruc.nadpis)}</h2>
+    <p class="lede">${esc(sc.doruc.uvod)}</p></div>
+  <div class="cols" style="margin-bottom:20px">
+    <div class="leaf"><div class="rubric">Rozdáva brat Martin</div>
+      <div class="blk" style="margin:0"><ul>${sc.doruc.rozdava.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>
+    <div class="leaf"><div class="rubric">Umiestňuje sestra Brunhilda</div>
+      <div class="blk" style="margin:0"><ul>${sc.doruc.umiestnuje.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>
+  </div>
+  <div class="leaf" style="margin-bottom:20px"><div class="rubric">Na čo nezabudnúť pri odovzdávaní</div>
+    <div class="blk" style="margin:0"><ul>${sc.doruc.pozor.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`:''}
 
   <div class="orn"><span>❦</span></div>
   <div class="pagehead"><h2>Priebeh hry krok za krokom</h2>
